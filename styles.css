@@ -700,9 +700,9 @@ margin-top: -200px;
 }
 
 /* Responsiveness  */
-@media only screen and (max-width: 1900px) {
+@media only screen and (max-width: 1800px) {
   #right {
-      left: 1300px; /* Ajusta según sea necesario */
+    left: 900px; /* Ajusta según sea necesario */
   }
 }
 
