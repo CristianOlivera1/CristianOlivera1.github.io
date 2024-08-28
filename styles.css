@@ -392,12 +392,25 @@ main .container .text h1 span {
   width: 100%;
   height: auto;
 }
-
+.skills .unamba,iframe{
+  margin-top: 15px;
+  box-shadow: 2px 4px 18px rgba(62, 63, 168, 0.8), 
+                0px 10px 18px 8px rgba(62, 63, 168, 0.8);
+}
 .skills .escuela {
   width: 50%;
   height: auto;
+  filter: drop-shadow(13px 6px 18px rgba(63, 63, 168, 0.8));
+}
+.skills .escuela,
+.skills .unamba {
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.skills .escuela:hover,
+.skills .unamba:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al 110% */ 
+}
 #down {
   position: absolute;
   bottom: -10px;
