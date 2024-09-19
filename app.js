@@ -15,15 +15,13 @@ function toggleSidebar(){
 //Loader
 document.addEventListener("DOMContentLoaded", function() {
     const loader = document.querySelector('.loader-container');
-    const minimumLoadingTime = 4000; // tiempo en milisegundos-->4s
+    const minimumLoadingTime = 3000; // tiempo en milisegundos-->1s
     let pageLoaded = false;
 
     // Verifica si la página ya se cargó completamente
     window.addEventListener("load", function() {
         pageLoaded = true;
     });
-
-   
     setTimeout(function() {
         if (pageLoaded) {
             loader.style.display = 'none';
@@ -52,24 +50,60 @@ window.addEventListener('scroll', function() {
     lastScrollTop = scrollTop;
 });
 
-
-//para interactuar con las estrellas
 document.querySelectorAll(".rating").forEach((ratingEl) => {
     const starsEl = ratingEl.querySelectorAll(".fa-star");
+    
+    // Inicializar el rating
     updateRating(starsEl, 0);
 
+    // Añadir eventos a cada estrella
     starsEl.forEach((starEl, index) => {
+        // Evento click/touchstart para marcar las estrellas
         starEl.addEventListener("click", () => updateRating(starsEl, index));
+        starEl.addEventListener("touchstart", () => updateRating(starsEl, index), { passive: true });
+
+        // Evento hover/touchstart para mostrar las estrellas en hover/touch de izquierda a derecha
+        starEl.addEventListener("mouseover", () => updateHover(starsEl, index));
+        starEl.addEventListener("touchstart", () => updateHover(starsEl, index), { passive: true });
+
+        // Eliminar el efecto hover cuando el mouse sale o se retira el dedo
+        starEl.addEventListener("mouseout", () => removeHover(starsEl));
+        starEl.addEventListener("touchend", () => removeHover(starsEl), { passive: true });
     });
 });
 
+// Función para actualizar las estrellas activadas al hacer clic o tocar
 function updateRating(starsEl, index) {
     starsEl.forEach((starEl, idx) => {
-        if (idx < index + 1) {
+        if (idx <= index) {
             starEl.classList.add("active");
         } else {
             starEl.classList.remove("active");
         }
     });
 }
-//para interactuar con las estrellas
+
+// Función para aplicar el hover o toque solo a las estrellas no activadas
+function updateHover(starsEl, index) {
+    starsEl.forEach((starEl, idx) => {
+        if (!starEl.classList.contains("active") && idx <= index) {
+            starEl.classList.add("hovered");
+        }
+    });
+}
+
+// Función para eliminar el hover cuando el mouse o toque termina
+function removeHover(starsEl) {
+    starsEl.forEach(starEl => {
+        starEl.classList.remove("hovered");
+    });
+}
+document.querySelectorAll('.btns a').forEach(btn => {
+    const iconClass = btn.querySelector('i').classList;
+  
+    if (iconClass.contains('fa-github')) {
+      btn.setAttribute('data-tooltip', 'GitHub');
+    } else if (iconClass.contains('fa-code')) {
+      btn.setAttribute('data-tooltip', 'Ver Código');
+    }
+  });
