@@ -293,10 +293,22 @@ main .container h1 {
 }
 
 .line-numbers pre {
-  padding-top: 12px;
+  padding-top: 13px;
   margin: 0;
-  line-height: 1.3; /* Asegura que los números estén alineados con el código */
+  line-height: 0.8; /* Asegura que los números estén alineados con el código */
   font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.right-icon {
+  margin-right: 5px;
+  transition: background-color 0.3s ease; 
+  border-radius: 8px;
+}
+
+.right-icon:hover {
+  background-color: #888; /* Fondo más claro al hacer hover */
+  color: red;
+  padding-left: 0;
 }
 
 .titlecode {
@@ -1377,20 +1389,15 @@ header nav .burger:hover i {
     padding: 10px;
     text-align: center;
   }
-
-  .titlecode,
-  .code {
-    text-align: center;
-    padding-right: 0;
-  }
-
-  .titlecode>div:nth-child(3) {
-    margin-left: 0;
+ .right-icon {
+  float: right !important;  
   }
 
   .code {
     width: 100%;
-    padding-left: 10px;
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 0;
   }
 
 }
