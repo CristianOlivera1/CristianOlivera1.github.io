@@ -1,74 +1,104 @@
-const burger = document.querySelector(".burger");
-const sidebar = document.querySelector(".links");
-const links = document.querySelectorAll(".links li a");
+document.addEventListener("DOMContentLoaded", function() {
+  const burger = document.querySelector(".burger");
+  const sidebar = document.querySelector(".links");
+  const links = document.querySelectorAll(".links li a");
 
-burger.addEventListener("click", toggleSidebar);
-
-links.forEach(link => {
-  link.addEventListener("click", toggleSidebar);
-});
-function toggleSidebar() {
-  sidebar.classList.toggle("show");
-
-  // Cambiar el ícono de bars a times y viceversa
-  const icon = burger.querySelector('i');
-  if (icon.classList.contains('fa-bars')) {
-    icon.classList.remove('fa-bars');
-    icon.classList.add('fa-times');
-  } else {
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
+  if (burger) {
+    burger.addEventListener("click", toggleSidebar);
   }
-}
+
+  if (links.length > 0) {
+    links.forEach(link => {
+      link.addEventListener("click", toggleSidebar);
+    });
+  }
+
+  function toggleSidebar() {
+    sidebar.classList.toggle("show");
+
+    // Cambiar el ícono de bars a times y viceversa
+    const icon = burger.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  }
+});
 
 //Loader
 document.addEventListener("DOMContentLoaded", function() {
-    const loader = document.querySelector('.loader-container');
-    const minimumLoadingTime = 3000; // tiempo en milisegundos-->1s
-    let pageLoaded = false;
+  const loader = document.querySelector('.loader-container');
+  const minimumLoadingTime = 3000; // tiempo en milisegundos-->1s
+  let pageLoaded = false;
 
-    // Verifica si la página ya se cargó completamente
-    window.addEventListener("load", function() {
-        pageLoaded = true;
-    });
-    setTimeout(function() {
-        if (pageLoaded) {
-            loader.style.display = 'none';
-        } else {
-            
-            window.addEventListener("load", function() {
-                loader.style.display = 'none';
-            });
-        }
-    }, minimumLoadingTime);
+  // Verifica si la página ya se cargó completamente
+  window.addEventListener("load", function() {
+      pageLoaded = true;
+  });
+
+  if (loader) { // Verifica que el loader exista
+      setTimeout(function() {
+          if (pageLoaded) {
+              loader.style.display = 'none';
+          } else {
+              window.addEventListener("load", function() {
+                  loader.style.display = 'none';
+              });
+          }
+      }, minimumLoadingTime);
+  } else {
+      console.warn('El elemento .loader-container no se encontró en el DOM.');
+  }
 });
 
 //Sub MENU IA
+document.addEventListener("DOMContentLoaded", function() {
   const modalContentia = document.querySelector('.modal-contentia');
   const aiModal2 = document.getElementById('aiModal');
-  // Mostrar el modal al hacer clic en el botón
-  document.getElementById('abrirsubmenuIA').addEventListener('click', () => {
-    aiModal2.style.display = 'block';
-    modalContentia.style.width = '80%'; 
-    modalContentia.style.height = '80%'; 
-  });
+  const abrirsubmenuIA = document.getElementById('abrirsubmenuIA');
+
+  if (abrirsubmenuIA) {
+      abrirsubmenuIA.addEventListener('click', () => {
+          aiModal2.style.display = 'block';
+          modalContentia.style.width = '80%'; 
+          modalContentia.style.height = '80%'; 
+      });
+  } else {
+      console.warn('El elemento con ID "abrirsubmenuIA" no se encontró en el DOM.');
+  }
+});
 //Sub MENU IA; 
 
 //abrir IA desde scroll abrirIaScroll
-const modalContentiascrol = document.querySelector('.modal-contentia');
-const aiModalscrol = document.getElementById('aiModal');
-document.getElementById('abrirIaScroll').addEventListener('click', () => {
-  console.log('Botón de IA clicado');
-  aiModalscrol.style.display = 'block';
-  modalContentiascrol.style.width = '80%'; 
-  modalContentiascrol.style.height = '80%';
+document.addEventListener("DOMContentLoaded", function() {
+  const aiModal = document.getElementById('aiModal');
+  const abrirIaScroll = document.getElementById('abrirIaScroll');
+
+  if (abrirIaScroll) {
+      abrirIaScroll.addEventListener('click', () => {
+          aiModal.style.display = 'block';
+      });
+  } else {
+      console.warn('El elemento con ID "abrirIaScroll" no se encontró en el DOM.');
+  }
 });
 //abrir IA desde scroll
 
 // abrir Editor Scroll desde main
-document.getElementById('abrirEditorScroll').addEventListener('click', function() {
-  console.log('Botón de editor clicado');
-  document.getElementById('nombreProyectoModal').style.display = 'block';
+document.addEventListener("DOMContentLoaded", function() {
+  const abrirEditorScroll = document.getElementById('abrirEditorScroll');
+  const nombreProyectoModal = document.getElementById('nombreProyectoModal');
+
+  if (abrirEditorScroll) {
+      abrirEditorScroll.addEventListener('click', function() {
+          nombreProyectoModal.style.display = 'block';
+      });
+  } else {
+      console.warn('El elemento con ID "abrirEditorScroll" no se encontró en el DOM.');
+  }
 });
 // abrir Editor Scroll desde main
 //Sub MENU editor
@@ -286,15 +316,15 @@ document.querySelectorAll('.btns a').forEach(btn => {
   });
 
   //MODAL
-// Obtener el mensaje vacío
   document.querySelectorAll('.btns a[data-tooltip="Ver Código"]').forEach(btn => {
     btn.addEventListener('click', function() {
       const projectName = this.closest('.project').querySelector('h1').innerText.replace(/\s/g, '%20');
+  
       // Definir las rutas correctas para los archivos HTML, CSS y JS
       const htmlFile = `https://raw.githubusercontent.com/CristianOlivera1/Resources-dev/main/mini-proyectos/${projectName}/index.html`;
       const cssFile = `https://raw.githubusercontent.com/CristianOlivera1/Resources-dev/main/mini-proyectos/${projectName}/style.css`;
       const jsFile = `https://raw.githubusercontent.com/CristianOlivera1/Resources-dev/main/mini-proyectos/${projectName}/script.js`;
-
+  
       // Función para cargar y mostrar contenido solo si el archivo existe
       const fetchFile = (url) => {
         return fetch(url)
@@ -307,32 +337,68 @@ document.querySelectorAll('.btns a').forEach(btn => {
           .catch(() => null); // Silenciar cualquier otro tipo de error
       };
   
+      // Función para verificar si una imagen existe en la URL
+      const imageExists = async (url) => {
+        try {
+          const response = await fetch(url);
+          return response.ok;
+        } catch {
+          return false;
+        }
+      };
+  
       // Cargar archivos y mostrar en el modal
       Promise.all([
         fetchFile(htmlFile),
         fetchFile(cssFile),
         fetchFile(jsFile)
-      ]).then(([htmlContent, cssContent, jsContent]) => {
-     
-        document.getElementById('htmlContent').innerHTML = htmlContent ? 
-        `<pre class="line-numbers"><code class="language-html">${htmlContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>` : 
-        `<pre class="line-numbers"><code class="language-html">&lt;!-- Este proyecto no contiene HTML --&gt;</code></pre>`; // Comentario en HTML
-      
-      document.getElementById('cssContent').innerHTML = cssContent ? 
-        `<pre class="line-numbers"><code class="language-css">${cssContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>` : 
-        `<pre class="line-numbers"><code class="language-css">/* Este proyecto no contiene CSS */</code></pre>`; // Comentario en CSS
-      
-      document.getElementById('jsContent').innerHTML = jsContent ? 
-        `<pre class="line-numbers"><code class="language-javascript">${jsContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>` : 
-        `<pre class="line-numbers"><code class="language-javascript">// Este proyecto no contiene JavaScript</code></pre>`; // Comentario en JS
-      
+      ]).then(async ([htmlContent, cssContent, jsContent]) => {
+  
+        document.getElementById('htmlContent').innerHTML = htmlContent ?
+          `<pre class="line-numbers"><code class="language-html">${htmlContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>` :
+          `<pre class="line-numbers"><code class="language-html">&lt;!-- Este proyecto no contiene HTML --&gt;</code></pre>`; // Comentario en HTML
+  
+        document.getElementById('cssContent').innerHTML = cssContent ?
+          `<pre class="line-numbers"><code class="language-css">${cssContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>` :
+          `<pre class="line-numbers"><code class="language-css">/* Este proyecto no contiene CSS */</code></pre>`; // Comentario en CSS
+  
+        document.getElementById('jsContent').innerHTML = jsContent ?
+          `<pre class="line-numbers"><code class="language-javascript">${jsContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>` :
+          `<pre class="line-numbers"><code class="language-javascript">// Este proyecto no contiene JavaScript</code></pre>`; // Comentario en JS
+  
         // Resaltar la sintaxis de todos los bloques de código
         Prism.highlightAll();
         openModal();
- 
-        
-        const updateIframe = () => {
+  
+        const updateIframe2 = async () => {
           const iframeDoc = document.getElementById('resultFrame').contentDocument || document.getElementById('resultFrame').contentWindow.document;
+          let updatedHtmlContent = document.getElementById('htmlContent').innerText;
+  
+          // Crear un elemento div temporal para analizar el HTML
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = updatedHtmlContent;
+  
+          // Buscar todas las imágenes y actualizar sus rutas relativas
+          for (const img of tempDiv.querySelectorAll('img')) {
+            let originalSrc = img.getAttribute('src');
+            if (originalSrc && !originalSrc.startsWith('http')) {
+              // Intentar encontrar la imagen en la raíz del proyecto
+              const imgRootUrl = `https://raw.githubusercontent.com/CristianOlivera1/Resources-dev/main/mini-proyectos/${projectName}/${originalSrc}`;
+              if (await imageExists(imgRootUrl)) {
+                img.setAttribute('src', imgRootUrl);
+              } else {
+                // Intentar encontrar la imagen en la carpeta "imagenes" del proyecto
+                const imgFolderUrl = `https://raw.githubusercontent.com/CristianOlivera1/Resources-dev/main/mini-proyectos/${projectName}/imagenes/${originalSrc}`;
+                if (await imageExists(imgFolderUrl)) {
+                  img.setAttribute('src', imgFolderUrl);
+                }
+              }
+            }
+          }
+  
+          // Obtener el HTML actualizado con las rutas absolutas para las imágenes
+          updatedHtmlContent = tempDiv.innerHTML;
+  
           iframeDoc.open();
           iframeDoc.write(`
             <html>
@@ -340,25 +406,25 @@ document.querySelectorAll('.btns a').forEach(btn => {
               <style>${document.getElementById('cssContent').innerText}</style>
             </head>
             <body>
-              ${document.getElementById('htmlContent').innerText}
+              ${updatedHtmlContent}
               <script>${document.getElementById('jsContent').innerText}</script>
             </body>
             </html>
           `);
           iframeDoc.close();
         };
-      
-        // Agregar evento para actualizar el iframe al 
+  
+        // Agregar evento para actualizar el iframe al cambiar el contenido editable
         document.querySelectorAll('[contenteditable="true"]').forEach(codeBlock => {
-          codeBlock.addEventListener('input', updateIframe); // Llama a la función de actualización
+          codeBlock.addEventListener('input', updateIframe2); // Llama a la función de actualización
         });
-      
+  
         // Inicializar el iframe al abrir el modal
-        updateIframe();
-        
+        await updateIframe2();
       });
     });
   });
+  
 
 // Iniciar el estado de "Resultado" como activo
 let isResultActive = true;

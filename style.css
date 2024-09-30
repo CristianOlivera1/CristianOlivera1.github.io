@@ -594,8 +594,12 @@ body.light-theme .projects h1.title::after {
   background: #33333383;
 }
 
+body.light-theme .projects .subtitle p{
+  color: rgba(51, 51, 51, 0.91);
+}
+
 body.light-theme .projects .btns a i {
-  color: #000000;
+  color: var(--primary);
 }
 
 body.light-theme .projects .btns a:hover {
@@ -633,6 +637,7 @@ body.light-theme .projects .download:hover {
 body.light-theme .projects .description {
   background: linear-gradient(180deg, rgba(99, 98, 98, 0.363) 0%,
       rgba(133, 131, 131, 0.295) 20%, rgb(219, 219, 218) 100%);
+      border-color: #888;
 
 }
 
@@ -673,11 +678,21 @@ body.light-theme .about {
 body.light-theme .column-svg svg {
   color: rgb(68, 74, 77)
 }
+body.light-theme .feature-section,
+body.light-theme .achievements {
+  border: 2px solid #70707057;
+}
+
+body.light-theme .feature-section:hover,
+body.light-theme .achievements:hover{
+  border-color: #6973fb;
+}
 
 body.light-theme .feature-section h2,
 body.light-theme .achievements h2 {
   color: rgba(51, 51, 51, 0.91);
 }
+
 
 /*aplicando tema claro*/
 .projects .container {
@@ -948,7 +963,7 @@ body.light-theme .achievements h2 {
 .project .description {
   position: absolute;
   bottom: -100px;
-  left: 10%;
+  left: 10%; 
   width: 80%;
   padding: 1rem;
   color: #ffffff;
@@ -2511,6 +2526,7 @@ header nav .burger:hover i {
 
   .about h3 {
     font-size: 17px;
+    margin-bottom: 12px;
   }
 
   .subtitle h1 svg {
@@ -2528,10 +2544,15 @@ header nav .burger:hover i {
   .two-columns>div {
     max-width: 100%;
   }
+  .feature-section,
+  .achievements{
+    padding: 12px 10px 12px ;
+
+  }
 
   .feature-section li,
   .achievements li {
-    padding: 23px 5px;
+    padding: 10px 5px;
     margin: 10px 0;
 
   }
@@ -2565,7 +2586,7 @@ header nav .burger:hover i {
   .scroller li {
     padding: 5px 4px;
     font-size: 11px;
-    margin-bottom: -13px;
+    margin-bottom: -10px;
   }
 
   .footer {
@@ -2673,6 +2694,10 @@ header nav .burger:hover i {
   #nombreProyectoModal .nombre-modal-content .button-container .btn {
     font-size: 12px;
   }
+  .code-container-modal pre .nomProyecto{
+    margin-left: 40px;
+
+  }
 
   .close-ai {
     margin-top: -10px;
@@ -2720,8 +2745,10 @@ header nav .burger:hover i {
   }
 
   .code-container-modal .copy-btn {
-    top: 15px;
-    right: 30px;
+    top: 50px;
+    right: 20px;
+    font-size: 10px;
+    padding: 2px;
   }
 
   .tab-button i {
@@ -2765,10 +2792,25 @@ header nav .burger:hover i {
   .export-btn {
     margin-right: 100px;
     padding: 6px;
+    position: relative;
   }
 
   .export-btn span {
     display: none;
+  }
+  .export-btn[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -25px; /* Ajusta la posición del tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    z-index: 999;
   }
 }
 
