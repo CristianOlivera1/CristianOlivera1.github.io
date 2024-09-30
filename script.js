@@ -76,10 +76,12 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   const aiModal = document.getElementById('aiModal');
   const abrirIaScroll = document.getElementById('abrirIaScroll');
-
+  const modalContentia2 = document.querySelector('.modal-contentia');
   if (abrirIaScroll) {
       abrirIaScroll.addEventListener('click', () => {
           aiModal.style.display = 'block';
+          modalContentia2.style.width = '80%'; 
+          modalContentia2.style.height = '80%'; 
       });
   } else {
       console.warn('El elemento con ID "abrirIaScroll" no se encontró en el DOM.');
