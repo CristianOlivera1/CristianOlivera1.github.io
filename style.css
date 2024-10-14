@@ -312,7 +312,7 @@ main .container h1 {
 }
 
 .rosa {
-  font-weight: 700;
+  font-weight: bold;
   background-image: linear-gradient(135deg, #e669fb, #ff70a7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1133,7 +1133,7 @@ body.light-theme .achievements h2 {
 }
 
 /* Contenedor de botones en el modal */
-#nombreProyectoModal .nombre-modal-content .button-container {
+  #nombreProyectoModal .nombre-modal-content .button-container {
   display: flex;
   justify-content: space-between;
 }
@@ -1886,16 +1886,15 @@ body.light-theme .achievements h2 {
 
 /* Imagen del proyecto */
 .project-screenshot {
-  width: 50%;
-  border-radius: 12px;
+  width: 60%;
   transition: transform 0.3s ease;
   margin-bottom: 5rem;
   margin-top: 5rem;
-  mask-image: linear-gradient(black 20%, transparent);
+  mask-image: linear-gradient(black 30%, transparent);
 }
 
 .project-screenshot:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 /*hacer que el gif se oculte y no ocupe espacio*/
@@ -2222,7 +2221,7 @@ header nav .burger:hover i {
 @media only screen and (max-width: 480px) {
 
   main h2 {
-    font-size: 13px !important;
+    font-size: 14px !important;
     margin: 0;
   }
 
@@ -2240,12 +2239,13 @@ header nav .burger:hover i {
 
   .scroll-main {
     width: 250px;
-    margin-left: 17px;
     border: none;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .scroll-main .scroller li {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   header h1 {
@@ -2265,8 +2265,8 @@ header nav .burger:hover i {
   }
 
   header nav a img {
-    padding-left: 10px;
-    width: 50px;
+    width: 40px;
+    vertical-align: -6px;
   }
 
   header nav .links li a {
@@ -2282,7 +2282,6 @@ header nav .burger:hover i {
   /* Estilos para submenús */
   header nav .dropdown-content {
     position: static;
-    /* Posición estática para que se vea bien en móviles */
     background-color: rgba(0, 0, 0, 0.342);
     padding: 2rem;
     display: block;
@@ -2327,6 +2326,7 @@ header nav .burger:hover i {
   main .text .grp h1 {
     font-size: 16px !important;
     margin-top: 25px;
+    font-weight: bold;
   }
 
   h3 {
@@ -2334,7 +2334,8 @@ header nav .burger:hover i {
   }
 
   main .grp .text {
-    font-size: 14px !important;
+    font-size: 16px !important;
+    font-weight: bold;
   }
 
   .project {
@@ -2484,7 +2485,6 @@ header nav .burger:hover i {
 
   .btns a::after {
     bottom: -15px;
-    /* Ajusta la posición del tooltip debajo del ícono */
     left: 50%;
     padding: 5px 10px;
     border-radius: 5px;
@@ -2573,10 +2573,12 @@ header nav .burger:hover i {
   }
 
   .project-screenshot {
-    width: 100%;
-    -webkit-mask-image: linear-gradient(black 80%, transparent);
-    mask-image: linear-gradient(black 80%, transparent);
+    width: 130%;
+    -webkit-mask-image: linear-gradient(black 50%, transparent);
+    mask-image: linear-gradient(black 50%, transparent);
     margin-bottom: 3rem;
+    left: auto;
+    margin-left: -65px;
   }
 
   .ScrollInfinite {
@@ -2690,10 +2692,11 @@ header nav .burger:hover i {
   #nombreProyectoModal .nombre-modal-content input {
     font-size: 11px;
   }
+  #nombreProyectoModal .nombre-modal-content .confirmar{
+  font-size: 13px;
+} 
 
-  #nombreProyectoModal .nombre-modal-content .button-container .btn {
-    font-size: 12px;
-  }
+
   .code-container-modal pre .nomProyecto{
     margin-left: 40px;
 
