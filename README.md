@@ -31,5 +31,5 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 3. Abre el archivo `index.html` en tu navegador.
 
 ## 📬 Resultado
-<a href="https://CristianOlivera1.github.io" target="_blank">Página del Proyecto</a>
+**Proyecto Link**: [CristianOlivera1.github.io](https://CristianOlivera1.github.io)
 
