@@ -31,5 +31,5 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 3. Abre el archivo `index.html` en tu navegador.
 
 ## 📬 Resultado
-**Proyecto Link**: [CristianOlivera1.github.io](https://CristianOlivera1.github.io)
+**Proyecto Link**:  [![CristianOlivera1.github.io](https://img.shields.io/badge/CristianOlivera1.github.io-%23facc15?logo=eye)](https://CristianOlivera1.github.io)
 
