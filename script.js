@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //Loader
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader-container');
-  const minimumLoadingTime = 2000; // tiempo en milisegundos-->3s
+  const minimumLoadingTime = 1000; // tiempo en milisegundos-->1s
   let pageLoaded = false;
 
   // Verifica si la página ya se cargó completamente
