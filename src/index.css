@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #facc15;
+  --animate-spin-slow: spin 2s linear infinite;
+}
