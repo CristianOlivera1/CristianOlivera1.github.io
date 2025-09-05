@@ -6,15 +6,15 @@ export const PERSONAL_INFO = {
   email: "oliverachavezcristian@gmail.com",
   linkedin: "https://www.linkedin.com/in/cristian-olivera-chavez-077028339/",
   github: "https://github.com/CristianOlivera1",
-  profileImage: "/src/assets/foto/foto.png",
-  aboutImage: "/src/assets/foto/foto.png"
+  profileImage: "./assets/foto/foto.png",
+  aboutImage: "./assets/foto/foto.png"
 }
 
 export const PROJECTS = [
   {
     title: "Monitoreo de Incendios",
     description: "Sistema web completo para la gestión y monitoreo de incendios forestales con reportes en tiempo real, localización GPS y gestión de archivos. Incluye autenticación de usuarios, panel de administración, notificaciones y exportación de datos en múltiples formatos (JSON, CSV, Excel).",
-    image: "/src/assets/projects/apunina.png",
+    image: "./assets/projects/apunina.png",
     technologies: [
       { name: "Angular 20", icon: "logos:angular-icon" },
       { name: "Spring Boot", icon: "logos:spring-icon" },
@@ -31,7 +31,7 @@ export const PROJECTS = [
   {
     title: "PachaApp",
     description: "Aplicación móvil para la gestión de actividades con información meteorológica integrada. Incluye autenticación Firebase, notificaciones FCM, integración con OpenWeatherMap API, servicios de geolocalización y recordatorios programados para una mejor organización de actividades.",
-    image: "/src/assets/projects/pachaapp.png",
+    image: "./assets/projects/pachaapp.png",
     technologies: [
       { name: "Android Studio", icon: "logos:android-icon" },
       { name: "Spring Boot", icon: "logos:spring-icon" },
@@ -49,7 +49,7 @@ export const PROJECTS = [
   {
     title: "Code Puzzle",
     description: "Juego educativo interactivo de programación con mecánicas drag & drop para enseñar conceptos de programación. Incluye seguimiento de progreso del usuario, panel de administración, base de datos MySQL y biblioteca SortableJS para interacciones fluidas.",
-    image: "/src/assets/projects/codepuzzle.png",
+    image: "./assets/projects/codepuzzle.png",
     technologies: [
       { name: "HTML5", icon: "logos:html-5" },
       { name: "CSS", icon: "vscode-icons:file-type-css" },
@@ -66,7 +66,7 @@ export const PROJECTS = [
   {
     title: "Unamba Forum",
     description: "Plataforma de foro universitario completa con publicaciones multimedia, sistema de comentarios y respuestas anidadas, reacciones en tiempo real y perfiles de usuario. Incluye autenticación OAuth, gestión de carreras, notificaciones push y diseño responsive con animaciones avanzadas.",
-    image: "/src/assets/projects/unambaforum.gif",
+    image: "./assets/projects/unambaforum.gif",
     technologies: [
       { name: "Angular 20", icon: "logos:angular-icon" },
       { name: "Spring Boot", icon: "logos:spring-icon" },

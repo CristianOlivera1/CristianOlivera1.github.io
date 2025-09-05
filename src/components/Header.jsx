@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react'
-import { PERSONAL_INFO } from '../constants/portfolioData'
 
 const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
   const navItems = [

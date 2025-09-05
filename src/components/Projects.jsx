@@ -5,9 +5,10 @@ const Projects = () => {
   return (
     <section id="proyectos" className="scroll-m-20 w-full px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+        <h2 className="flex relative items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
           <Icon icon="tabler:code" className="size-8" />
           Proyectos
+          <span className="from-gray-300 to-white/75 dark:to-[#794dff]/20 absolute -bottom-0.5 start-0 h-0.5 w-56 sm:w-2xs rounded-full bg-gradient-to-r"></span>
         </h2>
 
         <div className="flex flex-col gap-y-16">
@@ -17,10 +18,10 @@ const Projects = () => {
               className="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
             >
               <div className="w-full md:w-1/2">
-                <div className="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                <div className="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-400 hover:bg-gray-800/50">
                   <img
                     alt={project.title}
-                    className="object-cover  object-top w-full h-56 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105"
+                    className="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105"
                     src={project.image}
                   />
                 </div>
@@ -30,6 +31,7 @@ const Projects = () => {
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                   {project.title}
                 </h3>
+
 
                 <div className="flex flex-wrap mt-4 mb-4">
                   <ul className="flex flex-wrap gap-2">
@@ -58,7 +60,7 @@ const Projects = () => {
                       return (
                         <li key={techIndex}>
                           <span
-                            className="flex gap-x-2 rounded-full text-xs text-white py-1 px-3 items-center border border-white/20 backdrop-blur-sm"
+                            className="flex gap-x-2 rounded-full text-xs text-black dark:text-white py-1 px-3 items-center border border-white/20 backdrop-blur-sm"
                             style={{
                               background: getTechGradient(tech.name),
                               boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)'
@@ -95,7 +97,7 @@ const Projects = () => {
                     className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                   >
                     <Icon icon="tabler:external-link" className="size-4" />
-                    Demo
+                    Detalles
                   </a>
                 </footer>
               </div>
