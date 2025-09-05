@@ -74,9 +74,7 @@ function App() {
 
   return (
     <div className="relative text-black dark:text-white min-h-screen">
-      <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-[#01061a]
-        bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]
-        dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
+      <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-[#01061a] bg-[radial-gradient(circle_500px_at_50%_200px,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
       </div>
 
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} activeSection={activeSection} />
@@ -86,7 +84,7 @@ function App() {
           <Projects />
           <About />
 
-          <div className="absolute bottom-0 left-0 z-[-2] w-full h-[900px] translate-y-[-100px] bg-[radial-gradient(circle_500px_at_100%_50%,#3e3e3e,transparent)]"></div>
+          <div className="absolute bottom-0 left-0 z-[-2] w-full h-[900px] translate-y-[-100px] bg-[radial-gradient(circle_500px_at_100%_50%,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_100%_50%,#3e3e3e,transparent)]"></div>
         </div>
       </main>
 
