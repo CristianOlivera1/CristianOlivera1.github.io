@@ -3,7 +3,7 @@ import { PERSONAL_INFO } from '../constants/portfolioData'
 
 const Hero = () => {
     return (
-        <section id="inicio" className="py-28 md:py-36 scroll-m-20 w-full px-4">
+        <section id="inicio" className="py-28 md:py-36 scroll-m-20 w-full px-4 fade-in">
             <div className="max-w-4xl mx-auto">
                 <div className="max-w-2xl">
                     <div className="flex gap-4 mb-4">

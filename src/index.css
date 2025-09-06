@@ -5,3 +5,31 @@
   --color-primary: #facc15;
   --animate-spin-slow: spin 2s linear infinite;
 }
+
+button{
+  cursor: pointer;
+}
+
+/* Scroll minimalista para WebKit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(200, 200, 200);
+  border-radius: 3px;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
