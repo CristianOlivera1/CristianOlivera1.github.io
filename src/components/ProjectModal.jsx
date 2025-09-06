@@ -38,7 +38,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient }) => {
             {/* Header del Modal */}
             <div className="sticky top-0 z-10 flex items-center justify-between p-6 bg-white/95 dark:bg-gray-900/50 backdrop-blur-xs border-b border-gray-200 dark:border-gray-700 rounded-t-2xl">
               <div className="flex items-center gap-4">
-                <img src={project.favicon} alt="Favicon del proyecto" className="shrink-0 size-16"/>
+                <img src={project.favicon} alt="Favicon del proyecto" className="shrink-0 size-12 sm:size-16"/>
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {project.title}
@@ -56,15 +56,15 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient }) => {
                   className="flex items-center gap-3 px-2 py-1 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-200 hover:shadow-md group"
                 >
                   <Icon icon="mdi:github" className="size-6 text-gray-700 dark:text-gray-300" />
-                  <div>
-                    <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-primary">
+                  <div className='hidden sm:block'>
+                    <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-primary ">
                       Ver código fuente
                     </div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">
                       GitHub Repository
                     </div>
                   </div>
-                  <Icon icon="tabler:external-link" className="size-4 text-gray-400 ml-auto" />
+                  <Icon icon="tabler:external-link" className="size-4 text-gray-400 ml-auto hidden sm:block" />
                 </a>
 
                 <button

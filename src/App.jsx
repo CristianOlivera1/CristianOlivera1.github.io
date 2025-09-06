@@ -12,11 +12,9 @@ function App() {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('theme')
       if (saved) {
-        console.log('Theme from localStorage:', saved)
         return saved === 'dark'
       }
       const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      console.log('System dark mode:', systemDark)
       return systemDark
     }
     return false
@@ -51,8 +49,6 @@ function App() {
   useEffect(() => {
     const updateTheme = () => {
       const html = document.documentElement
-      console.log('Updating theme to:', darkMode ? 'dark' : 'light')
-
       if (darkMode) {
         html.classList.add('dark')
         localStorage.setItem('theme', 'dark')
@@ -61,14 +57,12 @@ function App() {
         localStorage.setItem('theme', 'light')
       }
 
-      console.log('HTML classes:', html.className)
     }
 
     updateTheme()
   }, [darkMode])
 
   const toggleDarkMode = () => {
-    console.log('Toggling dark mode from:', darkMode, 'to:', !darkMode)
     setDarkMode(!darkMode)
   }
 
