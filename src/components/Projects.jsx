@@ -2,10 +2,14 @@ import { useState } from 'react'
 import { Icon } from '@iconify/react'
 import { PROJECTS } from '../constants/portfolioData'
 import ProjectModal from './ProjectModal'
+import ImageModal from './ImageModal'
 
 const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false)
+  const [selectedImages, setSelectedImages] = useState([])
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const openModal = (project) => {
     setSelectedProject(project)
@@ -15,6 +19,22 @@ const Projects = () => {
   const closeModal = () => {
     setIsModalOpen(false)
     setSelectedProject(null)
+  }
+
+  const openImageModal = (images, startIndex = 0) => {
+    setSelectedImages(images)
+    setCurrentImageIndex(startIndex)
+    setIsImageModalOpen(true)
+  }
+
+  const closeImageModal = () => {
+    setIsImageModalOpen(false)
+    setSelectedImages([])
+    setCurrentImageIndex(0)
+  }
+
+  const handleImageChange = (newIndex) => {
+    setCurrentImageIndex(newIndex)
   }
 
   const getTechGradient = (techName) => {
@@ -56,8 +76,11 @@ const Projects = () => {
                 <div className="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-400 hover:bg-gray-800/50">
                   <img
                     alt={project.title}
-                    className="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105"
+                    className="object-cover object-top w-full h-76 max-h-76 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105 cursor-pointer"
                     src={project.image}
+                    onClick={() => openImageModal([
+                      { src: project.image, alt: `${project.title} - Vista principal` }
+                    ], 0)}
                   />
                 </div>
               </div>
@@ -115,13 +138,20 @@ const Projects = () => {
           ))}
         </div>
       </div>
-
-      {/* Modal Component */}
       <ProjectModal
         isOpen={isModalOpen}
         project={selectedProject}
         onClose={closeModal}
         getTechGradient={getTechGradient}
+        openImageModal={openImageModal}
+      />
+      
+      <ImageModal
+        isOpen={isImageModalOpen}
+        images={selectedImages}
+        currentIndex={currentImageIndex}
+        onClose={closeImageModal}
+        onImageChange={handleImageChange}
       />
     </section>
   )
