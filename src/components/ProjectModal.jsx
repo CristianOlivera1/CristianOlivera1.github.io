@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import { Icon } from '@iconify/react'
 
-const ProjectModal = ({ isOpen, project, onClose, getTechGradient }) => {
-    // Cerrar modal con tecla Escape
+const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModal }) => {
     useEffect(() => {
         const handleEscape = (e) => {
             if (e.key === 'Escape' && isOpen) {
@@ -34,8 +33,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient }) => {
             }
           }}
         >
-          <div className="relative max-w-7xl max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-2xl dark:bg-[url('./assets/bg/background-modal.svg')] w-full h-screen bg-cover">
-            {/* Header del Modal */}
+          <div className="relative max-w-7xl max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-2xl dark:bg-[url('/assets/bg/background-modal.svg')] w-full h-screen bg-cover">
             <div className="sticky top-0 z-10 flex items-center justify-between p-6 bg-white/95 dark:bg-gray-900/50 backdrop-blur-xs border-b border-gray-200 dark:border-gray-700 rounded-t-2xl">
               <div className="flex items-center gap-4">
                 <img src={project.favicon} alt="Favicon del proyecto" className="shrink-0 size-12 sm:size-16"/>
@@ -85,7 +83,12 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient }) => {
                         <img
                           src={project.image2}
                           alt={`${project.title} - Vista 2`}
-                          className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                          className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                          onClick={() => openImageModal([
+                            { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
+                            { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
+                            { src: project.image3, alt: `${project.title} - Vista de funcionalidades avanzadas` }
+                          ], 1)}
                         />
                         <div className="absolute bottom-0 left-0 bg-black/60 text-white p-3 text-xs rounded-b-lg backdrop-blur-sm">
                           <Icon icon="tabler:photo" className="inline size-3 mr-1" />
@@ -97,7 +100,12 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient }) => {
                         <img
                           src={project.image3}
                           alt={`${project.title} - Vista 3`}
-                          className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                          className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                          onClick={() => openImageModal([
+                            { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
+                            { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
+                            { src: project.image3, alt: `${project.title} - Vista de funcionalidades avanzadas` }
+                          ], 2)}
                         />
                         <div className="absolute bottom-0 left-0 bg-black/60 text-white p-3 text-xs rounded-b-lg backdrop-blur-sm">
                           <Icon icon="tabler:photo" className="inline size-3 mr-1" />
@@ -110,7 +118,12 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient }) => {
                       <img
                         src={project.image}
                         alt={`${project.title} - Vista principal`}
-                        className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                        onClick={() => openImageModal([
+                          { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
+                          { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
+                          { src: project.image3, alt: `${project.title} - Vista de funcionalidades avanzadas` }
+                        ], 0)}
                       />
                       <div className="absolute bottom-0 left-0 bg-black/60 text-white p-3 text-xs rounded-b-lg backdrop-blur-sm">
                         <Icon icon="tabler:star" className="inline size-3 mr-1" />
