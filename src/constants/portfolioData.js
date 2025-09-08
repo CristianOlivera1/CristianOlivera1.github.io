@@ -12,11 +12,11 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS = [
   {
-    title: "Monitoreo de Incendios",
+    title: "Apu Nina",
     description: "Sistema web completo para la gestión y monitoreo de incendios forestales con reportes en tiempo real, localización GPS y gestión de archivos. Incluye autenticación de usuarios, panel de administración, notificaciones y exportación de datos en múltiples formatos (JSON, CSV, Excel).",
-    image: "./assets/projects/apunina/apunina.png",
-    image2: "./assets/projects/apunina/apunina2.png",
-    image3: "./assets/projects/apunina/apunina3.png",
+    image: "./assets/projects/apunina/apunina.avif",
+    image2: "./assets/projects/apunina/apunina2.gif",
+    image3: "./assets/projects/apunina/apunina3.avif",
     favicon: "./assets/projects/apunina/favicon.png",
     features: [
       { icon: "tabler:map-pin", text: "Localización GPS en tiempo real" },
@@ -40,11 +40,11 @@ export const PROJECTS = [
     }
   },
   {
-    title: "PachaApp",
+    title: "Pacha App",
     description: "Aplicación móvil para la gestión de actividades con información meteorológica integrada. Incluye autenticación Firebase, notificaciones FCM, integración con OpenWeatherMap API, servicios de geolocalización y recordatorios programados para una mejor organización de actividades.",
-    image: "./assets/projects/pachaapp/pachaapp.png",
-    image2: "./assets/projects/pachaapp/pachaapp2.png",
-    image3: "./assets/projects/pachaapp/pachaapp3.png",
+    image: "./assets/projects/pachaapp/pachaapp2.gif",
+    image2: "./assets/projects/pachaapp/pachaapp.avif",
+    image3: "./assets/projects/pachaapp/pachaapp3.avif",
     favicon: "./assets/projects/pachaapp/favicon.svg",
     features: [
       { icon: "tabler:lock", text: "Autenticación Firebase" },
@@ -70,9 +70,9 @@ export const PROJECTS = [
   {
     title: "Code Puzzle",
     description: "Juego educativo interactivo de programación con mecánicas drag & drop para enseñar conceptos de programación. Incluye seguimiento de progreso del usuario, panel de administración, base de datos MySQL y biblioteca SortableJS para interacciones fluidas.",
-    image: "./assets/projects/codepuzzle/codepuzzle.png",
-    image2: "./assets/projects/codepuzzle/codepuzzle2.png",
-    image3: "./assets/projects/codepuzzle/codepuzzle3.png",
+    image: "./assets/projects/codepuzzle/codepuzzle.avif",
+    image2: "./assets/projects/codepuzzle/codepuzzle2.gif",
+    image3: "./assets/projects/codepuzzle/codepuzzle3.avif",
     favicon: "./assets/projects/codepuzzle/favicon.svg",
     features: [
       { icon: "proicons:google-2", text: "Autenticacion con Google" },
@@ -98,8 +98,8 @@ export const PROJECTS = [
     title: "Unamba Forum",
     description: "Plataforma de foro universitario completa con publicaciones multimedia, sistema de comentarios y respuestas anidadas, reacciones en tiempo real y perfiles de usuario. Incluye autenticación OAuth, gestión de carreras, notificaciones push y diseño responsive con animaciones avanzadas.",
     image: "./assets/projects/unambaforum/unambaforum.gif",
-    image2: "./assets/projects/unambaforum/unambaforum2.png",
-    image3: "./assets/projects/unambaforum/unambaforum3.png",
+    image2: "./assets/projects/unambaforum/unambaforum2.avif",
+    image3: "./assets/projects/unambaforum/unambaforum3.avif",
     favicon: "./assets/projects/unambaforum/favicon.svg",
     features: [
       { icon: "proicons:google-2", text: "Autenticación con Google" },
