@@ -13,10 +13,10 @@ const Hero = () => {
                             alt={PERSONAL_INFO.name}
                         />
                         <div className='flex flex-col gap-2 justify-center'>
-                        
-                                <h1 className="text-2xl font-bold tracking-tight text-gray-800 sm:text-3xl dark:text-white">
-                                    {PERSONAL_INFO.name}
-                                </h1>
+
+                            <h1 className="text-2xl font-bold tracking-tight text-gray-800 sm:text-3xl dark:text-white">
+                                {PERSONAL_INFO.name}
+                            </h1>
 
                             <div className="flex items-center">
                                 <span className="relative inline-flex overflow-hidden rounded-full p-[1px]">
@@ -70,6 +70,7 @@ const Hero = () => {
                         </a>
                     </nav>
                 </div>
+  
             </div>
         </section>
     )

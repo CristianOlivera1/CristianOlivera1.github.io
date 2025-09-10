@@ -15,7 +15,7 @@ export const PROJECTS = [
     title: "Apu Nina",
     description: "Sistema web completo para la gestión y monitoreo de incendios forestales con reportes en tiempo real, localización GPS y gestión de archivos. Incluye autenticación de usuarios, panel de administración, notificaciones y exportación de datos en múltiples formatos (JSON, CSV, Excel).",
     image: "./assets/projects/apunina/apunina.avif",
-    image2: "./assets/projects/apunina/apunina2.gif",
+    image2: "./assets/projects/apunina/apunina2.mp4",
     image3: "./assets/projects/apunina/apunina3.avif",
     favicon: "./assets/projects/apunina/favicon.png",
     features: [
@@ -42,7 +42,7 @@ export const PROJECTS = [
   {
     title: "Pacha App",
     description: "Aplicación móvil para la gestión de actividades con información meteorológica integrada. Incluye autenticación Firebase, notificaciones FCM, integración con OpenWeatherMap API, servicios de geolocalización y recordatorios programados para una mejor organización de actividades.",
-    image: "./assets/projects/pachaapp/pachaapp2.gif",
+    image: "./assets/projects/pachaapp/pachaapp2.mp4",
     image2: "./assets/projects/pachaapp/pachaapp.avif",
     image3: "./assets/projects/pachaapp/pachaapp3.avif",
     favicon: "./assets/projects/pachaapp/favicon.svg",
@@ -71,7 +71,7 @@ export const PROJECTS = [
     title: "Code Puzzle",
     description: "Juego educativo interactivo de programación con mecánicas drag & drop para enseñar conceptos de programación. Incluye seguimiento de progreso del usuario, panel de administración, base de datos MySQL y biblioteca SortableJS para interacciones fluidas.",
     image: "./assets/projects/codepuzzle/codepuzzle.avif",
-    image2: "./assets/projects/codepuzzle/codepuzzle2.gif",
+    image2: "./assets/projects/codepuzzle/codepuzzle2.mp4",
     image3: "./assets/projects/codepuzzle/codepuzzle3.avif",
     favicon: "./assets/projects/codepuzzle/favicon.svg",
     features: [
@@ -97,7 +97,7 @@ export const PROJECTS = [
   {
     title: "Unamba Forum",
     description: "Plataforma de foro universitario completa con publicaciones multimedia, sistema de comentarios y respuestas anidadas, reacciones en tiempo real y perfiles de usuario. Incluye autenticación OAuth, gestión de carreras, notificaciones push y diseño responsive con animaciones avanzadas.",
-    image: "./assets/projects/unambaforum/unambaforum.gif",
+    image: "./assets/projects/unambaforum/unambaforum.mp4",
     image2: "./assets/projects/unambaforum/unambaforum2.avif",
     image3: "./assets/projects/unambaforum/unambaforum3.avif",
     favicon: "./assets/projects/unambaforum/favicon.svg",
@@ -119,6 +119,58 @@ export const PROJECTS = [
     ],
     links: {
       github: "https://github.com/CristianOlivera1/Unamba-forum-frontend"
+    }
+  },
+  {
+    title: "Autenticación con Google, GitHub y Facebook",
+    description: "Sistema completo de autenticación con registro e inicio de sesión seguro. Incluye validación de formularios, hash de contraseñas, manejo de sesiones. Implementa mejores prácticas de seguridad y experiencia de usuario moderna.",
+    image: "./assets/projects/codeoner/codeoner.mp4",
+    image2: "./assets/projects/codeoner/codeoner2.avif",
+    image3: "./assets/projects/codeoner/codeoner3.avif",
+    favicon: "./assets/projects/codeoner/favicon.png",
+    features: [
+      { icon: "tabler:lock", text: "Autenticación segura" },
+      { icon: "gg:profile", text: "Perfil de usuario" },
+      { icon: "tabler:shield-check", text: "Hash de contraseñas" },
+      { icon: "tabler:user-plus", text: "Registro de usuarios" },
+      { icon: "pepicons-pencil:cv", text: "Generación de CV automático" },
+      { icon: "tabler:database", text: "Gestión de sesiones" }
+    ],
+    technologies: [
+      { name: "HTML5", icon: "logos:html-5" },
+      { name: "CSS", icon: "vscode-icons:file-type-css" },
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "PHP", icon: "logos:php" },
+      { name: "MySQL", icon: "fontisto:mysql" }
+    ],
+    links: {
+      github: "https://github.com/CristianOlivera1/Login-Register-with-Autentication"
+    }
+  },
+  {
+    title: "Optimización de Transporte",
+    description: "Aplicación para resolver problemas de transporte utilizando algoritmos de Costo Mínimo y Esquina Noroeste. Optimiza la distribución de recursos entre múltiples orígenes y destinos, calculando rutas más eficientes y costos minimizados para logística empresarial.",
+    image: "./assets/projects/encm/encm.avif",
+    image2: "./assets/projects/encm/encm2.mp4",
+    image3: "./assets/projects/encm/encm3.avif",
+    favicon: "./assets/projects/encm/favicon.svg",
+    features: [
+      { icon: "tabler:route", text: "Algoritmo Costo Mínimo" },
+      { icon: "tabler:map-2", text: "Método Esquina Noroeste" },
+      { icon: "tabler:calculator", text: "Optimización de costos" },
+      { icon: "tabler:truck", text: "Gestión de distribución" },
+      { icon: "tabler:chart-line", text: "Análisis de resultados" },
+      { icon: "tabler:target", text: "Rutas eficientes" }
+    ],
+    technologies: [
+      { name: "HTML5", icon: "logos:html-5" },
+      { name: "CSS", icon: "vscode-icons:file-type-css" },
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "Python", icon: "logos:python" },
+      { name: "Flask", icon: "file-icons:flask" },
+    ],
+    links: {
+      github: "https://github.com/CristianOlivera1/Costo-minimo-y-Esquina-noroeste"
     }
   }
 ]
