@@ -10,20 +10,6 @@ button{
   cursor: pointer;
 }
 
-/* Scroll minimalista para WebKit */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: black;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(200, 200, 200);
-  border-radius: 3px;
-}
 
 .fade-in {
   animation: fadeIn 0.8s ease-in;
@@ -32,4 +18,34 @@ button{
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Animaciones para proyectos */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación de carga suave */
+.animate-pulse-slow {
+  animation: pulseslow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulselow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
