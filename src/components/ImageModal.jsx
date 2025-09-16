@@ -571,7 +571,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                         </div>
                     )}
 
-                    {/* Imagen actual (centro) con zoom y pan */}
                     <div
                         ref={imageRef}
                         className="relative"
