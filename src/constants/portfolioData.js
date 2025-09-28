@@ -91,7 +91,8 @@ export const PROJECTS = [
       { name: "Google Cloud", icon: "logos:google-cloud" }
     ],
     links: {
-      github: "https://github.com/CristianOlivera1/Code-Puzzle"
+      github: "https://github.com/CristianOlivera1/Code-Puzzle",
+      live: "https://codepuzzle.rf.gd/"
     }
   },
   {
@@ -144,7 +145,8 @@ export const PROJECTS = [
       { name: "MySQL", icon: "fontisto:mysql" }
     ],
     links: {
-      github: "https://github.com/CristianOlivera1/Login-Register-with-Autentication"
+      github: "https://github.com/CristianOlivera1/Login-Register-with-Autentication",
+      live: "https://codeoner.rf.gd/"
     }
   },
   {
@@ -170,7 +172,8 @@ export const PROJECTS = [
       { name: "Flask", icon: "file-icons:flask" },
     ],
     links: {
-      github: "https://github.com/CristianOlivera1/Costo-minimo-y-Esquina-noroeste"
+      github: "https://github.com/CristianOlivera1/Costo-minimo-y-Esquina-noroeste",
+      live: "https://encmcalculator.vercel.app/"
     }
   }
 ]
