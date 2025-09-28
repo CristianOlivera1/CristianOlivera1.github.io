@@ -127,16 +127,16 @@ const Projects = () => {
                       loop
                       playsInline
                       className="object-cover object-top w-full h-76 max-h-76 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105 cursor-pointer"
-                        onClick={() =>
-                          openImageModal(
-                            [
-                              { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
-                              { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
-                              { src: project.image3, alt: `${project.title} - Vista de funcionalidades avanzadas` }
-                            ],
-                            0
-                          )
-                        }
+                      onClick={() =>
+                        openImageModal(
+                          [
+                            { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
+                            { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
+                            { src: project.image3, alt: `${project.title} - Vista de funcionalidades avanzadas` }
+                          ],
+                          0
+                        )
+                      }
                     >
                       <source src={project.image} type="video/mp4" />
                       Tu navegador no soporta el video.
@@ -147,19 +147,18 @@ const Projects = () => {
                       loading="lazy"
                       className="object-cover object-top w-full h-76 max-h-76 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105 cursor-pointer"
                       src={project.image}
-                        onClick={() =>
-                          openImageModal(
-                            [
-                              { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
-                              { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
-                              { src: project.image3, alt: `${project.title} - Vista de funcionalidades avanzadas` }
-                            ],
-                            0
-                          )
-                        }
+                      onClick={() =>
+                        openImageModal(
+                          [
+                            { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
+                            { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
+                            { src: project.image3, alt: `${project.title} - Vista de funcionalidades avanzadas` }
+                          ],
+                          0
+                        )
+                      }
                     />
                   )}
-
                 </div>
               </div>
 
@@ -167,7 +166,6 @@ const Projects = () => {
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                   {project.title}
                 </h3>
-
 
                 <div className="flex flex-wrap mt-4 mb-4">
                   <ul className="flex flex-wrap gap-2">
@@ -193,23 +191,34 @@ const Projects = () => {
                 </div>
 
                 <footer className="flex items-end justify-start mt-6 gap-x-4">
+                  {project.links.live && (
+                    <a
+                      target="_blank"
+                      href={project.links.live}
+                      rel="noopener noreferrer" title='Ver demostración'
+                      className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
+                    >
+                      <Icon icon="lucide:external-link" className="size-5" />
+                      Ver Demo
+                    </a>
+                  )}
+                  <button
+                    onClick={() => openModal(project)} title='Ver detalles del proyecto'
+                    className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
+                  >
+                    <Icon icon="fluent:apps-list-detail-24-regular" className="size-5" />
+                    Detalles
+                  </button>
                   <a
                     target="_blank"
                     href={project.links.github}
                     rel="noopener noreferrer" title='Ver código fuente en GitHub'
                     className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                   >
-                    <Icon icon="mdi:github" className="size-6" />
+                    <Icon icon="mdi:github" className="size-5" />
                     Código
                   </a>
 
-                  <button
-                    onClick={() => openModal(project)} title='Ver detalles del proyecto'
-                    className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
-                  >
-                    <Icon icon="tabler:external-link" className="size-4" />
-                    Detalles
-                  </button>
                 </footer>
               </div>
             </article>
