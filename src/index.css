@@ -46,3 +46,68 @@ button{
     opacity: 0.8;
   }
 }
+
+/* Scrollbar general */
+::-webkit-scrollbar {
+  width: 8px;       
+  height: 8px;         
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;    
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af; 
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Optimizaciones de rendimiento para modal */
+.modal-container {
+  contain: layout style paint;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.modal-scroll {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+
+/* Optimización para las imágenes del modal */
+.modal-image {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Mejoras para el scrollbar del modal */
+::-webkit-scrollbar {
+  width: 8px;       
+  height: 8px;         
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;    
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af; 
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}

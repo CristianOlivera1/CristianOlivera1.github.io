@@ -1,7 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, memo, useCallback } from 'react'
 import { Icon } from '@iconify/react'
 
 const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModal }) => {
+  const handleBackdropClick = useCallback((e) => {
+    if (e.target === e.currentTarget) {
+      onClose()
+    }
+  }, [onClose])
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && isOpen) {
@@ -26,15 +32,11 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) {
-          onClose()
-        }
-      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity duration-200"
+      onClick={handleBackdropClick}
     >
-      <div className="relative max-w-7xl max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-2xl dark:bg-[url('/assets/bg/background-modal.svg')] w-full h-screen bg-cover">
-        <div className="sticky top-0 z-10 flex items-center justify-between p-6 bg-white/95 dark:bg-gray-900/50 backdrop-blur-xs border-b border-gray-200 dark:border-gray-700 rounded-t-2xl">
+      <div className="relative max-w-7xl max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-2xl dark:bg-gray-900/95 w-full h-screen modal-container modal-scroll scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
+        <div className="sticky top-0 z-10 flex items-center justify-between p-6 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 rounded-t-2xl will-change-transform">
           <div className="flex items-center gap-4">
             <img src={project.favicon} alt="Favicon del proyecto" className="shrink-0 size-12 sm:size-16" />
             <div>
@@ -79,14 +81,15 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
             <div className="lg:col-span-2 space-y-6">
               <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-6">
-                  <div className="relative h-48 md:h-64 group">
+                  <div className="relative h-48 md:h-64 group overflow-hidden rounded-lg">
                     {/\.(mp4|webm|mov)$/i.test(project.image2) ? (
                       <video
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                        loading="lazy"
+                        className="w-full h-full object-cover shadow-md transform transition-transform duration-200 ease-out group-hover:scale-105 cursor-pointer will-change-transform modal-image"
                         onClick={() =>
                           openImageModal(
                             [
@@ -105,7 +108,8 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                       <img
                         src={project.image2}
                         alt={`${project.title} - Vista 2`}
-                        className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                        loading="lazy"
+                        className="w-full h-full object-cover shadow-md transform transition-transform duration-200 ease-out group-hover:scale-105 cursor-pointer will-change-transform modal-image"
                         onClick={() =>
                           openImageModal(
                             [
@@ -125,11 +129,12 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                     </div>
                   </div>
 
-                  <div className="relative h-48 md:h-64 group">
+                  <div className="relative h-48 md:h-64 group overflow-hidden rounded-lg">
                     <img
                       src={project.image3}
                       alt={`${project.title} - Vista 3`}
-                      className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                      loading="lazy"
+                      className="w-full h-full object-cover shadow-md transform transition-transform duration-200 ease-out group-hover:scale-105 cursor-pointer will-change-transform modal-image"
                       onClick={() => openImageModal([
                         { src: project.image, alt: `${project.title} - Vista principal del proyecto` },
                         { src: project.image2, alt: `${project.title} - Vista de la interfaz secundaria` },
@@ -143,14 +148,15 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                   </div>
                 </div>
 
-                <div className="relative h-[calc(16rem+1.5rem)] md:h-[calc(32rem+1.5rem)] group">
+                <div className="relative h-[calc(16rem+1.5rem)] md:h-[calc(32rem+1.5rem)] group overflow-hidden rounded-lg">
                   {project.image.endsWith('.mp4') ? (
                     <video
                       autoPlay
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                      loading="lazy"
+                      className="w-full h-full object-cover shadow-md transform transition-transform duration-200 ease-out group-hover:scale-105 cursor-pointer will-change-transform modal-image"
                       onClick={() =>
                         openImageModal(
                           [
@@ -169,7 +175,8 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                     <img
                       src={project.image}
                       alt={`${project.title} - Vista principal`}
-                      className="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                      loading="lazy"
+                      className="w-full h-full object-cover shadow-md transform transition-transform duration-200 ease-out group-hover:scale-105 cursor-pointer will-change-transform modal-image"
                       onClick={() =>
                         openImageModal(
                           [
@@ -246,4 +253,4 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
   )
 }
 
-export default ProjectModal
+export default memo(ProjectModal)

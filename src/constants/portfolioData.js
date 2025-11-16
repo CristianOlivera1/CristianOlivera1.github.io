@@ -6,6 +6,7 @@ export const PERSONAL_INFO = {
   email: "oliverachavezcristian@gmail.com",
   linkedin: "https://www.linkedin.com/in/cristian-olivera-chavez-077028339/",
   github: "https://github.com/CristianOlivera1",
+  cv: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV_Desarrollador-de-Apps-Web.pdf",
   profileImage: "./assets/foto/foto.png",
   aboutImage: "./assets/foto/foto.png"
 }
@@ -142,7 +143,9 @@ export const PROJECTS = [
       { name: "CSS", icon: "vscode-icons:file-type-css" },
       { name: "JavaScript", icon: "logos:javascript" },
       { name: "PHP", icon: "logos:php" },
-      { name: "MySQL", icon: "fontisto:mysql" }
+      { name: "MySQL", icon: "fontisto:mysql" },
+      { name: "Google Cloud", icon: "logos:google-cloud" }
+
     ],
     links: {
       github: "https://github.com/CristianOlivera1/Login-Register-with-Autentication",
