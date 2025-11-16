@@ -562,6 +562,7 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                                 </video>
                             ) : (
                                 <img
+                                    loading="lazy"
                                     className="max-w-full max-h-full object-contain pointer-events-none"
                                     src={prevImage.src}
                                     alt={prevImage.alt}
@@ -598,6 +599,7 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                             </video>
                         ) : (
                             <img
+                                loading="lazy"
                                 className="max-w-full max-h-screen object-contain pointer-events-none relative z-10"
                                 src={currentImage.src}
                                 alt={currentImage.alt}
@@ -629,6 +631,7 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                                 </video>
                             ) : (
                                 <img
+                                    loading="lazy"
                                     className="max-w-full max-h-full object-contain pointer-events-none"
                                     src={nextImage.src}
                                     alt={nextImage.alt}
@@ -706,6 +709,7 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                                 </video>
                             ) : (
                                 <img
+                                    loading="lazy"
                                     src={img.src}
                                     alt={`Miniatura ${idx + 1}`}
                                     className="w-full h-full object-cover"

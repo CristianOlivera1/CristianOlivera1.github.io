@@ -8,6 +8,7 @@ const Hero = () => {
                 <div className="max-w-2xl">
                     <div className="flex gap-4 mb-4">
                         <img
+                            loading="lazy"
                             className="rounded-full shadow-lg size-24"
                             src={PERSONAL_INFO.profileImage}
                             alt={PERSONAL_INFO.name}
