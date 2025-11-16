@@ -190,13 +190,13 @@ const Projects = () => {
                   {project.description}
                 </div>
 
-                <footer className="flex items-end justify-start mt-6 gap-x-4">
+                <footer className="flex items-end justify-start mt-6 gap-x-3 sm:gap-x-4">
                   {project.links.live && (
                     <a
                       target="_blank"
                       href={project.links.live}
                       rel="noopener noreferrer" title='Ver demostración'
-                      className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
+                      className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-1 sm:gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                     >
                       <Icon icon="lucide:external-link" className="size-5" />
                       <span className="hidden sm:inline">Ver</span> Demo
@@ -204,7 +204,7 @@ const Projects = () => {
                   )}
                   <button
                     onClick={() => openModal(project)} title='Ver detalles del proyecto'
-                    className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
+                    className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-1 sm:gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black hover:shadow-2xs"
                   >
                     <Icon icon="fluent:apps-list-detail-24-regular" className="size-5" />
                     Detalles
@@ -213,7 +213,7 @@ const Projects = () => {
                     target="_blank"
                     href={project.links.github}
                     rel="noopener noreferrer" title='Ver código fuente en GitHub'
-                    className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
+                    className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-1 sm:gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                   >
                     <Icon icon="mdi:github" className="size-5" />
                     Código
@@ -231,7 +231,7 @@ const Projects = () => {
             <button
               onClick={handleShowMoreProjects}
               disabled={isLoading}
-              className="inline-flex mask-b-from-50% mask-b-to-120%  bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 pt-2  pb-4 space-x-2 text-base transition dark:text-white dark:bg-gray-800 dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
+              className="inline-flex mask-b-from-50% mask-b-to-120%  bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-1 sm:gap-2 px-3 pt-2  pb-4 space-x-2 text-base transition dark:text-white dark:bg-gray-800 dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
             >
               {isLoading ? (
                 <>

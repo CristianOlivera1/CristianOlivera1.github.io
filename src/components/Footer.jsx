@@ -13,8 +13,7 @@ const Footer = () => {
           </div>
 
           <div className="text-xs text-center opacity-60">
-            Diseñado y estructurado con enfoque modular y optimización responsiva.
-          </div>
+            Construyendo ideas, proyectos y experiencias digitales que suman valor.          </div>
         </div>
       </div>
     </footer>

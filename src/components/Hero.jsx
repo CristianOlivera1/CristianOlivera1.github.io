@@ -1,10 +1,19 @@
 import { Icon } from '@iconify/react'
 import { PERSONAL_INFO } from '../constants/portfolioData'
-
+import Particles from './ParticleBackground'
 const Hero = () => {
     return (
-        <section id="inicio" className="py-28 md:py-36 scroll-m-20 w-full px-4 fade-in">
-            <div className="max-w-4xl mx-auto">
+        <section id="inicio" className="relative py-28 md:py-36 scroll-m-20 w-full px-4 fade-in overflow-hidden">
+            <Particles
+                className="absolute inset-0 z-10"
+                quantity={15}
+                ease={70}
+                staticity={30}
+                color="#ffffff"
+                size={0.8}
+            />
+
+            <div className="max-w-4xl mx-auto relative z-10">
                 <div className="max-w-2xl">
                     <div className="flex gap-4 mb-4">
                         <img
@@ -76,7 +85,7 @@ const Hero = () => {
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                         >
-                          <Icon icon="ph:read-cv-logo-bold" className='size-6'/>CV
+                            <Icon icon="ph:read-cv-logo-bold" className='size-6' />CV
                         </a>
                     </nav>
                 </div>
