@@ -15,7 +15,6 @@ const AnimatedUserIcon = forwardRef(({ className }, ref) => {
   useEffect(() => {
     if (!userCircleRef.current || !checkMarkRef.current) return
 
-    // Configurar estado inicial del checkmark
     gsap.set(checkMarkRef.current, { scale: 1, opacity: 1 })
 
     timelineRef.current = gsap.timeline({ paused: true })

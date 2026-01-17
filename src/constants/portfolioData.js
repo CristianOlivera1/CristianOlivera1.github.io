@@ -13,6 +13,35 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS = [
   {
+    title: "Chat AI - Imágenes y Videos",
+    description: "Aplicación web para generar imágenes y videos a partir de descripciones textuales. Incluye tres modos (chat conversacional, generación de imágenes y videos desde imágenes), autenticación completa con Google, historial de conversaciones persistente y sistema de almacenamiento dual para usuarios autenticados y anónimos.",
+    image: "./assets/projects/chatai/chatai2.mp4",
+    image2: "./assets/projects/chatai/chatai.avif",
+    image3: "./assets/projects/chatai/chatai3.avif",
+    favicon: "./assets/projects/chatai/favicon.png",
+    features: [
+      { icon: "tabler:robot", text: "Chat conversacional con IA" },
+      { icon: "tabler:photo", text: "Generación de imágenes 2K con Gemini" },
+      { icon: "tabler:video", text: "Generación de videos con Kling AI v2.5" },
+      { icon: "tabler:history", text: "Historial de conversaciones por modo" },
+      { icon: "tabler:shield-check", text: "Autenticación con Google y Email" },
+      { icon: "tabler:database", text: "Almacenamiento dual (Supabase + localStorage)" }
+    ],
+    technologies: [
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "React", icon: "logos:react" },
+      { name: "Google Cloud", icon: "logos:google-cloud" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+      { name: "Freepik API", icon: "simple-icons:freepik" },
+      { name: "PostgreSQL", icon: "logos:postgresql" }
+    ],
+    links: {
+      github: "https://github.com/CristianOlivera1/Chat-AI-Generacion-Imagenes-NextJS",
+      live: "https://chateai.site"
+    }
+  },
+  {
     title: "Apu Nina",
     description: "Sistema web completo para la gestión y monitoreo de incendios forestales con reportes en tiempo real, localización GPS y gestión de archivos. Incluye autenticación de usuarios, panel de administración, notificaciones y exportación de datos en múltiples formatos (JSON, CSV, Excel).",
     image: "./assets/projects/apunina/apunina.avif",
@@ -37,7 +66,7 @@ export const PROJECTS = [
       { name: "Google Cloud", icon: "logos:google-cloud" }
     ],
     links: {
-      github: "https://github.com/CristianOlivera1/monitoreo-incendios"
+      github: "https://github.com/CristianOlivera1/monitoreo-incendios",
     }
   },
   {
@@ -105,7 +134,7 @@ export const PROJECTS = [
     favicon: "./assets/projects/unambaforum/favicon.svg",
     features: [
       { icon: "proicons:google-2", text: "Autenticación con Google" },
-      { icon: "tabler:message-circle", text: "Comentarios y reacciones"},
+      { icon: "tabler:message-circle", text: "Comentarios y reacciones" },
       { icon: "iconoir:post", text: "Publicaciones de los usuarios" },
       { icon: "ph:student", text: "Múltiples carreras" },
       { icon: "solar:notes-broken", text: "Sección de notas" },
@@ -185,7 +214,7 @@ export const ABOUT_TEXT = [
   "Mi <strong>responsabilidad</strong> es algo que me caracteriza. Estoy constantemente en busca de oportunidades para nunca dejar de aprender y así perfeccionar mis habilidades.",
 
   "Estoy trabajando en <strong>proyectos que van desde e-commerce hasta aplicaciones de gestión</strong>, siempre enfocándome en escribir código limpio y escalable",
-  
+
   "Mi objetivo es <strong>crear soluciones tecnológicas que generen un impacto positivo</strong> y mejoren la experiencia de los usuarios. Disfruto trabajando en equipo, aprendiendo nuevas tecnologías y compartiendo conocimiento con la comunidad de desarrolladores.",
-  
+
 ]

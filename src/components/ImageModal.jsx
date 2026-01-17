@@ -13,7 +13,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         currentY: 0
     })
 
-    // Estados para zoom y pan
     const [zoom, setZoom] = useState(1)
     const [pan, setPan] = useState({ x: 0, y: 0 })
     const [isPanning, setIsPanning] = useState(false)
@@ -30,7 +29,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
     const MAX_ZOOM = 4
     const ZOOM_STEP = 0.2
     
-    // Retorna true si la URL termina en .mp4, .webm o .mov (case-insensitive)
     const isVideo = (src) => /\.(mp4|webm|mov)$/i.test(src);
     
     useEffect(() => {
@@ -38,19 +36,16 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
             const newIndex = currentIndex || 0
             const validIndex = Math.max(0, Math.min(newIndex, images.length - 1))
             setActiveIndex(validIndex)
-            // Reset zoom cuando se abre el modal
             setZoom(1)
             setPan({ x: 0, y: 0 })
         }
     }, [isOpen, images, currentIndex])
 
-    // Reset zoom cuando cambia la imagen
     useEffect(() => {
         setZoom(1)
         setPan({ x: 0, y: 0 })
     }, [activeIndex])
 
-    // Calcular límites de pan basados en el zoom
     const calculatePanLimits = useCallback(() => {
         if (!imageRef.current || zoom <= 1) return { maxX: 0, maxY: 0 }
         
@@ -64,7 +59,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         return { maxX, maxY }
     }, [zoom])
 
-    // Restringir pan a los límites
     const constrainPan = useCallback((x, y) => {
         const { maxX, maxY } = calculatePanLimits()
         return {
@@ -73,7 +67,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         }
     }, [calculatePanLimits])
 
-    // Manejo del zoom con rueda del mouse
     const handleWheel = useCallback((e) => {
         if (images.length === 0) return
         e.preventDefault()
@@ -84,7 +77,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         if (newZoom === 1) {
             setPan({ x: 0, y: 0 })
         } else if (newZoom > zoom) {
-            // Zoom hacia el punto del cursor
             const rect = imageRef.current?.getBoundingClientRect()
             if (rect) {
                 const x = e.clientX - rect.left - rect.width / 2
@@ -101,7 +93,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         setZoom(newZoom)
     }, [zoom, pan, images.length, constrainPan])
 
-    // Doble tap/click para zoom
     const handleDoubleClick = useCallback((e) => {
         e.stopPropagation()
         
@@ -120,7 +111,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         }
     }, [zoom, constrainPan])
 
-    // Manejo de pan con mouse
     const handleMouseDownForPan = useCallback((e) => {
         if (zoom <= 1) return
         e.stopPropagation()
@@ -142,7 +132,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         setIsPanning(false)
     }, [])
 
-    // Calcular distancia entre dos puntos táctiles (para pinch zoom)
     const getPinchDistance = (touches) => {
         if (touches.length < 2) return 0
         const dx = touches[0].clientX - touches[1].clientX
@@ -150,17 +139,14 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         return Math.sqrt(dx * dx + dy * dy)
     }
 
-    // Manejo de gestos táctiles mejorado
     const handleTouchStart = useCallback((e) => {
         if (e.touches.length === 2) {
-            // Pinch to zoom
             setIsZooming(true)
             setLastPinchDistance(getPinchDistance(e.touches))
             e.preventDefault()
         } else if (e.touches.length === 1) {
             const touch = e.touches[0]
             
-            // Detectar doble tap
             const now = Date.now()
             if (now - lastTapRef.current < 300) {
                 e.preventDefault()
@@ -175,11 +161,9 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                 lastTapRef.current = now
                 
                 if (zoom > 1) {
-                    // Pan cuando hay zoom
                     setIsPanning(true)
                     setPanStart({ x: touch.clientX - pan.x, y: touch.clientY - pan.y })
                 } else if (images.length > 1) {
-                    // Navegación normal cuando no hay zoom
                     setDragState({
                         isDragging: true,
                         startX: touch.clientX,
@@ -195,7 +179,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
 
     const handleTouchMove = useCallback((e) => {
         if (e.touches.length === 2 && isZooming) {
-            // Pinch zoom
             e.preventDefault()
             const currentDistance = getPinchDistance(e.touches)
             if (lastPinchDistance > 0) {
@@ -211,7 +194,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
             const touch = e.touches[0]
             
             if (isPanning && zoom > 1) {
-                // Pan cuando hay zoom
                 e.preventDefault()
                 const newPan = constrainPan(
                     touch.clientX - panStart.x,
@@ -219,7 +201,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                 )
                 setPan(newPan)
             } else if (dragState.isDragging && zoom === 1 && images.length > 1) {
-                // Navegación normal
                 const deltaX = touch.clientX - dragState.startX
                 const deltaY = touch.clientY - dragState.startY
                 
@@ -282,7 +263,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         setTimeout(() => setIsTransitioning(false), 300)
     }, [activeIndex, images, onImageChange, isTransitioning])
 
-    // Funciones de manejo de mouse para navegación
     const handleMouseDown = useCallback((e) => {
         if (images.length <= 1 || zoom > 1) return
         
@@ -337,7 +317,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         isDragValidRef.current = false
     }, [dragState, images.length, zoom, goToPrevious, goToNext])
 
-    // Función para cambiar imagen directamente con transición
     const changeToImage = useCallback((index) => {
         if (index === activeIndex || isTransitioning) return
         
@@ -347,7 +326,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         setTimeout(() => setIsTransitioning(false), 300)
     }, [activeIndex, isTransitioning, onImageChange])
 
-    // Cerrar modal con tecla Escape y navegación con flechas
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (!isOpen) return
@@ -403,7 +381,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         }
     }, [isOpen, onClose, goToPrevious, goToNext, zoom])
 
-    // useEffect para eventos de mouse globales
     useEffect(() => {
         if (dragState.isDragging) {
             const handleGlobalMouseMove = (e) => handleMouseMove(e)
@@ -435,7 +412,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
         }
     }, [isPanning, handleMouseMoveForPan, handleMouseUpForPan])
 
-    // useEffect para wheel listener con passive: false
     useEffect(() => {
         if (!isOpen) return
 
@@ -458,13 +434,11 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
 
     if (!currentImage) return null
 
-    // Calcular índices de imágenes adyacentes
     const prevImageIndex = activeIndex > 0 ? activeIndex - 1 : images.length - 1
     const nextImageIndex = activeIndex < images.length - 1 ? activeIndex + 1 : 0
     const prevImage = images[prevImageIndex]
     const nextImage = images[nextImageIndex]
 
-    // Calcular el progreso del deslizamiento
     const dragOffset = dragState.isDragging && zoom === 1 ? dragState.currentX - dragState.startX : 0
     const containerWidth = typeof window !== 'undefined' ? window.innerWidth : 1000
     const dragProgress = Math.abs(dragOffset) / (containerWidth * 0.3)
@@ -539,7 +513,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                     onMouseDown={zoom === 1 ? handleMouseDown : undefined}
                     onDoubleClick={handleDoubleClick}
                 >
-                    {/* Imagen anterior (lado izquierdo) */}
                     {images.length > 1 && dragState.isDragging && dragOffset > 0 && zoom === 1 && (
                         <div
                             className="absolute right-full top-0 w-full h-full flex items-center justify-center mr-4"
@@ -608,7 +581,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                         )}
                     </div>
 
-                    {/* Imagen siguiente (lado derecho) */}
                     {images.length > 1 && dragState.isDragging && dragOffset < 0 && zoom === 1 && (
                         <div
                             className="absolute left-full top-0 w-full h-full flex items-center justify-center ml-4"
@@ -641,7 +613,6 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                         </div>
                     )}
 
-                    {/* Indicador de deslizamiento mejorado */}
                     {dragState.isDragging && isDragValidRef.current && zoom === 1 && (
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/70 text-white px-6 py-3 rounded-full text-sm backdrop-blur-sm pointer-events-none z-20 border border-white/20">
                             {dragOffset > 0 ? (
@@ -690,7 +661,7 @@ const ImageModal = ({ isOpen, images, currentIndex, onClose, onImageChange }) =>
                 </>
             )}
 
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm flex items-center justify-center w-full">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm flex items-center justify-center w-fit">
                 {currentImage.alt}
             </div>
 

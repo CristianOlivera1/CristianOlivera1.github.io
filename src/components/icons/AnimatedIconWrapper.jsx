@@ -1,6 +1,6 @@
 import { useRef, useImperativeHandle, forwardRef } from 'react'
 
-const AnimatedIconWrapper = forwardRef(({ children, onAnimationTrigger }, ref) => {
+const AnimatedIconWrapper = forwardRef(({ children }, ref) => {
   const childRef = useRef(null)
 
   useImperativeHandle(ref, () => ({
