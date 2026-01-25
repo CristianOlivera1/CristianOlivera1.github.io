@@ -74,7 +74,7 @@ function App() {
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} activeSection={activeSection} />
       <main>
         <Hero />
-        <div className="space-y-24 py-12 relative">
+        <div className="space-y-24 pt-12 relative">
           <Projects />
           <About />
 

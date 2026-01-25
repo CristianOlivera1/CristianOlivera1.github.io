@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; 
+}
+
 @theme {
   --color-primary: #facc15;
   --animate-spin-slow: spin 2s linear infinite;
@@ -83,7 +88,6 @@ button{
   will-change: scroll-position;
 }
 
-/* Optimización para las imágenes del modal */
 .modal-image {
   backface-visibility: hidden;
   transform: translateZ(0);

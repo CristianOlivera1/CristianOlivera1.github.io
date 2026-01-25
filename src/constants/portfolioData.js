@@ -18,7 +18,7 @@ export const PROJECTS = [
     image: "./assets/projects/chatai/chatai2.mp4",
     image2: "./assets/projects/chatai/chatai.avif",
     image3: "./assets/projects/chatai/chatai3.avif",
-    favicon: "./assets/projects/chatai/favicon.png",
+    favicon: "./assets/projects/chatai/favicon.avif",
     features: [
       { icon: "tabler:robot", text: "Chat conversacional con IA" },
       { icon: "tabler:photo", text: "Generación de imágenes 2K con Gemini" },

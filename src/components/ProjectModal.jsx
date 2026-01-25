@@ -38,7 +38,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
       <div className="relative max-w-7xl max-h-[95vh] overflow-y-auto bg-white rounded-2xl shadow-2xl dark:bg-gray-900/95 w-full h-screen modal-container modal-scroll scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
         <div className="sticky top-0 z-10 flex items-center justify-between p-6 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 rounded-t-2xl will-change-transform">
           <div className="flex items-center gap-4">
-            <img src={project.favicon} alt="Favicon del proyecto" className="shrink-0 size-12 sm:size-16" />
+            <img src={project.favicon} alt="Favicon del proyecto" className="shrink-0 size-12 sm:size-16 hidden sm:block" />
             <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 {project.title}
@@ -53,7 +53,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-2 py-1 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-200 hover:shadow-md group"
+              className="flex items-center gap-3 px-1 sm:px-2 py-1 bg-white dark:bg-gray-700 rounded-full sm:rounded-lg border border-gray-200 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-200 hover:shadow-md group"
             >
               <Icon icon="mdi:github" className="size-6 text-gray-700 dark:text-gray-300" />
               <div className='hidden sm:block'>
