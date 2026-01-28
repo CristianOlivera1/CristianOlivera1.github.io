@@ -215,6 +215,6 @@ export const ABOUT_TEXT = [
 
   "Estoy trabajando en <strong>proyectos que van desde e-commerce hasta aplicaciones de gestión</strong>, siempre enfocándome en escribir código limpio y escalable",
 
-  "Mi objetivo es <strong>crear soluciones tecnológicas que generen un impacto positivo</strong> y mejoren la experiencia de los usuarios. Disfruto trabajando en equipo, aprendiendo nuevas tecnologías y compartiendo conocimiento con la comunidad de desarrolladores.",
+  "Creo soluciones tecnológicas que mejoren la experiencia de los usuarios. Disfruto trabajando en equipo, aprendiendo nuevas tecnologías y compartiendo conocimiento con la comunidad de desarrolladores.",
 
 ]

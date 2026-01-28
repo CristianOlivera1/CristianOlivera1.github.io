@@ -15,7 +15,7 @@ const Footer = () => {
       </div>
       <div className="absolute bottom-0 right-1/3 w-full flex justify-center pointer-events-none z-0">
         <img
-          className="w-screen max-w-[700px] min-w-[500px] h-auto opacity-30 dark:opacity-50"
+          className="w-screen max-w-[700px] min-w-[500px] h-auto opacity-30 dark:opacity-50 invert dark:invert-0"
           src="/assets/bg/lines-co.svg"
           alt="lines-co"
         />
