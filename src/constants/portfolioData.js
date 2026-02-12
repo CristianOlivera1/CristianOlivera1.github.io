@@ -4,7 +4,7 @@ export const PERSONAL_INFO = {
   title: "Desarrollador de aplicaciones web",
   description: "con experiencia práctica en tecnologías como Angular, React, Spring Boot, bases de datos relacionales y otros. Me enfoco en mejorar la experiencia del usuario y la calidad del código, además aplico buenas prácticas para crear interfaces escalables y funcionales.",
   email: "oliverachavezcristian@gmail.com",
-  linkedin: "https://www.linkedin.com/in/cristian-olivera-chavez-077028339/",
+  linkedin: "https://www.linkedin.com/in/cristian-olivera-chavez",
   github: "https://github.com/CristianOlivera1",
   cv: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV_Desarrollador-de-Apps-Web.pdf",
   profileImage: "./assets/foto/foto.png",
