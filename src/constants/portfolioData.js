@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS = [
     {
-    "title": "OpenVid - Demos en el navegador",
+    "title": "openvid - Demos en el navegador",
     "description": "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
     "image": "./assets/projects/openvid/demo.mp4",
     "image2": "./assets/projects/openvid/openvid.webp",
