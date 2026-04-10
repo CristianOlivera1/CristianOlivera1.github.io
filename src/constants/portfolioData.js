@@ -12,6 +12,39 @@ export const PERSONAL_INFO = {
 }
 
 export const PROJECTS = [
+    {
+    "title": "OpenVid - Demos en el navegador",
+    "description": "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
+    "image": "./assets/projects/openvid/demo.mp4",
+    "image2": "./assets/projects/openvid/openvid.webp",
+    "image3": "./assets/projects/openvid/openvid2.webp",
+    "favicon": "./assets/projects/openvid/favicon.svg",
+    "features": [
+      { "icon": "tabler:screen-share", "text": "Grabación de pantalla en el navegador" },
+      { "icon": "tabler:upload", "text": "Subida de videos (MP4, WebM, QuickTime, MKV)" },
+      { "icon": "tabler:drag-drop", "text": "Carga rápida por drag & drop" },
+      { "icon": "tabler:palette", "text": "Fondos personalizados y prediseñados" },
+      { "icon": "tabler:layers-linked", "text": "Canvas con figuras, texto, imágenes y SVG" },
+      { "icon": "tabler:device-desktop", "text": "Mockups de dispositivos (Safari, Chrome, Samsung, etc.)" },
+      { "icon": "tabler:zoom-in-area", "text": "Zooms suaves y movimiento de cámara 3D" },
+      { "icon": "tabler:music", "text": "Audio multipista con control de volumen" },
+      { "icon": "tabler:scissors", "text": "Herramientas de edición: recorte, crop, proporciones" },
+      { "icon": "tabler:video", "text": "Exportación en 4K, 2K, 1080p, GIF y WebM transparente" },
+      { "icon": "tabler:shield-check", "text": "Autenticación con Google, GitHub y Twitch vía Supabase" }
+    ],
+    "technologies": [
+      { "name": "Next.js", "icon": "logos:nextjs-icon" },
+      { "name": "Supabase", "icon": "logos:supabase-icon" },
+      { "name": "FFmpeg.wasm", "icon": "simple-icons:ffmpeg" },
+      { "name": "Canvas API", "icon": "mdi:canvas" },
+      { "name": "Framer Motion", "icon": "logos:framer" },
+      { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+    ],
+    "links": {
+      "github": "https://github.com/CristianOlivera1/openvid",
+      "live": "https://openvid.dev"
+    }
+  },
   {
     title: "Chat AI - Imágenes y Videos",
     description: "Aplicación web para generar imágenes y videos a partir de descripciones textuales. Incluye tres modos (chat conversacional, generación de imágenes y videos desde imágenes), autenticación completa con Google, historial de conversaciones persistente y sistema de almacenamiento dual para usuarios autenticados y anónimos.",

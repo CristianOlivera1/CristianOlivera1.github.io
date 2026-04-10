@@ -199,10 +199,9 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
             </div>
 
             <div className="space-y-6">
-              {/* Tecnologías */}
-              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                <h3 className="flex items-center gap-2 text-lg font-semibold mb-4 text-gray-900 dark:text-white">
-                  <Icon icon="tabler:stack" className="size-5" />
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
+                <h3 className="flex items-center gap-2 text-lg font-semibold mb-4 text-zinc-900 dark:text-white">
+                  <Icon icon="tabler:stack" className="size-5 text-zinc-400" />
                   Tecnologías
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -221,28 +220,40 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                   ))}
                 </div>
               </div>
-              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                <h3 className="flex items-center gap-2 text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                  <Icon icon="mingcute:information-line" className="size-5" />
-                  Descripción del Proyecto
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
+              <div className="group relative rounded-xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700">
+                  <h3 className="flex items-center gap-2 text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-4">
+                    <Icon 
+                      icon="mingcute:information-line" 
+                      className="size-5 text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors" 
+                    />
+                    Descripción del Proyecto
+                  </h3>
+                  <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition-colors">
+                    {project.description}
+                  </p>
+                </div>
             </div>
-
           </div>
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-700/50">
-            <h3 className="flex items-center gap-2 text-xl font-semibold mb-4 text-blue-900 dark:text-blue-100">
-              <Icon icon="tabler:sparkles" className="size-5" />
+          <div className="group relative rounded-xl border border-zinc-200 bg-white p-6 transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-950 overflow-hidden mask-b-from-90% mask-b-to-99%">
+            <div 
+              className="absolute inset-0 pointer-events-none opacity-20 dark:opacity-40 bg-[radial-gradient(#3f3f46_1px,transparent_1px)] [background-size:20px_20px]" 
+            />
+            <div className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(600px_circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(120,119,198,0.08),transparent)]" />
+
+            <h3 className="relative z-10 flex items-center gap-2 text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-6">
+              <Icon icon="tabler:sparkles" className="size-5 text-zinc-400 group-hover:text-blue-400 transition-colors" />
               Características Destacadas
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
               {project.features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-blue-800 dark:text-blue-200">
-                  <Icon icon={feature.icon} className="size-4" />
-                  <span className="text-sm">{feature.text}</span>
+                <div key={index} className="group/item flex items-center gap-3">
+                  <Icon 
+                    icon={feature.icon} 
+                    className="size-4 text-zinc-400 group-hover/item:text-zinc-900 dark:group-hover/item:text-zinc-100 transition-colors" 
+                  />
+                  <span className="text-sm text-zinc-600 dark:text-zinc-400 group-hover/item:text-zinc-900 dark:group-hover/item:text-zinc-200 transition-colors">
+                    {feature.text}
+                  </span>
                 </div>
               ))}
             </div>
