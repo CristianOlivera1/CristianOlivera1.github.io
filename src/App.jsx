@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import About from './components/About'
 import Footer from './components/Footer'
 import { useActiveSection } from './hooks/useActiveSection'
+import { BlogProvider } from './blog/context/BlogContext'
+import BlogIndex from './blog/pages/BlogIndex'
+import PostPage from './blog/pages/PostPage'
 import './App.css'
 
-function App() {
+function PortfolioPage() {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('theme')
@@ -22,7 +26,6 @@ function App() {
 
   const activeSection = useActiveSection()
 
-  // Initialize theme on component mount
   useEffect(() => {
     const html = document.documentElement
     const saved = localStorage.getItem('theme')
@@ -34,7 +37,6 @@ function App() {
       html.classList.remove('dark')
       setDarkMode(false)
     } else {
-      // No saved preference, use system preference
       const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
       if (systemDark) {
         html.classList.add('dark')
@@ -84,6 +86,17 @@ function App() {
 
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<PortfolioPage />} />
+      <Route path="/blog" element={<BlogProvider><BlogIndex /></BlogProvider>} />
+      <Route path="/post/:slug" element={<BlogProvider><PostPage /></BlogProvider>} />
+      <Route path="*" element={<PortfolioPage />} />
+    </Routes>
   )
 }
 

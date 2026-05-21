@@ -52,7 +52,6 @@ button{
   }
 }
 
-/* Scrollbar general */
 ::-webkit-scrollbar {
   width: 8px;       
   height: 8px;         
@@ -73,7 +72,6 @@ button{
   background: #6b7280;
 }
 
-/* Optimizaciones de rendimiento para modal */
 .modal-container {
   contain: layout style paint;
   transform: translateZ(0);
@@ -95,7 +93,6 @@ button{
   image-rendering: crisp-edges;
 }
 
-/* Mejoras para el scrollbar del modal */
 ::-webkit-scrollbar {
   width: 8px;       
   height: 8px;         
@@ -115,3 +112,122 @@ button{
 ::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
+
+
+.blog-prose {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.dark .blog-prose {
+  color: #d1d5db;
+}
+
+.blog-prose p {
+  margin-bottom: 1.4rem;
+}
+
+.blog-prose h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.dark .blog-prose h2 {
+  color: #f9fafb;
+}
+
+.blog-prose h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.dark .blog-prose h3 {
+  color: #f3f4f6;
+}
+
+.blog-prose a {
+  color: #d97706;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s;
+}
+
+.dark .blog-prose a {
+  color: #fbbf24;
+}
+
+.blog-prose a:hover { color: #b45309; }
+.dark .blog-prose a:hover { color: #fde68a; }
+
+.blog-prose strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.dark .blog-prose strong {
+  color: #f9fafb;
+}
+
+.blog-prose em {
+  font-style: italic;
+  color: #4b5563;
+}
+
+.dark .blog-prose em { color: #9ca3af; }
+
+.blog-prose blockquote {
+  border-left: 3px solid #facc15;
+  padding: 0.75rem 1.25rem;
+  margin: 1.75rem 0;
+  background: #fffbeb;
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-style: italic;
+  color: #78350f;
+}
+
+.dark .blog-prose blockquote {
+  background: rgba(250, 204, 21, 0.06);
+  color: #fde68a;
+}
+
+.blog-prose code {
+  font-family: 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  font-size: 0.875em;
+  background: #f3f4f6;
+  color: #6d28d9;
+  padding: 0.15em 0.45em;
+  border-radius: 0.3rem;
+}
+
+.dark .blog-prose code {
+  background: #1f2937;
+  color: #a78bfa;
+}
+
+.blog-prose ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.blog-prose ol li {
+  padding-left: 0.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.blog-prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.blog-prose ul li { margin-bottom: 0.4rem; }
