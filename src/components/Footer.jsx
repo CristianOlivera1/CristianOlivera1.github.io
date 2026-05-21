@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   return (
     <footer className="relative w-full pt-30 pb-10 px-4">
@@ -7,6 +9,9 @@ const Footer = () => {
             <a href="#inicio" className="hover:text-yellow-500 transition-colors">Inicio</a>
             <a href="#proyectos" className="hover:text-yellow-500 transition-colors">Proyectos</a>
             <a href="#sobre-mi" className="hover:text-yellow-500 transition-colors">Sobre mí</a>
+            <Link to="/blog" className="hover:text-yellow-500 transition-colors font-medium">
+              Blog ✍️
+            </Link>
           </div>
           <div className="text-xs text-center opacity-60">
             Construyendo ideas, proyectos y experiencias digitales que suman valor.
