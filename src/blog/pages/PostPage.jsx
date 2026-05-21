@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { Icon } from '@iconify/react'
 import BlogLayout from '../components/BlogLayout'
 import { useBlog } from '../context/BlogContext'
@@ -26,23 +27,10 @@ const PostPage = () => {
     const post = getPostBySlug(slug)
 
     const safeLang = lang === 'es' ? 'es' : 'en'
-    const title = post ? post.meta[safeLang]?.title ?? post.meta.en.title : t.postNotFound
+    const title = post ? (post.meta[safeLang] && post.meta[safeLang].title) || post.meta.en.title : t.postNotFound
     const description = post
-        ? post.meta[safeLang]?.description ?? post.meta.en.description
+        ? (post.meta[safeLang] && post.meta[safeLang].description) || post.meta.en.description
         : t.postNotFoundDesc
-
-    useEffect(() => {
-        document.title = `${title} | CrisBlog`
-    }, [title])
-
-    useEffect(() => {
-        const descTag =
-            document.querySelector('meta[name="description"]') ||
-            document.head.appendChild(document.createElement('meta'))
-
-        descTag.setAttribute('name', 'description')
-        descTag.setAttribute('content', description)
-    }, [description])
 
     if (!post) {
         return (
@@ -64,7 +52,8 @@ const PostPage = () => {
 
     const { meta, ContentEN, ContentES } = post
     const Content = safeLang === 'es' ? ContentES : ContentEN
-    const readingTime = meta.readingTime[safeLang] ?? meta.readingTime.en
+    const readingTime = (meta.readingTime[safeLang]) || meta.readingTime.en
+    const absoluteOgImage = (meta.ogImage && meta.ogImage.startsWith('http')) ? meta.ogImage : `${BASE_URL}${meta.ogImage}`
     const postUrl = `${BASE_URL}/post/${meta.slug}`
 
     const handleCopyLink = async () => {
@@ -87,6 +76,32 @@ const PostPage = () => {
 
     return (
         <>
+            <Helmet>
+                <title>{title} | CrisBlog</title>
+                <meta name="description" content={description} />
+                <link rel="canonical" href={postUrl} />
+                
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={postUrl} />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={absoluteOgImage} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:site_name" content="CrisBlog" />
+                <meta property="article:published_time" content={meta.date} />
+                <meta property="article:author" content={meta.author} />
+                {meta.tags && meta.tags.map((tag) => (
+                    <meta key={tag} property="article:tag" content={tag} />
+                ))}
+                
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:url" content={postUrl} />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:image" content={absoluteOgImage} />
+            </Helmet>
+
             <BlogLayout currentSlug={slug} showProgress>
                 <div className="max-w-5xl mx-auto px-4 mt-6">
                     <div className="w-full aspect-[16/9] max-h-[480px] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
