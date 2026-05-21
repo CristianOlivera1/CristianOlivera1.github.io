@@ -16,10 +16,25 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "include": [
+      "/",
+      "/blog",
+      "/post/github-copilot-officially-dead",
+      "/post/github-internal-repositories-breach-2026"
+    ]
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
@@ -40,6 +55,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
+    "react-snap": "^1.23.0",
     "vite": "^7.1.2"
   }
 }
