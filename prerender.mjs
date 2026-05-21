@@ -8,7 +8,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const DIST_DIR = join(__dirname, 'dist')
 const PORT = 3456
 
-// Routes to prerender
 const ROUTES = [
   { path: '/', output: 'index.html' },
   { path: '/blog', output: 'blog/index.html' },
@@ -16,7 +15,6 @@ const ROUTES = [
   { path: '/post/github-internal-repositories-breach-2026', output: 'post/github-internal-repositories-breach-2026/index.html' }
 ]
 
-// Simple static file server
 function startServer() {
   const server = createServer((req, res) => {
     let filePath = join(DIST_DIR, req.url === '/' ? 'index.html' : req.url)
@@ -63,9 +61,14 @@ async function prerenderRoute(browser, route) {
   
   try {
     await page.goto(url, { 
-      waitUntil: 'networkidle0',
+      waitUntil: 'domcontentloaded',
       timeout: 30000 
     })
+
+    await page.waitForFunction(
+      () => document.getElementById('root') && document.getElementById('root').children.length > 0,
+      { timeout: 10000 }
+    ).catch(() => {})
     
     await page.waitForFunction(
       () => {
@@ -78,7 +81,34 @@ async function prerenderRoute(browser, route) {
     
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    const html = await page.content()
+    let html = await page.content()
+
+    if (html.includes('data-rh="true"')) {
+      const tagsToDedup = [
+        /<meta\s+name="description"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<link\s+rel="canonical"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:title"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:description"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:image"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:image:width"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:image:height"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:image:alt"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:url"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:type"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:locale"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+property="og:site_name"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+name="twitter:card"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+name="twitter:title"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+name="twitter:description"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+name="twitter:image"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+name="twitter:image:alt"(?![^>]*data-rh)[^>]*\/?>/gi,
+        /<meta\s+name="twitter:url"(?![^>]*data-rh)[^>]*\/?>/gi,
+      ]
+      for (const regex of tagsToDedup) {
+        html = html.replace(regex, '')
+      }
+      console.log(`   🔧 Deduplicated meta tags (Helmet override active)`)
+    }
     
     const outputPath = join(DIST_DIR, route.output)
     const outputDir = dirname(outputPath)
@@ -89,9 +119,9 @@ async function prerenderRoute(browser, route) {
     
     writeFileSync(outputPath, html, 'utf-8')
     
-    console.log(` Saved to: ${route.output}`)
+    console.log(`   ✅ Saved to: ${route.output}`)
   } catch (error) {
-    console.error(` Error prerendering ${route.path}:`, error.message)
+    console.error(`   ❌ Error prerendering ${route.path}:`, error.message)
   } finally {
     await page.close()
   }
