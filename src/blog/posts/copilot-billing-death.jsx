@@ -683,8 +683,8 @@ export const meta = {
   date: '2026-05-20',
   author: 'Cristian Olivera',
   authorHandle: '@CristianOlivera',
-  heroImage: '/assets/blog/copilot-dead.png',
-  ogImage: '/assets/blog/copilot-dead.png',
+  heroImage: 'https://cristianolivera1.github.io/assets/blog/copilot-dead.png',
+  ogImage: 'https://cristianolivera1.github.io/assets/blog/copilot-dead.png',
   readingTime: { en: 7, es: 8 },
   tags: ['GitHub Copilot', 'AI', 'Developer Tools', 'Tech News'],
   en: {
