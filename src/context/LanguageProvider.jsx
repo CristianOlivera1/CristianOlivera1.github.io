@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { LanguageContext } from './LanguageContext'
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(() => {
-    try { 
-      return localStorage.getItem('portfolio-lang') || 'es' 
-    } catch (error) { 
-      console.warn('Storage no accesible:', error)
-      return 'es' 
+  const [lang, setLang] = useState('es')
+
+  useEffect(() => {
+    try {
+      const savedLang = localStorage.getItem('portfolio-lang')
+      if (savedLang && savedLang !== 'es') {
+        setLang(savedLang)
+      }
+    } catch (error) {
+      console.warn('Storage no accesible en este entorno:', error)
     }
-  })
+  }, [])
 
   const toggleLang = () => {
     setLang(l => {
