@@ -10,6 +10,7 @@ import { BlogProvider } from './blog/context/BlogContext'
 import BlogIndex from './blog/pages/BlogIndex'
 import PostPage from './blog/pages/PostPage'
 import './App.css'
+import { LanguageProvider } from './context/LanguageProvider'
 
 function PortfolioPage() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -92,10 +93,10 @@ function PortfolioPage() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<PortfolioPage />} />
+      <Route path="/" element={<LanguageProvider><PortfolioPage /></LanguageProvider>} />
       <Route path="/blog" element={<BlogProvider><BlogIndex /></BlogProvider>} />
       <Route path="/post/:slug" element={<BlogProvider><PostPage /></BlogProvider>} />
-      <Route path="*" element={<PortfolioPage />} />
+      <Route path="*" element={<LanguageProvider><PortfolioPage /></LanguageProvider>} />
     </Routes>
   )
 }

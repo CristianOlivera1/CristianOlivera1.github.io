@@ -1,7 +1,11 @@
 import { Icon } from '@iconify/react'
 import { PERSONAL_INFO } from '../constants/portfolioData'
+import { useLanguage } from '../context/LanguageContext'
+import { PORTFOLIO_UI } from '../constants/i18n'
 import Particles from './ParticleBackground'
 const Hero = () => {
+    const { lang } = useLanguage()
+    const t = PORTFOLIO_UI[lang].hero
     return (
         <section id="inicio" className="relative py-28 md:py-36 scroll-m-20 w-full px-4 fade-in overflow-hidden">
             <Particles
@@ -35,7 +39,7 @@ const Hero = () => {
                                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500"></span>
                                             <span className="relative inline-flex size-3 rounded-full bg-green-400 dark:bg-green-500"></span>
                                         </span>
-                                        <span className='text-green-700 dark:text-green-400 '>Disponible para trabajar</span>
+                                        <span className='text-green-700 dark:text-green-400 '>{t.available}</span>
                                     </div>
                                 </span>
                             </div>
@@ -44,7 +48,7 @@ const Hero = () => {
 
 
                     <p className="mt-6 text-xl text-gray-800 dark:[&>strong]:text-primary [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
-                        <strong>{PERSONAL_INFO.title}</strong> {PERSONAL_INFO.description}
+                        <strong>{t.title}</strong> {t.description}
                     </p>
 
                     <nav className="flex flex-wrap gap-4 mt-8">
@@ -74,7 +78,7 @@ const Hero = () => {
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                         >
-                            <Icon icon="ph:read-cv-logo-bold" className='size-6' />CV
+                            <Icon icon="ph:read-cv-logo-bold" className='size-6' />{t.cv}
                         </a>
                     </nav>
                 </div>

@@ -1,7 +1,11 @@
 import { useEffect, memo, useCallback } from 'react'
 import { Icon } from '@iconify/react'
+import { useLanguage } from '../context/LanguageContext'
+import { PORTFOLIO_UI } from '../constants/i18n'
 
 const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModal }) => {
+  const { lang } = useLanguage()
+  const t = PORTFOLIO_UI[lang].modal
   const handleBackdropClick = useCallback((e) => {
     if (e.target === e.currentTarget) {
       onClose()
@@ -44,7 +48,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                 {project.title}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Detalles del proyecto
+                {t.projectDetails}
               </p>
             </div>
           </div>
@@ -58,7 +62,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
               <Icon icon="mdi:github" className="size-6 text-gray-700 dark:text-gray-300" />
               <div className='hidden sm:block'>
                 <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-primary ">
-                  Ver código fuente
+                  {t.viewSourceCode}
                 </div>
                 <div className="text-xs text-gray-500 dark:text-gray-400">
                   GitHub Repository
@@ -125,7 +129,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
 
                     <div className="absolute bottom-0 left-0 bg-black/60 text-white p-3 text-xs rounded-b-lg backdrop-blur-sm">
                       <Icon icon="tabler:photo" className="inline size-3 mr-1 -translate-y-0.5" />
-                      Vista de la interfaz secundaria
+                      {t.secondaryView}
                     </div>
                   </div>
 
@@ -143,7 +147,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                     />
                     <div className="absolute bottom-0 left-0 bg-black/60 text-white p-3 text-xs rounded-b-lg backdrop-blur-sm">
                       <Icon icon="tabler:photo" className="inline size-3 mr-1 -translate-y-0.5" />
-                      Vista de funcionalidades avanzadas
+                      {t.advancedView}
                     </div>
                   </div>
                 </div>
@@ -192,7 +196,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
 
                   <div className="absolute bottom-0 left-0 bg-black/60 text-white p-3 text-xs rounded-b-lg backdrop-blur-sm">
                     <Icon icon="tabler:star" className="inline size-3 mr-1 -translate-y-0.5" />
-                    Vista principal del proyecto
+                    {t.mainView}
                   </div>
                 </div>
               </div>
@@ -202,7 +206,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
               <div className="rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
                 <h3 className="flex items-center gap-2 text-lg font-semibold mb-4 text-zinc-900 dark:text-white">
                   <Icon icon="tabler:stack" className="size-5 text-zinc-400" />
-                  Tecnologías
+                  {t.technologies}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
@@ -226,7 +230,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
                       icon="mingcute:information-line" 
                       className="size-5 text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors" 
                     />
-                    Descripción del Proyecto
+                    {t.description}
                   </h3>
                   <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition-colors">
                     {project.description}
@@ -242,7 +246,7 @@ const ProjectModal = ({ isOpen, project, onClose, getTechGradient, openImageModa
 
             <h3 className="relative z-10 flex items-center gap-2 text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-6">
               <Icon icon="tabler:sparkles" className="size-5 text-zinc-400 group-hover:text-blue-400 transition-colors" />
-              Características Destacadas
+              {t.features}
             </h3>
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
               {project.features.map((feature, index) => (

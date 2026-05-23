@@ -47,8 +47,8 @@ export const PROJECTS = [
   },
 
   {
-    "title": "openhero - Galería de Secciones Hero Cinematográficas",
-    "description": "Una colección abierta y gratuita de secciones hero con video cinematográfico para la web moderna. Explora, previsualiza a pantalla completa, descarga los fondos y copia código de producción listo para usar en HTML o Next.js con un solo clic.",
+    "title": "openhero - Galería de Secciones Hero",
+    "description": "Una colección abierta y gratuita de secciones hero con video cinematográfico para la web moderna. Explora, previsualiza a pantalla completa, descarga los fondos y copia código de producción listo para usar en HTML o Next.js.",
     "image": "./assets/projects/openhero/openhero.mp4",
     "image2": "./assets/projects/openhero/openhero.png",
     "image3": "./assets/projects/openhero/openhero2.avif",
@@ -75,7 +75,7 @@ export const PROJECTS = [
   },
   {
     title: "Chat AI - Imágenes y Videos",
-    description: "Aplicación web para generar imágenes y videos a partir de descripciones textuales. Incluye tres modos (chat conversacional, generación de imágenes y videos desde imágenes), autenticación completa con Google, historial de conversaciones persistente y sistema de almacenamiento dual para usuarios autenticados y anónimos.",
+    description: "Aplicación web para generar imágenes y videos a partir de descripciones textuales. Incluye tres modos (chat conversacional, generación de imágenes y videos desde imágenes), autenticación completa con Google, historial de conversaciones persistente.",
     image: "./assets/projects/chatai/chatai.mp4",
     image2: "./assets/projects/chatai/chatai.avif",
     image3: "./assets/projects/chatai/chatai3.avif",

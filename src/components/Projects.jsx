@@ -1,10 +1,26 @@
 import { useRef, useState } from 'react'
 import { Icon } from '@iconify/react'
 import { PROJECTS } from '../constants/portfolioData'
+import { useLanguage } from '../context/LanguageContext'
+import { PORTFOLIO_UI, PROJECTS_EN } from '../constants/i18n'
 import ProjectModal from './ProjectModal'
 import ImageModal from './ImageModal'
 
+const getTranslatedProject = (project, index, lang) => {
+  if (lang === 'es') return project
+  const en = PROJECTS_EN[index]
+  if (!en) return project
+  return {
+    ...project,
+    title: en.title,
+    description: en.description,
+    features: project.features.map((f, i) => ({ ...f, text: en.features[i] || f.text })),
+  }
+}
+
 const Projects = () => {
+  const { lang } = useLanguage()
+  const t = PORTFOLIO_UI[lang].projects
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
@@ -16,7 +32,8 @@ const Projects = () => {
   // Configuración de paginación
   const initialProjectsCount = 4
   const incrementCount = 3 // Cuántos proyectos mostrar por cada click
-  const displayedProjects = PROJECTS.slice(0, visibleProjectsCount)
+  const translatedProjects = PROJECTS.map((p, i) => getTranslatedProject(p, i, lang))
+  const displayedProjects = translatedProjects.slice(0, visibleProjectsCount)
   const hasMoreProjects = visibleProjectsCount < PROJECTS.length
   const isShowingAll = visibleProjectsCount >= PROJECTS.length
   const remainingProjects = PROJECTS.length - visibleProjectsCount
@@ -100,7 +117,7 @@ const Projects = () => {
       <div className="max-w-4xl mx-auto" >
         <h2 className="flex relative items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
           <Icon icon="tabler:code" className="size-8" />
-          Proyectos
+          {t.heading}
           <span className="from-gray-300 to-white/75 dark:to-[#794dff]/20 absolute -bottom-0.5 start-0 h-0.5 w-56 sm:w-2xs rounded-full bg-gradient-to-r"></span>
         </h2>
 
@@ -199,7 +216,7 @@ const Projects = () => {
                       className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-1 sm:gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                     >
                       <Icon icon="lucide:external-link" className="size-5" />
-                      <span className="hidden sm:inline">Ver</span> Demo
+                      <span className="hidden sm:inline">{t.ver}</span> {t.demo}
                     </a>
                   )}
                   <button
@@ -207,7 +224,7 @@ const Projects = () => {
                     className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-1 sm:gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black hover:shadow-2xs"
                   >
                     <Icon icon="fluent:apps-list-detail-24-regular" className="size-5" />
-                    Detalles
+                    {t.details}
                   </button>
                   <a
                     target="_blank"
@@ -216,7 +233,7 @@ const Projects = () => {
                     className="inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-1 sm:gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 text-md hover:border-gray-500 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
                   >
                     <Icon icon="mdi:github" className="size-5" />
-                    Código
+                    {t.code}
                   </a>
 
                 </footer>
@@ -236,19 +253,19 @@ const Projects = () => {
               {isLoading ? (
                 <>
                   <Icon icon="tabler:loader-2" className="size-5 animate-spin" />
-                  Cargando...
+                  {t.loading}
                 </>
               ) : isShowingAll ? (
                 <>
                   <Icon icon="tabler:chevron-up" className="size-5 transition-transform group-hover:-translate-y-0.5 animate-bounce translate-y-1" />
-                  Ver menos
+                  {t.showLess}
                 </>
               ) : (
                 <>
                   <Icon icon="tabler:chevron-down" className="size-5 transition-transform group-hover:translate-y-0.5 animate-bounce translate-y-1" />
-                  Ver más proyectos
+                  {t.showMore}
                   <span className="ml-1 px-2 py-1 text-xs bg-white text-black rounded-full">
-                    {remainingProjects > 0 ? `${remainingProjects} restantes` : 'Todos'}
+                    {remainingProjects > 0 ? `${remainingProjects} ${t.remaining}` : (lang === 'es' ? 'Todos' : 'All')}
                   </span>
                 </>
               )}

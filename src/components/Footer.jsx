@@ -1,20 +1,24 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
+import { PORTFOLIO_UI } from '../constants/i18n'
 
 const Footer = () => {
+  const { lang } = useLanguage()
+  const t = PORTFOLIO_UI[lang].footer
   return (
     <footer className="relative w-full pt-30 pb-10 px-4">
       <div className="relative z-20 max-w-4xl mx-auto">
         <div className="w-full flex flex-col items-center justify-center gap-4 py-6 text-sm text-zinc-700 dark:text-zinc-300">
           <div className="flex gap-6">
-            <a href="#inicio" className="hover:text-yellow-500 transition-colors">Inicio</a>
-            <a href="#proyectos" className="hover:text-yellow-500 transition-colors">Proyectos</a>
-            <a href="#sobre-mi" className="hover:text-yellow-500 transition-colors">Sobre mí</a>
+            <a href="#inicio" className="hover:text-yellow-500 transition-colors">{t.inicio}</a>
+            <a href="#proyectos" className="hover:text-yellow-500 transition-colors">{t.proyectos}</a>
+            <a href="#sobre-mi" className="hover:text-yellow-500 transition-colors">{t.sobreMi}</a>
             <Link to="/blog" className="hover:text-yellow-500 transition-colors font-medium">
-              Blog ✍️
+              {t.blog} ✍️
             </Link>
           </div>
           <div className="text-xs text-center opacity-60">
-            Construyendo ideas, proyectos y experiencias digitales que suman valor.
+            {t.tagline}
           </div>
         </div>
       </div>

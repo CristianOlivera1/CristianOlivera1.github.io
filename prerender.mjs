@@ -47,7 +47,6 @@ function startServer() {
 
   return new Promise((resolve) => {
     server.listen(PORT, () => {
-      console.log(`🚀 Server running at http://localhost:${PORT}`)
       resolve(server)
     })
   })
@@ -56,8 +55,6 @@ function startServer() {
 async function prerenderRoute(browser, route) {
   const page = await browser.newPage()
   const url = `http://localhost:${PORT}${route.path}`
-  
-  console.log(`📄 Prerendering: ${route.path}`)
   
   try {
     await page.goto(url, { 
@@ -107,7 +104,6 @@ async function prerenderRoute(browser, route) {
       for (const regex of tagsToDedup) {
         html = html.replace(regex, '')
       }
-      console.log(`   🔧 Deduplicated meta tags (Helmet override active)`)
     }
     
     const outputPath = join(DIST_DIR, route.output)
@@ -119,7 +115,6 @@ async function prerenderRoute(browser, route) {
     
     writeFileSync(outputPath, html, 'utf-8')
     
-    console.log(`   ✅ Saved to: ${route.output}`)
   } catch (error) {
     console.error(`   ❌ Error prerendering ${route.path}:`, error.message)
   } finally {
@@ -128,8 +123,6 @@ async function prerenderRoute(browser, route) {
 }
 
 async function main() {
-  console.log('Starting prerendering process...\n')
-  
   const server = await startServer()
   
   const browser = await puppeteer.launch({
@@ -142,7 +135,6 @@ async function main() {
       await prerenderRoute(browser, route)
     }
     
-    console.log('\n Prerendering complete!')
   } catch (error) {
     console.error('Error during prerendering:', error)
     process.exit(1)

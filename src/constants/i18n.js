@@ -1,0 +1,217 @@
+export const PORTFOLIO_UI = {
+  es: {
+    nav: {
+      inicio: 'Inicio',
+      proyectos: 'Proyectos',
+      sobreMi: 'Sobre mí',
+      blog: 'Blog',
+    },
+    hero: {
+      available: 'Disponible para trabajar',
+      title: 'Desarrollador de aplicaciones web',
+      description: 'con experiencia práctica en tecnologías como Angular, React, Spring Boot, bases de datos relacionales y otros. Me enfoco en mejorar la experiencia del usuario y la calidad del código, además aplico buenas prácticas para crear interfaces escalables y funcionales.',
+      cv: 'CV',
+    },
+    about: {
+      heading: 'Sobre mí',
+    },
+    projects: {
+      heading: 'Proyectos',
+      demo: 'Demo',
+      ver: 'Ver',
+      details: 'Detalles',
+      code: 'Código',
+      loading: 'Cargando...',
+      showLess: 'Ver menos',
+      showMore: 'Ver más proyectos',
+      remaining: 'restantes',
+    },
+    modal: {
+      projectDetails: 'Detalles del proyecto',
+      viewSourceCode: 'Ver código fuente',
+      mainView: 'Vista principal del proyecto',
+      secondaryView: 'Vista de la interfaz secundaria',
+      advancedView: 'Vista de funcionalidades avanzadas',
+      technologies: 'Tecnologías',
+      description: 'Descripción del Proyecto',
+      features: 'Características Destacadas',
+    },
+    footer: {
+      inicio: 'Inicio',
+      proyectos: 'Proyectos',
+      sobreMi: 'Sobre mí',
+      blog: 'Blog',
+      tagline: 'Construyendo ideas, proyectos y experiencias digitales que suman valor.',
+    },
+  },
+  en: {
+    nav: {
+      inicio: 'Home',
+      proyectos: 'Projects',
+      sobreMi: 'About me',
+      blog: 'Blog',
+    },
+    hero: {
+      available: 'Available for work',
+      title: 'Web application developer',
+      description: 'with hands-on experience in technologies like Angular, React, Spring Boot, relational databases and others. I focus on improving user experience and code quality, applying best practices to create scalable and functional interfaces.',
+      cv: 'CV',
+    },
+    about: {
+      heading: 'About me',
+    },
+    projects: {
+      heading: 'Projects',
+      demo: 'Demo',
+      ver: 'View',
+      details: 'Details',
+      code: 'Code',
+      loading: 'Loading...',
+      showLess: 'Show less',
+      showMore: 'View more projects',
+      remaining: 'remaining',
+    },
+    modal: {
+      projectDetails: 'Project details',
+      viewSourceCode: 'View source code',
+      mainView: 'Main project view',
+      secondaryView: 'Secondary interface view',
+      advancedView: 'Advanced features view',
+      technologies: 'Technologies',
+      description: 'Project Description',
+      features: 'Key Features',
+    },
+    footer: {
+      inicio: 'Home',
+      proyectos: 'Projects',
+      sobreMi: 'About me',
+      blog: 'Blog',
+      tagline: 'Building ideas, projects and digital experiences that add value.',
+    },
+  },
+}
+
+export const ABOUT_TEXT_EN = [
+  'My <strong>responsibility</strong> is one of my defining characteristics. I am constantly seeking opportunities to never stop learning and thus perfect my skills.',
+  'I am working on <strong>projects ranging from e-commerce to management applications</strong>, always focusing on writing clean and scalable code.',
+  'I create technological solutions that improve the user experience. I enjoy working in teams, learning new technologies and sharing knowledge with the developer community.',
+]
+
+// English project translations — only title, description and features text.
+// Order must match PROJECTS array in portfolioData.js.
+export const PROJECTS_EN = [
+  {
+    title: 'openvid - Browser Demos',
+    description: 'Create professional demos in seconds directly in your browser. Record your screen or upload a video, add smooth zooms, device mockups and custom backgrounds, and export a cinematic demo ready to share.',
+    features: [
+      'Screen recording in the browser',
+      'Video upload (MP4, WebM, QuickTime, MKV)',
+      'Quick drag & drop loading',
+      'Custom and pre-designed backgrounds',
+      'Canvas with shapes, text, images and SVG',
+      'Device mockups (Safari, Chrome, Samsung, etc.)',
+      'Smooth zooms and 3D camera movement',
+      'Multi-track audio with volume control',
+      'Editing tools: trim, crop and ratios',
+      'Export in 4K, 2K, 1080p, GIF and transparent WebM',
+      'Authentication with Google, GitHub and Twitch via Supabase',
+    ],
+  },
+  {
+    title: 'openhero - Hero Section Gallery',
+    description: 'An open and free collection of cinematic video hero sections for the modern web. Explore, preview fullscreen, download backgrounds and copy production-ready code for HTML or Next.js.',
+    features: [
+      'Gallery with 60+ cinematic backgrounds organized by category',
+      'Full-screen high-quality preview with continuous loop',
+      'Source code copy (HTML and Next.js) ready to use in one click',
+      'Instant download of video and source code in ZIP format',
+      'Background library with 272 curated images in 4 categories',
+      'Community submission form to share hero sections',
+      'Open MIT license for free use without required attribution',
+    ],
+  },
+  {
+    title: 'Chat AI - Images and Videos',
+    description: 'Web application to generate images and videos from text descriptions. Includes three modes (conversational chat, image generation and video from images), full authentication with Google, persistent conversation history.',
+    features: [
+      'AI conversational chat',
+      '2K image generation with Gemini',
+      'Video generation with Kling AI v2.5',
+      'Conversation history by mode',
+      'Authentication with Google and Email',
+      'Dual storage (Supabase + localStorage)',
+    ],
+  },
+  {
+    title: 'Apu Nina',
+    description: 'Complete web system for forest fire management and monitoring with real-time reporting, GPS location and file management. Includes user authentication, admin panel, notifications and data export in multiple formats (JSON, CSV, Excel).',
+    features: [
+      'Real-time GPS location',
+      'Multiple export formats (JSON, CSV, Excel)',
+      'Authentication with Google',
+      'Notification system',
+      'Multiple roles',
+      'Attach multiple photos and videos',
+    ],
+  },
+  {
+    title: 'Pacha App',
+    description: 'Mobile application for activity management with integrated weather information. Includes Firebase authentication, FCM notifications, OpenWeatherMap API integration, geolocation services and scheduled reminders for better activity organization.',
+    features: [
+      'Firebase authentication',
+      'OpenWeatherMap integration',
+      'Geolocation',
+      'FCM push notifications',
+      'Scheduled reminders',
+      'Real-time notifications',
+    ],
+  },
+  {
+    title: 'Code Puzzle',
+    description: 'Interactive educational programming game with drag & drop mechanics to teach programming concepts. Includes user progress tracking, admin panel, MySQL database and SortableJS library for smooth interactions.',
+    features: [
+      'Authentication with Google',
+      'Drag & drop mechanics',
+      'Progress tracking',
+      'Interactive teaching',
+      'Admin panel',
+      'Multiple languages and levels',
+    ],
+  },
+  {
+    title: 'Unamba Forum',
+    description: 'Complete university forum platform with multimedia posts, nested comment and reply system, real-time reactions and user profiles. Includes OAuth authentication, major management, push notifications and responsive design with advanced animations.',
+    features: [
+      'Authentication with Google',
+      'Comments and reactions',
+      'User posts',
+      'Multiple majors',
+      'Notes section',
+      'Multiple roles',
+    ],
+  },
+  {
+    title: 'Authentication with Google, GitHub and Facebook',
+    description: 'Complete authentication system with secure registration and login. Includes form validation, password hashing, session management. Implements security best practices and modern user experience.',
+    features: [
+      'Secure authentication',
+      'User profile',
+      'Password hashing',
+      'User registration',
+      'Automatic CV generation',
+      'Session management',
+    ],
+  },
+  {
+    title: 'Transportation Optimization',
+    description: 'Application to solve transportation problems using Minimum Cost and Northwest Corner algorithms. Optimizes resource distribution between multiple origins and destinations, calculating the most efficient routes and minimized costs for business logistics.',
+    features: [
+      'Minimum Cost Algorithm',
+      'Northwest Corner Method',
+      'Cost optimization',
+      'Distribution management',
+      'Results analysis',
+      'Efficient routes',
+    ],
+  },
+]

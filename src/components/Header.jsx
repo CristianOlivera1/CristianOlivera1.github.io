@@ -1,10 +1,13 @@
 import { useRef } from 'react'
+import { Icon } from '@iconify/react'
 import AnimatedHomeIcon from './icons/AnimatedHomeIcon'
 import AnimatedCodeIcon from './icons/AnimatedCodeIcon'
 import AnimatedUserIcon from './icons/AnimatedUserIcon'
 import AnimatedSunIcon from './icons/AnimatedSunIcon'
 import AnimatedMoonIcon from './icons/AnimatedMoonIcon'
 import AnimatedBlogIcon from './icons/AnimatedBlogIcon'
+import { useLanguage } from '../context/LanguageContext'
+import { PORTFOLIO_UI } from '../constants/i18n'
 
 const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
   const homeIconRef = useRef(null)
@@ -12,16 +15,21 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
   const userIconRef = useRef(null)
   const blogIconRef = useRef(null)
   const themeIconRef = useRef(null)
+  const { lang, toggleLang } = useLanguage()
+  const t = PORTFOLIO_UI[lang].nav
 
    const navItems = [
-    { id: 'inicio', label: 'Inicio', component: AnimatedHomeIcon, ref: homeIconRef, url: '#inicio' },
-    { id: 'proyectos', label: 'Proyectos', component: AnimatedCodeIcon, ref: codeIconRef, url: '#proyectos' },
-    { id: 'sobre-mi', label: 'Sobre mí', component: AnimatedUserIcon, ref: userIconRef, url: '#sobre-mi' },
-    { id: 'blog', label: 'Blog', component: AnimatedBlogIcon, ref: blogIconRef, url: '/blog' }
+    { id: 'inicio', label: t.inicio, component: AnimatedHomeIcon, ref: homeIconRef, url: '#inicio' },
+    { id: 'proyectos', label: t.proyectos, component: AnimatedCodeIcon, ref: codeIconRef, url: '#proyectos' },
+    { id: 'sobre-mi', label: t.sobreMi, component: AnimatedUserIcon, ref: userIconRef, url: '#sobre-mi' },
+    { id: 'blog', label: t.blog, component: AnimatedBlogIcon, ref: blogIconRef, url: '/blog' }
   ]
 
   const getNavItemClasses = (itemId) => {
-    const baseClasses = "relative flex gap-1 px-3 py-2 transition rounded-full"
+    const isInicio = itemId === 'inicio'
+    const displayClasses = isInicio ? "hidden sm:flex" : "flex"
+    
+    const baseClasses = `relative ${displayClasses} gap-1 px-3 py-2 transition rounded-full`
     const isActive = activeSection === itemId
 
     if (isActive) {
@@ -61,13 +69,22 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
               onMouseEnter={() => item.ref.current?.handleMouseEnter?.()}
               onMouseLeave={() => item.ref.current?.handleMouseLeave?.()}
             >
+              {/* Se añade hidden sm:block para ocultar todos los iconos en pantallas menores a sm */}
               <IconComponent ref={item.ref} className="size-5 hidden sm:block" />
               {item.label}
             </a>
           )
         })}
 
-        <div className="relative ml-2">
+        <div className="relative ml-2 flex items-center gap-1">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 text-xs font-semibold px-2 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-yellow-400/50 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all"
+            aria-label="Toggle language"
+          >
+            <Icon icon={lang === 'es' ? 'circle-flags:es' : 'circle-flags:us'} width={16} height={16} />
+            <span>{lang === 'es' ? 'ES' : 'EN'}</span>
+          </button>
           <button
             onClick={toggleDarkMode}
             onMouseEnter={() => themeIconRef.current?.handleMouseEnter?.()}
