@@ -12,10 +12,10 @@ export const PERSONAL_INFO = {
 }
 
 export const PROJECTS = [
-    {
+  {
     "title": "openvid - Demos en el navegador",
     "description": "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
-    "image": "./assets/projects/openvid/demo.mp4",
+    "image": "./assets/projects/openvid/openvid.mp4",
     "image2": "./assets/projects/openvid/openvid.webp",
     "image3": "./assets/projects/openvid/openvid2.webp",
     "favicon": "./assets/projects/openvid/favicon.svg",
@@ -45,10 +45,38 @@ export const PROJECTS = [
       "live": "https://openvid.dev"
     }
   },
+
+  {
+    "title": "openhero - Galería de Secciones Hero Cinematográficas",
+    "description": "Una colección abierta y gratuita de secciones hero con video cinematográfico para la web moderna. Explora, previsualiza a pantalla completa, descarga los fondos y copia código de producción listo para usar en HTML o Next.js con un solo clic.",
+    "image": "./assets/projects/openhero/openhero.mp4",
+    "image2": "./assets/projects/openhero/openhero.png",
+    "image3": "./assets/projects/openhero/openhero2.avif",
+    "favicon": "./assets/projects/openhero/favicon.svg",
+    "features": [
+      { "icon": "tabler:video", "text": "Galería con más de 60 fondos cinematográficos organizados por categorías" },
+      { "icon": "tabler:maximize", "text": "Previsualización a pantalla completa en alta calidad con bucle continuo" },
+      { "icon": "tabler:copy", "text": "Copia de código fuente (HTML y Next.js) listo para usar en un clic" },
+      { "icon": "tabler:file-zip", "text": "Descarga instantánea del video y el código fuente en formato ZIP" },
+      { "icon": "tabler:photo", "text": "Biblioteca de fondos curados con 272 imágenes en 4 categorías" },
+      { "icon": "tabler:upload", "text": "Formulario de envío para que la comunidad comparta sus propias secciones hero" },
+      { "icon": "tabler:creative-commons-by", "text": "Licencia abierta MIT de uso libre sin requerir atribución obligatoria" }
+    ],
+    "technologies": [
+      { "name": "Next.js", "icon": "logos:nextjs-icon" },
+      { "name": "Supabase", "icon": "logos:supabase-icon" },
+      { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" },
+      { "name": "TypeScript", "icon": "logos:typescript-icon" }
+    ],
+    "links": {
+      "github": "https://github.com/CristianOlivera1/openhero",
+      "live": "https://openhero.art"
+    }
+  },
   {
     title: "Chat AI - Imágenes y Videos",
     description: "Aplicación web para generar imágenes y videos a partir de descripciones textuales. Incluye tres modos (chat conversacional, generación de imágenes y videos desde imágenes), autenticación completa con Google, historial de conversaciones persistente y sistema de almacenamiento dual para usuarios autenticados y anónimos.",
-    image: "./assets/projects/chatai/chatai2.mp4",
+    image: "./assets/projects/chatai/chatai.mp4",
     image2: "./assets/projects/chatai/chatai.avif",
     image3: "./assets/projects/chatai/chatai3.avif",
     favicon: "./assets/projects/chatai/favicon.avif",
@@ -78,7 +106,7 @@ export const PROJECTS = [
     title: "Apu Nina",
     description: "Sistema web completo para la gestión y monitoreo de incendios forestales con reportes en tiempo real, localización GPS y gestión de archivos. Incluye autenticación de usuarios, panel de administración, notificaciones y exportación de datos en múltiples formatos (JSON, CSV, Excel).",
     image: "./assets/projects/apunina/apunina.avif",
-    image2: "./assets/projects/apunina/apunina2.mp4",
+    image2: "./assets/projects/apunina/apunina.mp4",
     image3: "./assets/projects/apunina/apunina3.avif",
     favicon: "./assets/projects/apunina/favicon.png",
     features: [
@@ -105,7 +133,7 @@ export const PROJECTS = [
   {
     title: "Pacha App",
     description: "Aplicación móvil para la gestión de actividades con información meteorológica integrada. Incluye autenticación Firebase, notificaciones FCM, integración con OpenWeatherMap API, servicios de geolocalización y recordatorios programados para una mejor organización de actividades.",
-    image: "./assets/projects/pachaapp/pachaapp2.mp4",
+    image: "./assets/projects/pachaapp/pachaapp.mp4",
     image2: "./assets/projects/pachaapp/pachaapp.avif",
     image3: "./assets/projects/pachaapp/pachaapp3.avif",
     favicon: "./assets/projects/pachaapp/favicon.svg",

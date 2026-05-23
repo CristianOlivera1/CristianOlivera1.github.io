@@ -15,7 +15,7 @@ const Projects = () => {
 
   // Configuración de paginación
   const initialProjectsCount = 4
-  const incrementCount = 2 // Cuántos proyectos mostrar por cada click
+  const incrementCount = 3 // Cuántos proyectos mostrar por cada click
   const displayedProjects = PROJECTS.slice(0, visibleProjectsCount)
   const hasMoreProjects = visibleProjectsCount < PROJECTS.length
   const isShowingAll = visibleProjectsCount >= PROJECTS.length
