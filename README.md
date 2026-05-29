@@ -6,7 +6,7 @@ A personal tech blog focused on developer tools, AI, and lessons learned buildin
 
 #### GitHub investigates unauthorized access to internal repositories - what it means
 
-![Hero Image](https://cristianolivera1.github.io/assets/blog/claude-opus-48-2.png)
+![Hero Image](https://cristianolivera1.github.io/assets/blog/claude-opus-48.png)
 
 **URL:** [https://cristianolivera1.github.io/post/github-internal-repositories-breach-2026](https://cristianolivera1.github.io/post/claude-opus-48-launch-analysis)  
 **Date:** May 28, 2026  
