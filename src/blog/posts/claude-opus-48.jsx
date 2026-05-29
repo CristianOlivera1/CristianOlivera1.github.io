@@ -723,7 +723,7 @@ export const ContentES = () => (
 
 export const meta = {
     slug: 'claude-opus-48-launch-analysis',
-    date: '2026-05-29',
+    date: '2026-05-28',
     author: 'Cristian Olivera',
     authorHandle: '@CristianOlivera',
     heroImage:

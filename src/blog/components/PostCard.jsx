@@ -17,7 +17,7 @@ const PostCard = ({ post, featured = false }) => {
             to={`/post/${meta.slug}`}
             className={`group block rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-yellow-400/50 hover:shadow-xl hover:shadow-yellow-400/5 transition-all duration-300 ${featured ? 'sm:flex' : ''}`}
         >
-            <div className={`relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 ${featured ? 'sm:w-80 sm:flex-shrink-0' : 'aspect-[16/9]'}`}>
+            <div className={`relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 ${featured ? 'sm:w-100 sm:flex-shrink-0' : 'aspect-[16/9]'}`}>
                 <img
                     src={meta.heroImage}
                     alt={title}
