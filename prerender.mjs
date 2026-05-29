@@ -12,7 +12,8 @@ const ROUTES = [
   { path: '/', output: 'index.html' },
   { path: '/blog', output: 'blog/index.html' },
   { path: '/post/github-copilot-officially-dead', output: 'post/github-copilot-officially-dead/index.html' },
-  { path: '/post/github-internal-repositories-breach-2026', output: 'post/github-internal-repositories-breach-2026/index.html' }
+  { path: '/post/github-internal-repositories-breach-2026', output: 'post/github-internal-repositories-breach-2026/index.html' },
+  { path: '/post/claude-opus-48-launch-analysis', output: 'post/claude-opus-48-launch-analysis/index.html' }
 ]
 
 function startServer() {
