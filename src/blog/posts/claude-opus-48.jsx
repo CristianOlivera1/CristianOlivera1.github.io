@@ -726,10 +726,8 @@ export const meta = {
     date: '2026-05-28',
     author: 'Cristian Olivera',
     authorHandle: '@CristianOlivera',
-    heroImage:
-        'https://cristianolivera1.github.io/assets/blog/claude-opus-48.png',
-    ogImage:
-        'https://cristianolivera1.github.io/assets/blog/claude-opus-48.png',
+    heroImage: 'https://cristianolivera1.github.io/assets/blog/claude-opus-48-2.png',
+    ogImage: 'https://cristianolivera1.github.io/assets/blog/claude-opus-48-2.png',
     readingTime: {
         en: 8,
     },
