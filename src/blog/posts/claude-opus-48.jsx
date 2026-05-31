@@ -256,11 +256,11 @@ export const ContentEN = () => (
         </p>
 
         <ol className="space-y-2">
-            <li>1. A new model drops with marginally better benchmarks.</li>
-            <li>2. Twitter declares every previous model obsolete.</li>
-            <li>3. Teams rush to rebuild prompts and eval pipelines.</li>
-            <li>4. Older models mysteriously become slower or less reliable.</li>
-            <li>5. Everyone migrates again.</li>
+            <li>A new model drops with marginally better benchmarks.</li>
+            <li>Twitter declares every previous model obsolete.</li>
+            <li>Teams rush to rebuild prompts and eval pipelines.</li>
+            <li>Older models mysteriously become slower or less reliable.</li>
+            <li>Everyone migrates again.</li>
         </ol>
 
         <SectionHeading icon="lucide:bar-chart-3">
@@ -430,11 +430,6 @@ export const ContentEN = () => (
             </strong>
         </p>
 
-        <Callout icon="lucide:triangle-alert" type="warning">
-            AI infrastructure now behaves more like a subscription treadmill than a
-            stable software dependency.
-        </Callout>
-
         <SectionHeading icon="lucide:rocket">
             So… Is Opus 4.8 Actually Good?
         </SectionHeading>
@@ -505,8 +500,8 @@ export const ContentES = () => (
         </p>
 
         <ol className="space-y-2">
-            <li>1. Sale un modelo nuevo con benchmarks ligeramente mejores.</li>
-            <li>2. Twitter declara obsoleto todo lo anterior.</li>
+            <li>Sale un modelo nuevo con benchmarks ligeramente mejores.</li>
+            <li>Twitter declara obsoleto todo lo anterior.</li>
             <li>3. Los equipos corren a rehacer prompts y pipelines de evaluación.</li>
             <li>4. Los modelos viejos misteriosamente se vuelven más lentos o menos confiables.</li>
             <li>5. Todos migran otra vez.</li>
@@ -677,11 +672,6 @@ export const ContentES = () => (
                 se empuja constantemente a los desarrolladores a actualizar.
             </strong>
         </p>
-
-        <Callout icon="lucide:triangle-alert" type="warning">
-            La infraestructura de IA ya se comporta más como una cinta de suscripciones que como una
-            dependencia estable de software.
-        </Callout>
 
         <SectionHeading icon="lucide:rocket">
             Entonces… ¿Opus 4.8 realmente es bueno?
