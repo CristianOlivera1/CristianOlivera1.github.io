@@ -502,9 +502,9 @@ export const ContentES = () => (
         <ol className="space-y-2">
             <li>Sale un modelo nuevo con benchmarks ligeramente mejores.</li>
             <li>Twitter declara obsoleto todo lo anterior.</li>
-            <li>3. Los equipos corren a rehacer prompts y pipelines de evaluación.</li>
-            <li>4. Los modelos viejos misteriosamente se vuelven más lentos o menos confiables.</li>
-            <li>5. Todos migran otra vez.</li>
+            <li>Los equipos corren a rehacer prompts y pipelines de evaluación.</li>
+            <li>Los modelos viejos misteriosamente se vuelven más lentos o menos confiables.</li>
+            <li>Todos migran otra vez.</li>
         </ol>
 
         <SectionHeading icon="lucide:bar-chart-3">
