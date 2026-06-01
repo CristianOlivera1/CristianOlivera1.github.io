@@ -17,19 +17,28 @@ const About = () => {
         </h2>
 
         <article className="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
-          <div className="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-primary text-pretty order-2 md:order-1">
+          <div className="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-primary text-pretty order-2 md:order-1 flex-1">
             {aboutParagraphs.map((paragraph, index) => (
               <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
             ))}
           </div>
-          <img
-            loading="lazy"
-            src={PERSONAL_INFO.aboutImage}
-            alt={PERSONAL_INFO.name}
-            className="order-1 object-cover w-64 h-full p-1 md:order-2 lg:p-2 lg:w-2xs bg-black/20 dark:bg-yellow-500/5 dark:mask-radial-at-center dark:mask-radial-from-50% dark:mask-radial-to-78%"
-            style={{ objectPosition: '50% 50%' }}
-          />
 
+          <div className="order-1 w-full max-w-[306px] p-1 md:order-2 lg:p-2 flex-shrink-0">
+            <a
+              href="https://app.daily.dev/cristianolivera1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:scale-[1.02] transition-transform"
+            >
+              <img
+                loading="lazy"
+                src="https://api.daily.dev/devcards/v2/1ytZxqzBa671YUGfHTkKo.png?type=default&r=1aq"
+                width="356"
+                alt="Cristian Olivera Chávez's Dev Card"
+                className="w-full h-auto object-contain bg-black/20 dark:bg-yellow-500/5 rounded-lg"
+              />
+            </a>
+          </div>
         </article>
       </div>
 
