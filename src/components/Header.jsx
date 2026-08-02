@@ -56,7 +56,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
 
   return (
     <header className="fixed top-0 z-20 flex items-center justify-center w-full mx-auto mt-2">
-      <nav className="flex px-4 py-2 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-sm">
+      <nav className="flex px-4 py-2 text-sm font-medium rounded-2xl text-gray-600 dark:text-gray-200 justify-center items-center bg-white/80 dark:bg-black  backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-sm">
         {navItems.map((item) => {
           const IconComponent = item.component
 

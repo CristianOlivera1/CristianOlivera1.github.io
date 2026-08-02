@@ -13,8 +13,8 @@ const Footer = () => {
             <a href="#inicio" className="hover:text-yellow-500 transition-colors">{t.inicio}</a>
             <a href="#proyectos" className="hover:text-yellow-500 transition-colors">{t.proyectos}</a>
             <a href="#sobre-mi" className="hover:text-yellow-500 transition-colors">{t.sobreMi}</a>
-            <Link to="/blog" className="hover:text-yellow-500 transition-colors font-medium">
-              {t.blog} ✍️
+            <Link to="/blog" className="hover:text-yellow-500 transition-colors">
+              {t.blog}
             </Link>
           </div>
           <div className="text-xs text-center opacity-60">

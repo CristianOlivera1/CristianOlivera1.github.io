@@ -15,9 +15,9 @@ export const PROJECTS = [
   {
     "title": "openvid - Demos en el navegador",
     "description": "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
-    "image": "./assets/projects/openvid/openvid.mp4",
-    "image2": "./assets/projects/openvid/openvid.webp",
-    "image3": "./assets/projects/openvid/openvid2.webp",
+    "image": "./assets/projects/openvid/openvid.avif",
+    "image2": "./assets/projects/openvid/openvid.mp4",
+    "image3": "./assets/projects/openvid/openvid2.avif",
     "favicon": "./assets/projects/openvid/favicon.svg",
     "features": [
       { "icon": "tabler:screen-share", "text": "Grabación de pantalla en el navegador" },
