@@ -1,6 +1,8 @@
 import puppeteer from 'puppeteer'
 import { createServer } from 'http'
 import { createReadStream, existsSync, mkdirSync, writeFileSync } from 'fs'
+
+const BASE_URL = 'https://cristianolivera1.github.io'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -15,6 +17,18 @@ const ROUTES = [
   { path: '/post/github-internal-repositories-breach-2026', output: 'post/github-internal-repositories-breach-2026/index.html' },
   { path: '/post/claude-opus-48-launch-analysis', output: 'post/claude-opus-48-launch-analysis/index.html' }
 ]
+
+function writeSitemap() {
+  const urls = ROUTES.map(route => {
+    const path = route.path === '/' ? '' : route.path
+    return `  <url>\n    <loc>${BASE_URL}${path}/</loc>\n  </url>`
+  }).join('\n')
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
+
+  writeFileSync(join(DIST_DIR, 'sitemap.xml'), sitemap, 'utf-8')
+}
 
 function startServer() {
   const server = createServer((req, res) => {
@@ -135,6 +149,8 @@ async function main() {
     for (const route of ROUTES) {
       await prerenderRoute(browser, route)
     }
+    
+    writeSitemap()
     
   } catch (error) {
     console.error('Error during prerendering:', error)
