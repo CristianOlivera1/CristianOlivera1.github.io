@@ -3,6 +3,9 @@ import PostCard from '../components/PostCard'
 import { useBlog } from '../context/BlogContext'
 import { UI } from '../i18n/translations'
 import { posts } from '../posts/index'
+import { Helmet } from 'react-helmet-async'
+
+const BASE_URL = 'https://cristianolivera1.github.io'
 
 const BlogIndex = () => {
   const { lang } = useBlog()
@@ -12,7 +15,22 @@ const BlogIndex = () => {
   const [featured, ...rest] = sorted
 
   return (
-    <BlogLayout>
+    <>
+      <Helmet>
+        <title>{t.heroTitle} | CrisBlog</title>
+        <meta name="description" content={t.heroSubtitle} />
+        <link rel="canonical" href={`${BASE_URL}/blog/`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${BASE_URL}/blog/`} />
+        <meta property="og:title" content={`${t.heroTitle} | CrisBlog`} />
+        <meta property="og:description" content={t.heroSubtitle} />
+        <meta property="og:site_name" content="CrisBlog" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${t.heroTitle} | CrisBlog`} />
+        <meta name="twitter:description" content={t.heroSubtitle} />
+      </Helmet>
+
+      <BlogLayout>
       <section className="border-b border-gray-100 dark:border-gray-800">
         <div className="max-w-4xl mx-auto px-4 py-16 sm:py-20">
           <div className="flex items-center gap-2 mb-5">
@@ -60,6 +78,7 @@ const BlogIndex = () => {
         )}
       </section>
     </BlogLayout>
+    </>
   )
 }
 

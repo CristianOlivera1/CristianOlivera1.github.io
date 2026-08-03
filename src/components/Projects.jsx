@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { Icon } from '@iconify/react'
-import { PROJECTS } from '../constants/portfolioData'
+import { PROJECTS, PERSONAL_INFO } from '../constants/portfolioData'
 import { useLanguage } from '../context/LanguageContext'
 import { PORTFOLIO_UI, PROJECTS_EN } from '../constants/i18n'
 import ProjectModal from './ProjectModal'
@@ -113,7 +114,30 @@ const Projects = () => {
     return gradients[techName] || 'radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent)';
   };
   return (
-    <section id="proyectos" className="scroll-m-20 w-full px-4">
+    <>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: t.heading,
+          numberOfItems: PROJECTS.length,
+          itemListElement: PROJECTS.map((p, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            item: {
+              '@type': 'SoftwareApplication',
+              name: p.title,
+              description: p.description,
+              url: p.links.live || p.links.github,
+              applicationCategory: 'WebApplication',
+              operatingSystem: 'Web',
+              keywords: p.technologies.map(t => t.name).join(', '),
+              author: { '@type': 'Person', name: PERSONAL_INFO.name },
+            },
+          })),
+        })}</script>
+      </Helmet>
+      <section id="proyectos" className="scroll-m-20 w-full px-4">
       <div className="max-w-4xl mx-auto" >
         <h2 className="flex relative items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
           <Icon icon="tabler:code" className="size-8" />
@@ -143,6 +167,9 @@ const Projects = () => {
                       muted
                       loop
                       playsInline
+                      poster={project.poster}
+                      title={`${project.title} - Vista principal`}
+                      aria-label={`${project.title} - Vista principal`}
                       className="object-cover object-top w-full h-76 max-h-76 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105 cursor-pointer"
                       onClick={() =>
                         openImageModal(
@@ -162,6 +189,7 @@ const Projects = () => {
                     <img
                       alt={project.title}
                       loading="lazy"
+                      decoding="async"
                       className="object-cover object-top w-full h-76 max-h-76 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105 cursor-pointer"
                       src={project.image}
                       onClick={() =>
@@ -289,6 +317,7 @@ const Projects = () => {
         onImageChange={handleImageChange}
       />
     </section>
+    </>
   )
 }
 

@@ -56,6 +56,41 @@ const PostPage = () => {
     const absoluteOgImage = (meta.ogImage && meta.ogImage.startsWith('http')) ? meta.ogImage : `${BASE_URL}${meta.ogImage}`
     const postUrl = `${BASE_URL}/post/${meta.slug}`
 
+    const blogUrl = `${BASE_URL}/blog/`
+
+    const jsonLdArticle = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      image: absoluteOgImage,
+      datePublished: meta.date,
+      dateModified: meta.date,
+      author: {
+        '@type': 'Person',
+        name: meta.author,
+        url: BASE_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'CrisBlog',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://cristianolivera1.github.io/assets/favicon/favicon.png',
+        },
+      },
+      mainEntityOfPage: postUrl,
+    }
+
+    const jsonLdBreadcrumb = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Blog', item: blogUrl },
+        { '@type': 'ListItem', position: 2, name: title, item: postUrl },
+      ],
+    }
+
     const handleCopyLink = async () => {
         try {
             await navigator.clipboard.writeText(postUrl)
@@ -100,6 +135,8 @@ const PostPage = () => {
                 <meta name="twitter:title" content={title} />
                 <meta name="twitter:description" content={description} />
                 <meta name="twitter:image" content={absoluteOgImage} />
+                <script type="application/ld+json">{JSON.stringify(jsonLdArticle)}</script>
+                <script type="application/ld+json">{JSON.stringify(jsonLdBreadcrumb)}</script>
             </Helmet>
 
             <BlogLayout currentSlug={slug} showProgress>

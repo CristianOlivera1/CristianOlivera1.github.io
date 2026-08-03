@@ -32,6 +32,7 @@ const About = () => {
             >
               <img
                 loading="lazy"
+                decoding="async"
                 src="https://api.daily.dev/devcards/v2/1ytZxqzBa671YUGfHTkKo.png?type=default&r=1aq"
                 width="356"
                 alt="Cristian Olivera Chávez's Dev Card"

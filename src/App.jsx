@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+import { PERSONAL_INFO } from './constants/portfolioData'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
@@ -70,7 +72,31 @@ function PortfolioPage() {
   }
 
   return (
-    <div className="relative text-black dark:text-white min-h-screen">
+    <>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: PERSONAL_INFO.name,
+          url: 'https://cristianolivera1.github.io/',
+          jobTitle: 'Desarrollador de aplicaciones web',
+          email: PERSONAL_INFO.email,
+          image: 'https://cristianolivera1.github.io/assets/foto/foto.png',
+          sameAs: [
+            PERSONAL_INFO.linkedin,
+            PERSONAL_INFO.github
+          ],
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Cristian Olivera - Portafolio',
+          url: 'https://cristianolivera1.github.io/',
+          description: 'Portafolio de Cristian Olivera - Desarrollador de aplicaciones web especializado en React, Angular, Next.js y Spring Boot.',
+          author: { '@type': 'Person', name: PERSONAL_INFO.name },
+        })}</script>
+      </Helmet>
+      <div className="relative text-black dark:text-white min-h-screen">
       <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-[#01061a] bg-[radial-gradient(circle_500px_at_50%_200px,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
       </div>
 
@@ -86,7 +112,8 @@ function PortfolioPage() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   )
 }
 

@@ -20,10 +20,13 @@ const Hero = () => {
                 <div className="max-w-2xl">
                     <div className="flex gap-4 mb-4">
                         <img
-                            loading="lazy"
                             className="rounded-full shadow-lg size-24"
                             src={PERSONAL_INFO.profileImage}
-                            alt={PERSONAL_INFO.name}
+                            alt={`${PERSONAL_INFO.name} - ${t.title}`}
+                            width="96"
+                            height="96"
+                            decoding="async"
+                            fetchPriority="high"
                         />
                         <div className='flex flex-col gap-2 justify-center'>
 
