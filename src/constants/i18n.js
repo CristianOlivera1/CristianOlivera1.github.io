@@ -11,6 +11,7 @@ export const PORTFOLIO_UI = {
       title: 'Desarrollador de aplicaciones web',
       description: 'con experiencia práctica en tecnologías como Angular, React, Spring Boot, bases de datos relacionales y otros. Me enfoco en mejorar la experiencia del usuario y la calidad del código, además aplico buenas prácticas para crear interfaces escalables y funcionales.',
       cv: 'CV',
+      socialNav: 'Redes y CV',
     },
     about: {
       heading: 'Sobre mí',
@@ -25,6 +26,10 @@ export const PORTFOLIO_UI = {
       showLess: 'Ver menos',
       showMore: 'Ver más proyectos',
       remaining: 'restantes',
+      demoTitle: 'Ver demostración',
+      detailsTitle: 'Ver detalles del proyecto',
+      codeTitle: 'Ver código fuente en GitHub',
+      allProjects: 'Todos',
     },
     modal: {
       projectDetails: 'Detalles del proyecto',
@@ -35,6 +40,14 @@ export const PORTFOLIO_UI = {
       technologies: 'Tecnologías',
       description: 'Descripción del Proyecto',
       features: 'Características Destacadas',
+      closeWindow: 'Cerrar ventana',
+      mainViewShort: 'Vista principal',
+      openGallery: 'Abrir galería de imágenes',
+      unsupportedVideo: 'Tu navegador no soporta el video.',
+    },
+    imageViewer: {
+      zoomIn: 'Ampliar zoom',
+      zoomOut: 'Reducir zoom',
     },
     footer: {
       inicio: 'Inicio',
@@ -56,6 +69,7 @@ export const PORTFOLIO_UI = {
       title: 'Web application developer',
       description: 'with hands-on experience in technologies like Angular, React, Spring Boot, relational databases and others. I focus on improving user experience and code quality, applying best practices to create scalable and functional interfaces.',
       cv: 'CV',
+      socialNav: 'Social links and CV',
     },
     about: {
       heading: 'About me',
@@ -70,6 +84,10 @@ export const PORTFOLIO_UI = {
       showLess: 'Show less',
       showMore: 'View more projects',
       remaining: 'remaining',
+      demoTitle: 'View demo',
+      detailsTitle: 'View project details',
+      codeTitle: 'View source code on GitHub',
+      allProjects: 'All',
     },
     modal: {
       projectDetails: 'Project details',
@@ -80,6 +98,14 @@ export const PORTFOLIO_UI = {
       technologies: 'Technologies',
       description: 'Project Description',
       features: 'Key Features',
+      closeWindow: 'Close window',
+      mainViewShort: 'Main view',
+      openGallery: 'Open image gallery',
+      unsupportedVideo: 'Your browser does not support the video.',
+    },
+    imageViewer: {
+      zoomIn: 'Zoom in',
+      zoomOut: 'Zoom out',
     },
     footer: {
       inicio: 'Home',
@@ -97,8 +123,6 @@ export const ABOUT_TEXT_EN = [
   'I create technological solutions that improve the user experience. I enjoy working in teams, learning new technologies and sharing knowledge with the developer community.',
 ]
 
-// English project translations — only title, description and features text.
-// Order must match PROJECTS array in portfolioData.js.
 export const PROJECTS_EN = [
   {
     title: 'openvid - Browser Demos',
@@ -128,6 +152,18 @@ export const PROJECTS_EN = [
       'Background library with 272 curated images in 4 categories',
       'Community submission form to share hero sections',
       'Open MIT license for free use without required attribution',
+    ],
+  },
+  {
+    title: 'Aura',
+    description: 'Gallery and customizer of atmospheric gradients to create visual backgrounds for web interfaces. It allows exploring more than 200 gradients, adjusting their layers, and exporting them as CSS, Tailwind, CSS Variables, CSS-in-JS, PNG, or SVG.',
+    features: [
+      'Layer-based gradient customization',
+      'Gallery with more than 200 gradients',
+      'Adjustment of blend modes, blur, and opacity',
+      'Export to CSS, Tailwind, variables, and CSS-in-JS',
+      'Download gradients in PNG and SVG formats',
+      'AI prompt generation to recreate gradients',
     ],
   },
   {

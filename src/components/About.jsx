@@ -1,7 +1,7 @@
-import { Icon } from '@iconify/react'
-import { PERSONAL_INFO, ABOUT_TEXT } from '../constants/portfolioData'
+import { ABOUT_TEXT } from '../constants/portfolioData'
 import { useLanguage } from '../context/LanguageContext'
 import { PORTFOLIO_UI, ABOUT_TEXT_EN } from '../constants/i18n'
+import SectionHeading from './ui/SectionHeading'
 
 const About = () => {
   const { lang } = useLanguage()
@@ -10,11 +10,7 @@ const About = () => {
   return (
     <section id="sobre-mi" className="scroll-m-20 w-full px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="flex relative items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-          <Icon icon="tabler:user-check" className="size-8" />
-          {t.heading}
-          <span className="from-gray-300 to-white/75 dark:to-[#794dff]/20 absolute -bottom-0.5 start-0 h-0.5 w-56 sm:w-2xs rounded-full bg-gradient-to-r"></span>
-        </h2>
+        <SectionHeading icon="tabler:user-check">{t.heading}</SectionHeading>
 
         <article className="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
           <div className="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-primary text-pretty order-2 md:order-1 flex-1">
@@ -36,7 +32,7 @@ const About = () => {
                 src="https://api.daily.dev/devcards/v2/1ytZxqzBa671YUGfHTkKo.png?type=default&r=1aq"
                 width="356"
                 alt="Cristian Olivera Chávez's Dev Card"
-                className="w-full h-auto object-contain bg-black/20 dark:bg-yellow-500/5 rounded-lg"
+                className="w-full h-auto object-contain rounded-lg"
               />
             </a>
           </div>

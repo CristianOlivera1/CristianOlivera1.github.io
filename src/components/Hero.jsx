@@ -3,6 +3,13 @@ import { PERSONAL_INFO } from '../constants/portfolioData'
 import { useLanguage } from '../context/LanguageContext'
 import { PORTFOLIO_UI } from '../constants/i18n'
 import Particles from './ParticleBackground'
+import ActionButton from './ui/ActionButton'
+
+const SOCIAL_LINKS = [
+  { href: PERSONAL_INFO.github, icon: 'mdi:github', label: 'GitHub' },
+  { href: PERSONAL_INFO.linkedin, icon: 'mdi:linkedin', label: 'LinkedIn' }
+]
+
 const Hero = () => {
     const { lang } = useLanguage()
     const t = PORTFOLIO_UI[lang].hero
@@ -13,8 +20,6 @@ const Hero = () => {
                 quantity={15}
                 ease={70}
                 staticity={30}
-                color="#ffffff"
-                size={0.8}
             />
             <div className="max-w-4xl mx-auto relative z-10">
                 <div className="max-w-2xl">
@@ -50,39 +55,21 @@ const Hero = () => {
                     </div>
 
 
-                    <p className="mt-6 text-xl text-gray-800 dark:[&>strong]:text-primary [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
+                    <p className="mt-6 bg-transparent text-xl text-gray-800 dark:text-gray-300 [&>strong]:rounded-sm [&>strong]:bg-yellow-300 [&>strong]:px-1 [&>strong]:font-semibold [&>strong]:text-gray-900 dark:[&>strong]:bg-transparent dark:[&>strong]:px-0 dark:[&>strong]:text-primary">
                         <strong>{t.title}</strong> {t.description}
                     </p>
 
-                    <nav className="flex flex-wrap gap-4 mt-8">
+                    <nav className="flex flex-wrap gap-4 mt-8" aria-label={t.socialNav}>
 
-                        <a
-                            href={PERSONAL_INFO.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
-                        >
-                            <Icon icon="mdi:github" className="size-6" />
-                            GitHub
-                        </a>
+                        {SOCIAL_LINKS.map((link) => (
+                            <ActionButton key={link.label} href={link.href} icon={link.icon}>
+                                {link.label}
+                            </ActionButton>
+                        ))}
 
-                        <a
-                            href={PERSONAL_INFO.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
-                        >
-                            <Icon icon="mdi:linkedin" className="size-6" />
-                            LinkedIn
-                        </a>
-                        <a
-                            href={PERSONAL_INFO.cv}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 active:bg-black"
-                        >
-                            <Icon icon="ph:read-cv-logo-bold" className='size-6' />{t.cv}
-                        </a>
+                        <ActionButton href={PERSONAL_INFO.cv} icon="ph:read-cv-logo-bold">
+                            {t.cv}
+                        </ActionButton>
                     </nav>
                 </div>
 
