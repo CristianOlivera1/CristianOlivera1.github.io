@@ -18,7 +18,7 @@ const Callout = ({ icon, children, type = 'info' }) => {
   }
 
   return (
-    <div className={`not-prose my-6 flex gap-3 rounded-xl border p-4 ${styles[type]}`}>
+    <div className={`not-prose my-6 flex gap-3 squircle-element-xl border p-4 ${styles[type]}`}>
       <div className="text-xl flex-shrink-0 leading-none">
         <Icon icon={icon} className="w-5 h-5 mt-0.5" />
       </div>
@@ -58,7 +58,7 @@ const AnimatedBillingStats = ({ lang }) => {
 
   return (
     <div ref={ref} className="not-prose my-10 grid sm:grid-cols-3 gap-4">
-      <div className="rounded-2xl bg-gray-100 dark:bg-gray-800 p-6 text-center">
+      <div className="squircle-element bg-gray-100 dark:bg-gray-800 p-6 text-center">
         <p className="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">
           {lang === 'en' ? 'Current Billing' : 'Facturación actual'}
         </p>
@@ -68,7 +68,7 @@ const AnimatedBillingStats = ({ lang }) => {
         <p className="text-xs text-gray-400 mt-1">USD / {lang === 'en' ? 'month' : 'mes'}</p>
       </div>
 
-      <div className="rounded-2xl bg-red-600 p-6 text-center shadow-lg shadow-red-600/20">
+      <div className="squircle-element bg-red-600 p-6 text-center shadow-lg shadow-red-600/20">
         <p className="text-xs uppercase tracking-widest text-red-200 mb-2">
           {lang === 'en' ? 'New Simulated Bill' : 'Nueva factura simulada'}
         </p>
@@ -81,7 +81,7 @@ const AnimatedBillingStats = ({ lang }) => {
         </p>
       </div>
 
-      <div className="rounded-2xl bg-gray-900 dark:bg-gray-950 border border-gray-700 p-6 text-center">
+      <div className="squircle-element bg-gray-900 dark:bg-gray-950 border border-gray-700 p-6 text-center">
         <p className="text-xs uppercase tracking-widest text-gray-400 mb-2">
           {lang === 'en' ? 'Monthly Overage' : 'Sobrecosto mensual'}
         </p>
@@ -119,7 +119,7 @@ const PricingTable = ({ lang }) => {
   const headers = lang === 'en' ? ['Feature', 'Old (PRU) Model', 'New AI Credits'] : ['Función', 'Modelo antiguo (PRU)', 'Nuevo AI Credits']
 
   return (
-    <div className="not-prose my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+    <div className="not-prose my-8 overflow-x-auto squircle-element-xl border border-gray-200 dark:border-gray-700">
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-gray-50 dark:bg-gray-800/60">
@@ -153,10 +153,10 @@ const AlternativeCard = ({ name, icon, tagline, pros, cons, url }) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="not-prose block rounded-2xl border border-gray-200/80 dark:border-gray-700/50 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-900/50 p-6 hover:border-yellow-400/60 hover:shadow-xl hover:shadow-yellow-500/10 dark:hover:shadow-yellow-500/5 hover:-translate-y-1 transition-all duration-300 group"
+    className="not-prose block squircle-element border border-gray-200/80 dark:border-gray-700/50 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-900/50 p-6 hover:border-yellow-400/60 hover:shadow-xl hover:shadow-yellow-500/10 dark:hover:shadow-yellow-500/5 hover:-translate-y-1 transition-all duration-300 group"
   >
     <div className="flex items-start gap-4 mb-4">
-      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 dark:from-yellow-500/10 dark:to-yellow-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+      <div className="flex-shrink-0 w-12 h-12 squircle-element-xl bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 dark:from-yellow-500/10 dark:to-yellow-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
         <Icon icon={icon} className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
       </div>
       <div className="flex-1 min-w-0">
@@ -269,7 +269,7 @@ export const ContentEN = () => (
       estimated monthly cost under the new AI Credits model:
     </p>
 
-    <div className="not-prose my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+    <div className="not-prose my-8 overflow-x-auto squircle-element-xl border border-gray-200 dark:border-gray-700">
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-gray-50 dark:bg-gray-800/60 text-left">
@@ -346,7 +346,7 @@ export const ContentEN = () => (
           desc: 'Monorepos and enterprise apps mean more tokens per agent prompt. The bigger the context, the higher the credit consumption per task.',
         },
       ].map(({ icon, title, desc }) => (
-        <div key={title} className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-yellow-400/40 transition-colors">
+        <div key={title} className="squircle-element-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-yellow-400/40 transition-colors">
           <div className="w-10 h-10 rounded-lg bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mb-3">
             <Icon icon={icon} className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
           </div>
@@ -523,7 +523,7 @@ export const ContentES = () => (
       y su costo mensual estimado bajo el nuevo modelo de AI Credits:
     </p>
 
-    <div className="not-prose my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
+    <div className="not-prose my-8 overflow-x-auto squircle-element-xl border border-gray-200 dark:border-gray-700">
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-gray-50 dark:bg-gray-800/60 text-left">
@@ -598,7 +598,7 @@ export const ContentES = () => (
           desc: 'Monorepos y apps empresariales implican más tokens por prompt de agente. A mayor contexto, mayor consumo de créditos por tarea.',
         },
       ].map(({ icon, title, desc }) => (
-        <div key={title} className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-yellow-400/40 transition-colors">
+        <div key={title} className="squircle-element-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-yellow-400/40 transition-colors">
           <div className="w-10 h-10 rounded-lg bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mb-3">
             <Icon icon={icon} className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
           </div>

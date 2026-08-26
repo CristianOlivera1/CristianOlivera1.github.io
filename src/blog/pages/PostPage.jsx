@@ -41,7 +41,7 @@ const PostPage = () => {
                     <p className="text-gray-500 dark:text-gray-400 mb-6">{t.postNotFoundDesc}</p>
                     <Link
                         to="/blog"
-                        className="inline-block px-5 py-2.5 rounded-xl bg-yellow-400 text-gray-900 font-semibold text-sm hover:bg-yellow-300 transition-colors"
+                        className="inline-block px-5 py-2.5 squircle-element-xl bg-yellow-400 text-gray-900 font-semibold text-sm hover:bg-yellow-300 transition-colors"
                     >
                         {t.backToBlog}
                     </Link>
@@ -141,7 +141,7 @@ const PostPage = () => {
 
             <BlogLayout currentSlug={slug} showProgress>
                 <div className="max-w-5xl mx-auto px-4 mt-6">
-                    <div className="w-full aspect-[16/9] max-h-[480px] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                    <div className="w-full aspect-[16/9] max-h-[480px] squircle-element overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
                         <img
                             src={meta.heroImage}
                             alt={title}

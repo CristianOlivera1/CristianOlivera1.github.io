@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 
 const SectionHeading = ({ icon, children }) => (
     <h2 className="mt-14 mb-5 flex items-center gap-3 text-2xl font-black tracking-tight text-gray-900 dark:text-white">
-        <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center">
+        <div className="w-10 h-10 squircle-element-xl bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center">
             <Icon icon={icon} className="w-5 h-5 text-orange-600 dark:text-orange-400" />
         </div>
         <span>{children}</span>
@@ -19,7 +19,7 @@ const Callout = ({ icon, children, type = 'info' }) => {
     }
 
     return (
-        <div className={`not-prose my-8 rounded-2xl border p-5 flex gap-4 ${styles[type]}`}>
+        <div className={`not-prose my-8 squircle-element border p-5 flex gap-4 ${styles[type]}`}>
             <div className="flex-shrink-0">
                 <Icon icon={icon} className="w-5 h-5 mt-0.5" />
             </div>
@@ -29,14 +29,14 @@ const Callout = ({ icon, children, type = 'info' }) => {
 }
 
 const StatCard = ({ label, value, icon, accent }) => (
-    <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+    <div className="squircle-element border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
         <div className="flex items-center justify-between mb-4">
             <p className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
                 {label}
             </p>
 
             <div
-                className={`w-10 h-10 rounded-xl flex items-center justify-center ${accent}`}
+                className={`w-10 h-10 squircle-element-xl flex items-center justify-center ${accent}`}
             >
                 <Icon icon={icon} className="w-5 h-5" />
             </div>
@@ -154,7 +154,7 @@ const BenchmarkTable = () => {
                         <th className="px-6 py-5 text-left"></th>
 
                         <th className="px-6 py-5 text-center">
-                            <div className="inline-flex rounded-2xl border-2 border-orange-400 bg-orange-50 dark:bg-orange-950/20 px-5 py-3 font-black text-gray-900 dark:text-white">
+                            <div className="inline-flex squircle-element border-2 border-orange-400 bg-orange-50 dark:bg-orange-950/20 px-5 py-3 font-black text-gray-900 dark:text-white">
                                 Opus 4.8
                             </div>
                         </th>
@@ -209,8 +209,8 @@ const BenchmarkTable = () => {
 }
 
 const CriticCard = ({ icon, title, text }) => (
-    <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 p-6">
-        <div className="w-11 h-11 rounded-xl bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center mb-4">
+    <div className="squircle-element border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 p-6">
+        <div className="w-11 h-11 squircle-element-xl bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center mb-4">
             <Icon icon={icon} className="w-5 h-5 text-orange-600 dark:text-orange-400" />
         </div>
 

@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import BlogLayout from '../components/BlogLayout'
 import PostCard from '../components/PostCard'
 import { useBlog } from '../context/BlogContext'
@@ -11,8 +12,11 @@ const BlogIndex = () => {
   const { lang } = useBlog()
   const t = UI[lang]
 
-  const sorted = [...posts].sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
-  const [featured, ...rest] = sorted
+  const { featured, rest } = useMemo(() => {
+    const sorted = [...posts].sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
+    const [featuredPost, ...restPosts] = sorted
+    return { featured: featuredPost, rest: restPosts }
+  }, [posts])
 
   return (
     <>

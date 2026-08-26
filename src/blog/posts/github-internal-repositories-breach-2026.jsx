@@ -17,7 +17,7 @@ const Callout = ({ icon, children, type = 'info' }) => {
   }
 
   return (
-    <div className={`not-prose my-6 flex gap-3 rounded-xl border p-4 ${styles[type]}`}>
+    <div className={`not-prose my-6 flex gap-3 squircle-element-xl border p-4 ${styles[type]}`}>
       <div className="text-xl flex-shrink-0 leading-none">
         <Icon icon={icon} className="w-5 h-5 mt-0.5" />
       </div>
@@ -27,8 +27,8 @@ const Callout = ({ icon, children, type = 'info' }) => {
 }
 
 const FactCard = ({ icon, title, text }) => (
-  <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5 shadow-sm hover:shadow-md transition-shadow">
-    <div className="w-11 h-11 rounded-xl bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mb-4">
+  <div className="squircle-element border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5 shadow-sm hover:shadow-md transition-shadow">
+    <div className="w-11 h-11 squircle-element-xl bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mb-4">
       <Icon icon={icon} className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
     </div>
     <h4 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h4>

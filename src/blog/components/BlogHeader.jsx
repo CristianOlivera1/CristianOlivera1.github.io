@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { useBlog } from '../context/BlogContext'
+import { useTheme } from '../../hooks/useTheme'
 import { UI } from '../i18n/translations'
 
 const BlogHeader = () => {
-  const { lang, toggleLang, darkMode, toggleDarkMode } = useBlog()
+  const { lang, toggleLang } = useBlog()
+  const { darkMode, toggleDarkMode } = useTheme()
   const t = UI[lang]
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()

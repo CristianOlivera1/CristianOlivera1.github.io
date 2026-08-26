@@ -29,7 +29,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
     const isInicio = itemId === 'inicio'
     const displayClasses = isInicio ? "hidden sm:flex" : "flex"
     
-    const baseClasses = `relative ${displayClasses} gap-1 px-3 py-2 transition rounded-full`
+    const baseClasses = `relative ${displayClasses} gap-1 px-3 py-2 transition squircle-element`
     const isActive = activeSection === itemId
 
     if (isActive) {
@@ -56,7 +56,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
 
   return (
     <header className="fixed top-0 z-20 flex items-center justify-center w-full mx-auto mt-2">
-      <nav className="flex px-4 py-2 text-sm font-medium rounded-2xl text-gray-600 dark:text-gray-200 justify-center items-center bg-white/80 dark:bg-black  backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-sm">
+      <nav className="flex px-4 py-2 text-sm font-medium squircle-element text-gray-600 dark:text-gray-200 justify-center items-center bg-white/80 dark:bg-[#01061a]/80 backdrop-blur-md border border-gray-200 dark:border-gray-600 shadow-sm">
         {navItems.map((item) => {
           const IconComponent = item.component
 
@@ -69,7 +69,6 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
               onMouseEnter={() => item.ref.current?.handleMouseEnter?.()}
               onMouseLeave={() => item.ref.current?.handleMouseLeave?.()}
             >
-              {/* Se añade hidden sm:block para ocultar todos los iconos en pantallas menores a sm */}
               <IconComponent ref={item.ref} className="size-5 hidden sm:block" />
               {item.label}
             </a>

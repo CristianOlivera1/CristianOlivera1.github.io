@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useBlog } from '../context/BlogContext'
 import { UI, formatDate } from '../i18n/translations'
-import { Icon } from '@iconify/react/dist/iconify.js'
+import { Icon } from '@iconify/react'
 
 const PostCard = ({ post, featured = false }) => {
     const { lang } = useBlog()
@@ -15,7 +15,7 @@ const PostCard = ({ post, featured = false }) => {
     return (
         <Link
             to={`/post/${meta.slug}`}
-            className={`group block rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-yellow-400/50 hover:shadow-xl hover:shadow-yellow-400/5 transition-all duration-300 ${featured ? 'sm:flex' : ''}`}
+            className={`group block squircle-element overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-yellow-400/50 hover:shadow-xl hover:shadow-yellow-400/5 transition-all duration-300 ${featured ? 'sm:flex' : ''}`}
         >
             <div className={`relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 ${featured ? 'sm:w-100 sm:flex-shrink-0' : 'aspect-[16/9]'}`}>
                 <img
