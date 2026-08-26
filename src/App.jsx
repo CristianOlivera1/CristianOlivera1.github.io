@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { PERSONAL_INFO } from './constants/portfolioData'
@@ -7,7 +6,9 @@ import Hero from './components/Hero'
 import Projects from './components/Projects'
 import About from './components/About'
 import Footer from './components/Footer'
+import AuraBackground from './components/AuraBackground'
 import { useActiveSection } from './hooks/useActiveSection'
+import { useTheme } from './hooks/useTheme'
 import { BlogProvider } from './blog/context/BlogContext'
 import BlogIndex from './blog/pages/BlogIndex'
 import PostPage from './blog/pages/PostPage'
@@ -15,61 +16,9 @@ import './App.css'
 import { LanguageProvider } from './context/LanguageProvider'
 
 function PortfolioPage() {
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme')
-      if (saved) {
-        return saved === 'dark'
-      }
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      return systemDark
-    }
-    return false
-  })
+  const { darkMode, toggleDarkMode } = useTheme()
 
   const activeSection = useActiveSection()
-
-  useEffect(() => {
-    const html = document.documentElement
-    const saved = localStorage.getItem('theme')
-
-    if (saved === 'dark') {
-      html.classList.add('dark')
-      setDarkMode(true)
-    } else if (saved === 'light') {
-      html.classList.remove('dark')
-      setDarkMode(false)
-    } else {
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      if (systemDark) {
-        html.classList.add('dark')
-        setDarkMode(true)
-      } else {
-        html.classList.remove('dark')
-        setDarkMode(false)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    const updateTheme = () => {
-      const html = document.documentElement
-      if (darkMode) {
-        html.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-      } else {
-        html.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-      }
-
-    }
-
-    updateTheme()
-  }, [darkMode])
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
 
   return (
     <>
@@ -97,7 +46,10 @@ function PortfolioPage() {
         })}</script>
       </Helmet>
       <div className="relative text-black dark:text-white min-h-screen">
-      <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-[#01061a] bg-[radial-gradient(circle_500px_at_50%_200px,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
+      <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-[#01061a] bg-[radial-gradient(circle_500px_at_50%_200px,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#101828,transparent)]">
+        <div className="aura-wrapper">
+          <AuraBackground />
+        </div>
       </div>
 
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} activeSection={activeSection} />
@@ -107,7 +59,7 @@ function PortfolioPage() {
           <Projects />
           <About />
 
-          <div className="absolute bottom-0 left-0 z-[-2] w-full h-[900px] translate-y-[-100px] bg-[radial-gradient(circle_500px_at_100%_50%,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_100%_50%,#3e3e3e,transparent)]"></div>
+          <div className="absolute bottom-0 left-0 z-[-2] w-full h-[900px] translate-y-[-100px] bg-[radial-gradient(circle_500px_at_100%_50%,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_100%_50%,#101828,transparent)]"></div>
         </div>
       </main>
 

@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
+import { useTheme } from '../hooks/useTheme'
 
 class ParticleAnimation {
-  constructor(el, { quantity = 30, staticity = 50, ease = 50 } = {}) {
+  constructor(el, { quantity = 30, staticity = 50, ease = 50, rgb = '255,255,255' } = {}) {
     this.canvas = el;
     if (!this.canvas) return;
     this.canvasContainer = this.canvas.parentElement;
@@ -11,6 +12,7 @@ class ParticleAnimation {
       quantity: quantity,
       staticity: staticity,
       ease: ease,
+      rgb: rgb,
     };
     this.circles = [];
     this.mouse = {
@@ -87,7 +89,7 @@ class ParticleAnimation {
     this.context.translate(translateX, translateY);
     this.context.beginPath();
     this.context.arc(x, y, size, 0, 2 * Math.PI);
-    this.context.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+    this.context.fillStyle = `rgba(${this.settings.rgb}, ${alpha})`;
     this.context.fill();
     this.context.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
     if (!update) {
@@ -155,21 +157,25 @@ class ParticleAnimation {
   }
 }
 
-const ParticleBackground = ({ 
-  quantity = 50, 
-  staticity = 50, 
+const ParticleBackground = ({
+  quantity = 50,
+  staticity = 50,
   ease = 50,
+  color,
   className = ""
 }) => {
+  const { darkMode } = useTheme()
   const canvasRef = useRef(null)
   const animationRef = useRef(null)
+  const rgb = color ?? (darkMode ? '255,255,255' : '31,41,55')
 
   useEffect(() => {
     if (canvasRef.current && !animationRef.current) {
       animationRef.current = new ParticleAnimation(canvasRef.current, {
         quantity,
         staticity,
-        ease
+        ease,
+        rgb
       })
     }
 
@@ -179,7 +185,7 @@ const ParticleBackground = ({
         animationRef.current = null
       }
     }
-  }, [quantity, staticity, ease])
+  }, [quantity, staticity, ease, rgb])
 
   return (
     <div className={`absolute inset-0 -z-10 ${className}`}>
