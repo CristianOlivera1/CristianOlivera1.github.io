@@ -13,65 +13,90 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS = [
   {
-    "title": "openvid - Demos en el navegador",
-    "description": "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
-    "image": "./assets/projects/openvid/openvid.avif",
-    "image2": "./assets/projects/openvid/openvid.mp4",
-    "image3": "./assets/projects/openvid/openvid2.avif",
-    "favicon": "./assets/projects/openvid/favicon.svg",
-    "features": [
-      { "icon": "tabler:screen-share", "text": "Grabación de pantalla en el navegador" },
-      { "icon": "tabler:upload", "text": "Subida de videos (MP4, WebM, QuickTime, MKV)" },
-      { "icon": "tabler:drag-drop", "text": "Carga rápida por drag & drop" },
-      { "icon": "tabler:palette", "text": "Fondos personalizados y prediseñados" },
-      { "icon": "tabler:layers-linked", "text": "Canvas con figuras, texto, imágenes y SVG" },
-      { "icon": "tabler:device-desktop", "text": "Mockups de dispositivos (Safari, Chrome, Samsung, etc.)" },
-      { "icon": "tabler:zoom-in-area", "text": "Zooms suaves y movimiento de cámara 3D" },
-      { "icon": "tabler:music", "text": "Audio multipista con control de volumen" },
-      { "icon": "tabler:scissors", "text": "Herramientas de edición: recorte, crop, proporciones" },
-      { "icon": "tabler:video", "text": "Exportación en 4K, 2K, 1080p, GIF y WebM transparente" },
-      { "icon": "tabler:shield-check", "text": "Autenticación con Google, GitHub y Twitch vía Supabase" }
+    title: "openvid - Demos en el navegador",
+    description: "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
+    image: "./assets/projects/openvid/openvid.avif",
+    image2: "./assets/projects/openvid/openvid.mp4",
+    image3: "./assets/projects/openvid/openvid2.avif",
+    favicon: "./assets/projects/openvid/favicon.svg",
+    features: [
+      { icon: "tabler:screen-share", text: "Grabación de pantalla en el navegador" },
+      { icon: "tabler:upload", text: "Subida de videos (MP4, WebM, QuickTime, MKV)" },
+      { icon: "tabler:drag-drop", text: "Carga rápida por drag & drop" },
+      { icon: "tabler:palette", text: "Fondos personalizados y prediseñados" },
+      { icon: "tabler:layers-linked", text: "Canvas con figuras, texto, imágenes y SVG" },
+      { icon: "tabler:device-desktop", text: "Mockups de dispositivos (Safari, Chrome, Samsung, etc.)" },
+      { icon: "tabler:zoom-in-area", text: "Zooms suaves y movimiento de cámara 3D" },
+      { icon: "tabler:music", text: "Audio multipista con control de volumen" },
+      { icon: "tabler:scissors", text: "Herramientas de edición: recorte, crop, proporciones" },
+      { icon: "tabler:video", text: "Exportación en 4K, 2K, 1080p, GIF y WebM transparente" },
+      { icon: "tabler:shield-check", text: "Autenticación con Google, GitHub y Twitch vía Supabase" }
     ],
-    "technologies": [
-      { "name": "Next.js", "icon": "logos:nextjs-icon" },
-      { "name": "Supabase", "icon": "logos:supabase-icon" },
-      { "name": "FFmpeg.wasm", "icon": "simple-icons:ffmpeg" },
-      { "name": "Canvas API", "icon": "mdi:canvas" },
-      { "name": "Framer Motion", "icon": "logos:framer" },
-      { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+    technologies: [
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
+      { name: "FFmpeg.wasm", icon: "simple-icons:ffmpeg" },
+      { name: "Canvas API", icon: "mdi:canvas" },
+      { name: "Framer Motion", icon: "logos:framer" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" }
     ],
-    "links": {
-      "github": "https://github.com/CristianOlivera1/openvid",
-      "live": "https://openvid.dev"
+    links: {
+      github: "https://github.com/CristianOlivera1/openvid",
+      live: "https://openvid.dev"
     }
   },
-
   {
-    "title": "openhero - Galería de Secciones Hero",
-    "description": "Una colección abierta y gratuita de secciones hero con video cinematográfico para la web moderna. Explora, previsualiza a pantalla completa, descarga los fondos y copia código de producción listo para usar en HTML o Next.js.",
-    "image": "./assets/projects/openhero/openhero.mp4",
-    "poster": "./assets/projects/openhero/poster.avif",
-    "image2": "./assets/projects/openhero/openhero.png",
-    "image3": "./assets/projects/openhero/openhero2.avif",
-    "favicon": "./assets/projects/openhero/favicon.svg",
-    "features": [
-      { "icon": "tabler:video", "text": "Galería con más de 60 fondos cinematográficos organizados por categorías" },
-      { "icon": "tabler:maximize", "text": "Previsualización a pantalla completa en alta calidad con bucle continuo" },
-      { "icon": "tabler:copy", "text": "Copia de código fuente (HTML y Next.js) listo para usar en un clic" },
-      { "icon": "tabler:file-zip", "text": "Descarga instantánea del video y el código fuente en formato ZIP" },
-      { "icon": "tabler:photo", "text": "Biblioteca de fondos curados con 272 imágenes en 4 categorías" },
-      { "icon": "tabler:upload", "text": "Formulario de envío para que la comunidad comparta sus propias secciones hero" },
-      { "icon": "tabler:creative-commons-by", "text": "Licencia abierta MIT de uso libre sin requerir atribución obligatoria" }
+    title: "openhero - Galería de Secciones Hero",
+    description: "Una colección abierta y gratuita de secciones hero con video cinematográfico para la web moderna. Explora, previsualiza a pantalla completa, descarga los fondos y copia código de producción listo para usar en HTML o Next.js.",
+    image: "./assets/projects/openhero/openhero.mp4",
+    poster: "./assets/projects/openhero/poster.avif",
+    image2: "./assets/projects/openhero/openhero.png",
+    image3: "./assets/projects/openhero/openhero2.avif",
+    favicon: "./assets/projects/openhero/favicon.svg",
+    features: [
+      { icon: "tabler:video", text: "Galería con más de 60 fondos cinematográficos organizados por categorías" },
+      { icon: "tabler:maximize", text: "Previsualización a pantalla completa en alta calidad con bucle continuo" },
+      { icon: "tabler:copy", text: "Copia de código fuente (HTML y Next.js) listo para usar en un clic" },
+      { icon: "tabler:file-zip", text: "Descarga instantánea del video y el código fuente en formato ZIP" },
+      { icon: "tabler:photo", text: "Biblioteca de fondos curados con 272 imágenes en 4 categorías" },
+      { icon: "tabler:upload", text: "Formulario de envío para que la comunidad comparta sus propias secciones hero" },
+      { icon: "tabler:creative-commons-by", text: "Licencia abierta MIT de uso libre sin requerir atribución obligatoria" }
     ],
-    "technologies": [
-      { "name": "Next.js", "icon": "logos:nextjs-icon" },
-      { "name": "Supabase", "icon": "logos:supabase-icon" },
-      { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" },
-      { "name": "TypeScript", "icon": "logos:typescript-icon" }
+    technologies: [
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+      { name: "TypeScript", icon: "logos:typescript-icon" }
     ],
-    "links": {
-      "github": "https://github.com/CristianOlivera1/openhero",
-      "live": "https://openhero.art"
+    links: {
+      github: "https://github.com/CristianOlivera1/openhero",
+      live: "https://openhero.art"
+    }
+  },
+  {
+    title: "Aura",
+    description: "Galería y personalizador de gradientes atmosféricos para crear fondos visuales para interfaces web. Permite explorar más de 200 gradientes, ajustar sus capas y exportarlos como CSS, Tailwind, CSS Variables, CSS-in-JS, PNG o SVG.",
+    image: "./assets/projects/aura/aura.avif",
+    image2: "./assets/projects/aura/aura.mp4",
+    image3: "./assets/projects/aura/aura2.avif",
+    favicon: "./assets/projects/aura/favicon.webp",
+    features: [
+      { icon: "tabler:wand", text: "Personalización de gradientes por capas" },
+      { icon: "tabler:photo", text: "Galería con más de 200 gradientes" },
+      { icon: "tabler:adjustments", text: "Ajuste de modos de mezcla, desenfoque y opacidad" },
+      { icon: "tabler:copy", text: "Exportación a CSS, Tailwind, variables y CSS-in-JS" },
+      { icon: "tabler:download", text: "Descarga de gradientes en PNG y SVG" },
+      { icon: "tabler:ai", text: "Generación de prompts para recrear gradientes con IA" }
+    ],
+    technologies: [
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "React", icon: "logos:react" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+      { name: "TypeScript", icon: "logos:typescript-icon" }
+    ],
+    links: {
+      github: "https://github.com/CristianOlivera1/Aura",
+      live: "https://auragradients.vercel.app/"
     }
   },
   {
@@ -273,7 +298,7 @@ export const PROJECTS = [
       github: "https://github.com/CristianOlivera1/Costo-minimo-y-Esquina-noroeste",
       live: "https://encmcalculator.vercel.app/"
     }
-  }
+  },
 ]
 
 export const ABOUT_TEXT = [
