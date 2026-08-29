@@ -125,8 +125,8 @@
 	      />
 	      {isOpen &&
 	        createPortal(
-	          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-[2147483647] bg-black/55 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm flex items-center gap-3 pointer-events-none select-none">
-	            <span className="truncate max-w-[60vw]">{gallery[liveIndex]?.alt}</span>
+	          <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-9999 bg-black/55 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm flex items-center gap-3 pointer-events-none select-none">
+	            <span className="truncate max-w-[30vw]">{gallery[liveIndex]?.alt}</span>
 	            <span className="opacity-70 tabular-nums">
 	              {liveIndex + 1} / {gallery.length}
 	            </span>

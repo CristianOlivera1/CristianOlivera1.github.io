@@ -18,7 +18,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
   const { lang, toggleLang } = useLanguage()
   const t = PORTFOLIO_UI[lang].nav
 
-   const navItems = [
+  const navItems = [
     { id: 'inicio', label: t.inicio, component: AnimatedHomeIcon, ref: homeIconRef, url: '#inicio' },
     { id: 'proyectos', label: t.proyectos, component: AnimatedCodeIcon, ref: codeIconRef, url: '#proyectos' },
     { id: 'sobre-mi', label: t.sobreMi, component: AnimatedUserIcon, ref: userIconRef, url: '#sobre-mi' },
@@ -28,26 +28,26 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
   const getNavItemClasses = (itemId) => {
     const isInicio = itemId === 'inicio'
     const displayClasses = isInicio ? "hidden sm:flex" : "flex"
-    
-    const baseClasses = `relative ${displayClasses} gap-1 px-3 py-2 transition squircle-element`
+
+    const baseClasses = `relative ${displayClasses} items-center justify-center gap-1 px-4 py-2 transition-all duration-300 squircle-element z-10 select-none`
     const isActive = activeSection === itemId
 
     if (isActive) {
-      return `${baseClasses} text-primary bg-primary/10 dark:bg-primary/20`
+      return `${baseClasses} text-yellow-600 dark:text-yellow-400 font-semibold`
     }
 
-    return `${baseClasses} hover:text-blue-500 dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800/50`
+    return `${baseClasses} text-gray-600 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/30`
   }
 
- const handleNavClick = (e, item) => {
+  const handleNavClick = (e, item) => {
     if (item.id === 'blog') {
-      return 
+      return
     }
 
     e.preventDefault()
     const section = document.getElementById(item.id)
     if (section) {
-      section.scrollIntoView({ 
+      section.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       })
@@ -56,7 +56,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
 
   return (
     <header className="fixed top-0 z-20 flex items-center justify-center w-full mx-auto mt-2">
-      <nav className="flex px-4 py-2 text-sm font-medium squircle-element text-gray-600 dark:text-gray-200 justify-center items-center bg-white/80 dark:bg-[#01061a]/80 backdrop-blur-md border border-gray-200 dark:border-gray-600 shadow-sm">
+      <nav className="flex px-4 py-2 text-sm font-medium squircle-element text-gray-600 dark:text-gray-200 justify-center items-center bg-white/80 dark:bg-black/80 backdrop-blur-md border border-gray-200 dark:border-gray-600 shadow-sm">
         {navItems.map((item) => {
           const IconComponent = item.component
 
@@ -69,8 +69,26 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
               onMouseEnter={() => item.ref.current?.handleMouseEnter?.()}
               onMouseLeave={() => item.ref.current?.handleMouseLeave?.()}
             >
-              <IconComponent ref={item.ref} className="size-5 hidden sm:block" />
-              {item.label}
+              {activeSection === item.id && (
+                <div
+                  className="absolute inset-0 w-full h-full squircle-element backdrop-blur-[2px] pointer-events-none -z-10 animate-fade-in
+                  bg-yellow-50 bg-[radial-gradient(51.07%_92.4%_at_51%_7.61%,theme(colors.yellow.300)_0%,theme(colors.yellow.200/80%)_100%)]
+                  
+                  dark:bg-[#121214] dark:bg-[radial-gradient(51.07%_92.4%_at_51%_7.61%,#3e310c_0%,#121214_100%)]
+                  
+                  border border-yellow-500/50 dark:border-yellow-500/25
+                  
+                  shadow-[inset_0_0.8rem_0.2rem_-0.8rem_rgba(255,255,255,0.4),0_4px_8px_-2px_rgba(234,179,8,0.2)]
+                  dark:shadow-[inset_0_0.8rem_0.2rem_-0.8rem_rgba(255,255,255,0.15),0_6px_12px_rgba(0,0,0,0.4)]"
+                >
+                  <div className="absolute top-0.5 left-1.5 size-6 bg-yellow-400 rounded-full blur-[5px] opacity-40 dark:opacity-30 pointer-events-none" />
+                </div>
+              )}
+
+              <div className="transition-transform duration-300 active:scale-95 flex items-center gap-1.5">
+                <IconComponent ref={item.ref} className="size-5 hidden sm:block" />
+                <span>{item.label}</span>
+              </div>
             </a>
           )
         })}

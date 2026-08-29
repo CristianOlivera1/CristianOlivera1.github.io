@@ -6,8 +6,8 @@ import Particles from './ParticleBackground'
 import ActionButton from './ui/ActionButton'
 
 const SOCIAL_LINKS = [
-  { href: PERSONAL_INFO.github, icon: 'mdi:github', label: 'GitHub' },
-  { href: PERSONAL_INFO.linkedin, icon: 'mdi:linkedin', label: 'LinkedIn' }
+    { href: PERSONAL_INFO.github, icon: 'mdi:github', label: 'GitHub' },
+    { href: PERSONAL_INFO.linkedin, icon: 'mdi:linkedin', label: 'LinkedIn' }
 ]
 
 const Hero = () => {
@@ -54,8 +54,7 @@ const Hero = () => {
                         </div>
                     </div>
 
-
-                    <p className="mt-6 bg-transparent text-xl text-gray-800 dark:text-gray-300 [&>strong]:rounded-sm [&>strong]:bg-yellow-300 [&>strong]:px-1 [&>strong]:font-semibold [&>strong]:text-gray-900 dark:[&>strong]:bg-transparent dark:[&>strong]:px-0 dark:[&>strong]:text-primary">
+                    <p className="mt-6 bg-transparent text-xl text-gray-800 dark:text-gray-300 [&>strong]:font-bold [&>strong]:text-gray-900 dark:[&>strong]:text-primary">
                         <strong>{t.title}</strong> {t.description}
                     </p>
 
