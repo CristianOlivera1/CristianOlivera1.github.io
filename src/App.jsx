@@ -30,7 +30,7 @@ function PortfolioPage() {
           url: 'https://cristianolivera1.github.io/',
           jobTitle: 'Desarrollador de aplicaciones web',
           email: PERSONAL_INFO.email,
-          image: 'https://cristianolivera1.github.io/assets/foto/foto.png',
+          image: 'https://cristianolivera1.github.io/assets/foto/foto.avif',
           sameAs: [
             PERSONAL_INFO.linkedin,
             PERSONAL_INFO.github

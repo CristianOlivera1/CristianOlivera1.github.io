@@ -7,8 +7,8 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/cristian-olivera-chavez",
   github: "https://github.com/CristianOlivera1",
   cv: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV_Desarrollador-de-Apps-Web.pdf",
-  profileImage: "./assets/foto/foto.png",
-  aboutImage: "./assets/foto/foto.png"
+  profileImage: "./assets/foto/foto.avif",
+  aboutImage: "./assets/foto/foto.avif"
 }
 
 export const PROJECTS = [
