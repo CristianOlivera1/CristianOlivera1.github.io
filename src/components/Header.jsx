@@ -29,7 +29,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
     const isInicio = itemId === 'inicio'
     const displayClasses = isInicio ? "hidden sm:flex" : "flex"
 
-    const baseClasses = `relative ${displayClasses} items-center justify-center gap-1 px-4 py-2 transition-all duration-300 squircle-element z-10 select-none`
+    const baseClasses = `relative ${displayClasses} items-center justify-center gap-1 px-2 sm:px-4 py-2 transition-all duration-300 squircle-element z-10 select-none`
     const isActive = activeSection === itemId
 
     if (isActive) {
