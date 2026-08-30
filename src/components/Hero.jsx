@@ -66,7 +66,11 @@ const Hero = () => {
                             </ActionButton>
                         ))}
 
-                        <ActionButton href={PERSONAL_INFO.cv} icon="ph:read-cv-logo-bold">
+                        <ActionButton
+                            href={typeof PERSONAL_INFO.cv === 'string' ? PERSONAL_INFO.cv : (PERSONAL_INFO.cv[lang] ?? PERSONAL_INFO.cv.es)}
+                            icon="ph:read-cv-logo-bold"
+                            ariaLabel={lang === 'es' ? 'Ver CV en español' : 'View CV in English'}
+                        >
                             {t.cv}
                         </ActionButton>
                     </nav>

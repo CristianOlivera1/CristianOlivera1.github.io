@@ -6,14 +6,17 @@ export const PERSONAL_INFO = {
   email: "oliverachavezcristian@gmail.com",
   linkedin: "https://www.linkedin.com/in/cristian-olivera-chavez",
   github: "https://github.com/CristianOlivera1",
-  cv: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV_Desarrollador-de-Apps-Web.pdf",
+  cv: {
+    es: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV-ES.pdf",
+    en: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV-EN.pdf",
+  },
   profileImage: "./assets/foto/foto.avif",
   aboutImage: "./assets/foto/foto.avif"
 }
 
 export const PROJECTS = [
   {
-    title: "openvid - Demos en el navegador",
+    title: "openvid - Editor de video",
     description: "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
     image: "./assets/projects/openvid/openvid.avif",
     image2: "./assets/projects/openvid/openvid.mp4",

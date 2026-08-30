@@ -125,7 +125,7 @@ export const ABOUT_TEXT_EN = [
 
 export const PROJECTS_EN = [
   {
-    title: 'openvid - Browser Demos',
+    title: 'openvid - Video Editor',
     description: 'Create professional demos in seconds directly in your browser. Record your screen or upload a video, add smooth zooms, device mockups and custom backgrounds, and export a cinematic demo ready to share.',
     features: [
       'Screen recording in the browser',
