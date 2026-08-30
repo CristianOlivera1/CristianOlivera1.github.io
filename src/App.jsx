@@ -46,7 +46,7 @@ function PortfolioPage() {
         })}</script>
       </Helmet>
       <div className="relative text-black dark:text-white min-h-screen">
-      <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-[#01061a] bg-[radial-gradient(circle_500px_at_50%_200px,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#101828,transparent)]">
+      <div className="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-black bg-[radial-gradient(circle_500px_at_50%_200px,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#101828,transparent)]">
         <div className="aura-wrapper">
           <AuraBackground />
         </div>
