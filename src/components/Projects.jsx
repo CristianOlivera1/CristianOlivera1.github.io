@@ -126,7 +126,7 @@ const Projects = () => {
       <div className="max-w-4xl mx-auto" >
         <SectionHeading icon="tabler:code">{t.heading}</SectionHeading>
 
-        <div className={`flex flex-col gap-y-16 transition-all duration-500 ease-in-out ${isLoading ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
+        <div className={`flex flex-col gap-y-30 transition-all duration-500 ease-in-out ${isLoading ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
           {displayedProjects.map((project, index) => {
             const isVideo = VIDEO_RE.test(project.image)
             return (
