@@ -5,6 +5,7 @@ import { PROJECTS, PERSONAL_INFO } from '../constants/portfolioData'
 import { useLanguage } from '../context/LanguageContext'
 import { PORTFOLIO_UI } from '../constants/i18n'
 import ActionButton from './ui/ActionButton'
+import ShowMoreButton from './ui/ShowMoreButton'
 import SmartMedia from './ui/SmartMedia'
 import TechBadge from './ui/TechBadge'
 import SectionHeading from './ui/SectionHeading'
@@ -152,7 +153,7 @@ const Projects = () => {
                     poster={project.poster}
                     unsupportedVideo={tm.unsupportedVideo}
                     asButton
-                    className="object-cover object-top w-full h-80 max-h-80 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/80"
+                    className="object-cover object-top w-full h-80 max-h-80 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-105 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
                     onClick={() => openProjectImages(project)}
                     onKeyDown={(e) => handleMediaKeyDown(e, project)}
                   />
@@ -215,32 +216,14 @@ const Projects = () => {
 
         {(hasMoreProjects || isShowingAll) && (
           <div className="flex justify-center mt-12">
-            <ActionButton
+            <ShowMoreButton
               onClick={handleShowMoreProjects}
               disabled={isLoading}
-              variant="squircle"
-              className="mask-b-from-50% mask-b-to-120% px-3 pt-2 pb-4"
-            >
-              {isLoading ? (
-                <>
-                  <Icon icon="tabler:loader-2" className="size-5 animate-spin" />
-                  {t.loading}
-                </>
-              ) : isShowingAll ? (
-                <>
-                  <Icon icon="tabler:chevron-up" className="size-5 transition-transform group-hover:-translate-y-0.5 animate-bounce translate-y-1" />
-                  {t.showLess}
-                </>
-              ) : (
-                <>
-                  <Icon icon="tabler:chevron-down" className="size-5 transition-transform group-hover:translate-y-0.5 animate-bounce translate-y-1" />
-                  {t.showMore}
-                  <span className="ml-1 px-2 py-1 text-xs bg-gray-900 text-white rounded-full dark:bg-gray-100 dark:text-gray-900">
-                    {remainingProjects > 0 ? `${remainingProjects} ${t.remaining}` : t.allProjects}
-                  </span>
-                </>
-              )}
-            </ActionButton>
+              isLoading={isLoading}
+              isShowingAll={isShowingAll}
+              remainingText={remainingProjects > 0 ? `${remainingProjects} ${t.remaining}` : t.allProjects}
+              t={t}
+            />
           </div>
         )}
       </div>

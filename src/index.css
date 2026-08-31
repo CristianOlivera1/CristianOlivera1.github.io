@@ -12,11 +12,15 @@ html.dark {
 }
 
 @theme {
-  --color-primary: #facc15;
+  --color-primary: #52525b;
   --animate-spin-slow: spin 2s linear infinite;
 }
 
-button{
+html.dark {
+  --color-primary: #e4e4e7;
+}
+
+button {
   cursor: pointer;
 }
 
@@ -25,8 +29,13 @@ button{
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fade-in-up {
@@ -38,6 +47,7 @@ button{
     opacity: 0;
     transform: translateY(30px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -49,26 +59,29 @@ button{
 }
 
 @keyframes pulselow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.8;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 10px;       
-  height: 10px;         
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;    
+  background: #f1f1f1;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9ca3af; 
+  background: #9ca3af;
   border-radius: 10px;
   border: 2px solid #f1f1f1;
 }
@@ -118,41 +131,56 @@ button{
   transform: translateZ(0);
   pointer-events: none;
 }
+
 .aura-layer-1 {
-  background: linear-gradient(154deg, transparent 18%, rgba(60,10,10,0.04) 29%, rgba(255,40,0,0.40) 36%, rgb(255,255,255) 42%, rgba(207,60,20,0.32) 48%, rgba(158,20,10,0.22) 55%, rgba(255,90,0,0.30) 62%, rgba(60,15,10,0.05) 68%, transparent 82%);
+  background: linear-gradient(154deg, transparent 18%, rgba(60, 10, 10, 0.04) 29%, rgba(255, 40, 0, 0.40) 36%, rgb(255, 255, 255) 42%, rgba(207, 60, 20, 0.32) 48%, rgba(158, 20, 10, 0.22) 55%, rgba(255, 90, 0, 0.30) 62%, rgba(60, 15, 10, 0.05) 68%, transparent 82%);
   filter: blur(113px);
 }
 
 .aura-layer-2 {
-  background: linear-gradient(128deg, transparent 28%, rgba(80,10,20,0.04) 38%, rgba(255,80,0,0.35) 43%, rgb(255,255,255) 48%, rgba(200,60,30,0.22) 52%, rgba(255,40,0,0.25) 57%, rgba(90,20,10,0.06) 62%, transparent 76%);
+  background: linear-gradient(128deg, transparent 28%, rgba(80, 10, 20, 0.04) 38%, rgba(255, 80, 0, 0.35) 43%, rgb(255, 255, 255) 48%, rgba(200, 60, 30, 0.22) 52%, rgba(255, 40, 0, 0.25) 57%, rgba(90, 20, 10, 0.06) 62%, transparent 76%);
   filter: blur(173px);
 }
 
 .aura-layer-3 {
-  background: radial-gradient(ellipse 78% 20% at 51% 53%, rgba(200,50,20,0.24) 0%, rgba(100,20,10,0.06) 45%, transparent 82%);
+  background: radial-gradient(ellipse 78% 20% at 51% 53%, rgba(200, 50, 20, 0.24) 0%, rgba(100, 20, 10, 0.06) 45%, transparent 82%);
   filter: blur(130px);
 }
 
 .aura-layer-4 {
-  background: radial-gradient(ellipse 48% 9% at 52% 50%, rgba(255,220,190,0.14) 0%, rgba(200,80,50,0.06) 45%, transparent 80%);
+  background: radial-gradient(ellipse 48% 9% at 52% 50%, rgba(255, 220, 190, 0.14) 0%, rgba(200, 80, 50, 0.06) 45%, transparent 80%);
   filter: blur(138px);
 }
 
 .aura-layer-5 {
-  background: linear-gradient(to top, rgba(5,1,1,0.75) 0%, rgba(5,1,1,0.45) 28%, rgba(5,1,1,0.15) 55%, transparent 78%);
+  background: linear-gradient(to top, rgba(5, 1, 1, 0.75) 0%, rgba(5, 1, 1, 0.45) 28%, rgba(5, 1, 1, 0.15) 55%, transparent 78%);
   filter: blur(115px);
 }
 
 .aura-layer-6 {
-  background: radial-gradient(ellipse 50% 28% at 72% 18%, rgba(150,90,20,0.10) 0%, rgba(100,60,10,0.03) 45%, transparent 82%);
+  background: radial-gradient(ellipse 50% 28% at 72% 18%, rgba(150, 90, 20, 0.10) 0%, rgba(100, 60, 10, 0.03) 45%, transparent 82%);
 }
 
 @media (min-width: 768px) {
-  .aura-layer-1 { filter: blur(162px); }
-  .aura-layer-2 { filter: blur(248px); }
-  .aura-layer-3 { filter: blur(187px); }
-  .aura-layer-4 { filter: blur(198px); }
-  .aura-layer-5 { filter: blur(166px); }
+  .aura-layer-1 {
+    filter: blur(162px);
+  }
+
+  .aura-layer-2 {
+    filter: blur(248px);
+  }
+
+  .aura-layer-3 {
+    filter: blur(187px);
+  }
+
+  .aura-layer-4 {
+    filter: blur(198px);
+  }
+
+  .aura-layer-5 {
+    filter: blur(166px);
+  }
 }
 
 .aura-grain {
@@ -232,7 +260,7 @@ button{
 }
 
 .blog-prose a {
-  color: #d97706;
+  color: #52525b;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -240,11 +268,16 @@ button{
 }
 
 .dark .blog-prose a {
-  color: #fbbf24;
+  color: #d4d4d8;
 }
 
-.blog-prose a:hover { color: #b45309; }
-.dark .blog-prose a:hover { color: #fde68a; }
+.blog-prose a:hover {
+  color: #27272a;
+}
+
+.dark .blog-prose a:hover {
+  color: #fafafa;
+}
 
 .blog-prose strong {
   font-weight: 700;
@@ -260,21 +293,23 @@ button{
   color: #4b5563;
 }
 
-.dark .blog-prose em { color: #9ca3af; }
+.dark .blog-prose em {
+  color: #9ca3af;
+}
 
 .blog-prose blockquote {
-  border-left: 3px solid #facc15;
+  border-left: 3px solid #d4d4d8;
   padding: 0.75rem 1.25rem;
   margin: 1.75rem 0;
-  background: #fffbeb;
+  background: #f4f4f5;
   border-radius: 0 0.75rem 0.75rem 0;
   font-style: italic;
   color: #78350f;
 }
 
 .dark .blog-prose blockquote {
-  background: rgba(250, 204, 21, 0.06);
-  color: #fde68a;
+  background: rgba(212, 212, 216, 0.15);
+  color: #fafafa;
 }
 
 .blog-prose code {
@@ -308,7 +343,9 @@ button{
   margin-bottom: 1.4rem;
 }
 
-.blog-prose ul li { margin-bottom: 0.4rem; }
+.blog-prose ul li {
+  margin-bottom: 0.4rem;
+}
 
 .squircle-element {
   border-radius: 25px;
@@ -320,10 +357,90 @@ button{
   corner-shape: squircle;
 }
 
-/* Los iconos por defecto de la librería react-photo-view son SVG de relleno
-   (fill:#fff). Al envolver iconos de trazo (Tabler) en
-   .PhotoView-Slider__toolbarIcon hay que forzar fill:none para que el trazo
-   no se convierta en una mancha sólida. */
+.show-more-btn {
+  position: relative;
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 36px;
+  background: radial-gradient(51.07% 92.4% at 51% 7.61%, #fafafa 0%, #d4d4d8 100%);
+  color: #18181b;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 160%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #d4d4d8;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  isolation: isolate;
+}
+
+.show-more-btn::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 36px;
+  padding: 1px;
+  background: linear-gradient(#000, #0000);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.dark .show-more-btn {
+  background: radial-gradient(51.07% 92.4% at 51% 7.61%, #5a5a5a 0%, #1a1a1a 100%);
+  color: #fff;
+  border: 0;
+  box-shadow: none;
+}
+
+.dark .show-more-btn::before {
+  background: linear-gradient(#fff, #fff0);
+  opacity: 0.2;
+}
+
+.show-more-btn:hover {
+  transform: translateY(-1px);
+}
+
+.show-more-btn:active {
+  transform: scale(0.98);
+}
+
+.show-more-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .PhotoView-Slider__toolbarIcon svg {
   fill: none;
+}
+
+.action-btn-squircle {
+  background: radial-gradient(51.07% 92.4% at 51% 7.61%, #3f3f46 0%, #18181b 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(63, 63, 70, 0.3) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
+}
+
+.action-btn-squircle:hover {
+  background: radial-gradient(51.07% 92.4% at 51% 7.61%, #4b4b52 0%, #121214 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+    0 6px 16px rgba(0, 0, 0, 0.25) !important;
 }

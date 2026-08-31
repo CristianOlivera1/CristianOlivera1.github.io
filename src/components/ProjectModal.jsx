@@ -47,7 +47,7 @@ const ProjectModal = ({ isOpen, project, onClose, openImageModal, suspendEscape 
       onClick={handleBackdropClick}
     >
       <div className="relative max-w-7xl max-h-[95vh] overflow-y-auto bg-white squircle-element shadow-2xl dark:bg-black w-full h-screen modal-container modal-scroll border border-gray-200 dark:border-gray-800">
-        <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-2 bg-white/95 dark:bg-[#01061a]/95 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-t-2xl will-change-transform">
+        <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-2 bg-white/95 dark:bg-black backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-t-2xl will-change-transform">
           <div className="flex items-center gap-4">
             <img src={project.favicon} alt="Favicon del proyecto" className="shrink-0 size-8 sm:size-14 hidden sm:block" />
             <div>

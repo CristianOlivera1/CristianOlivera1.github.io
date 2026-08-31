@@ -13,7 +13,7 @@ const About = () => {
         <SectionHeading icon="tabler:user-check">{t.heading}</SectionHeading>
 
         <article className="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
-          <div className="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-primary text-pretty order-2 md:order-1 flex-1">
+          <div className="[&>p]:mb-4 [&>p>strong]:text-zinc-800 dark:[&>p>strong]:text-primary text-pretty order-2 md:order-1 flex-1">
             {aboutParagraphs.map((paragraph, index) => (
               <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
             ))}
