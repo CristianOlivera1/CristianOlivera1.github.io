@@ -10,8 +10,8 @@ export const PERSONAL_INFO = {
     es: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV-ES.pdf",
     en: "https://cristianolivera1.github.io/assets/cv/Cristian-Olivera-Chavez-CV-EN.pdf",
   },
-  profileImage: "./assets/foto/foto.avif",
-  aboutImage: "./assets/foto/foto.avif"
+  profileImage: "./assets/photo/avatar.avif",
+  aboutImage: "./assets/photo/avatar.avif"
 }
 
 export const PROJECTS = [
@@ -301,6 +301,23 @@ export const PROJECTS = [
       github: "https://github.com/CristianOlivera1/Costo-minimo-y-Esquina-noroeste",
       live: "https://encmcalculator.vercel.app/"
     }
+  },
+]
+
+export const ACHIEVEMENTS = [
+  {
+    year: 2026,
+    title: 'Ganador - Hackatón MiduDev 2026',
+    event: 'Midudev · Hackatón 2026',
+    place: 'Ganador',
+    link: 'https://www.linkedin.com/feed/update/urn:li:activity:7447991013987717121/',
+  },
+  {
+    year: 2023,
+    title: 'Becario Pronabec - Beca 18',
+    event: 'Pronabec · Programa Nacional de Becas',
+    place: 'Becario',
+    link: null,
   },
 ]
 

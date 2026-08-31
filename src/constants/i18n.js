@@ -3,6 +3,7 @@ export const PORTFOLIO_UI = {
     nav: {
       inicio: 'Inicio',
       proyectos: 'Proyectos',
+      logros: 'Logros',
       sobreMi: 'Sobre mí',
       blog: 'Blog',
     },
@@ -11,10 +12,17 @@ export const PORTFOLIO_UI = {
       title: 'Desarrollador de aplicaciones web',
       description: 'con experiencia práctica en tecnologías como Angular, React, Spring Boot, bases de datos relacionales y otros. Me enfoco en mejorar la experiencia del usuario y la calidad del código, además aplico buenas prácticas para crear interfaces escalables y funcionales.',
       cv: 'CV',
+      cvAria: 'Ver CV en español',
       socialNav: 'Redes y CV',
     },
     about: {
       heading: 'Sobre mí',
+    },
+    achievements: {
+      heading: 'Logros',
+      featuredBadge: 'Destacado',
+      viewCredential: 'Ver credencial',
+      validationLabel: 'Ver validación',
     },
     projects: {
       heading: 'Proyectos',
@@ -52,6 +60,7 @@ export const PORTFOLIO_UI = {
     footer: {
       inicio: 'Inicio',
       proyectos: 'Proyectos',
+      logros: 'Logros',
       sobreMi: 'Sobre mí',
       blog: 'Blog',
       tagline: 'Construyendo ideas, proyectos y experiencias digitales que suman valor.',
@@ -61,6 +70,7 @@ export const PORTFOLIO_UI = {
     nav: {
       inicio: 'Home',
       proyectos: 'Projects',
+      logros: 'Achievements',
       sobreMi: 'About me',
       blog: 'Blog',
     },
@@ -69,10 +79,17 @@ export const PORTFOLIO_UI = {
       title: 'Web application developer',
       description: 'with hands-on experience in technologies like Angular, React, Spring Boot, relational databases and others. I focus on improving user experience and code quality, applying best practices to create scalable and functional interfaces.',
       cv: 'CV',
+      cvAria: 'View CV in English',
       socialNav: 'Social links and CV',
     },
     about: {
       heading: 'About me',
+    },
+    achievements: {
+      heading: 'Achievements',
+      featuredBadge: 'Featured',
+      viewCredential: 'View credential',
+      validationLabel: 'View validation',
     },
     projects: {
       heading: 'Projects',
@@ -110,6 +127,7 @@ export const PORTFOLIO_UI = {
     footer: {
       inicio: 'Home',
       proyectos: 'Projects',
+      logros: 'Achievements',
       sobreMi: 'About me',
       blog: 'Blog',
       tagline: 'Building ideas, projects and digital experiences that add value.',
@@ -249,5 +267,18 @@ export const PROJECTS_EN = [
       'Results analysis',
       'Efficient routes',
     ],
+  },
+]
+
+export const ACHIEVEMENTS_EN = [
+  {
+    title: 'Winner - MiduDev Hackathon 2026',
+    event: 'MiduDev · Hackathon 2026',
+    place: 'Winner',
+  },
+  {
+    title: 'Pronabec Scholar - Beca 18',
+    event: 'Pronabec · National Scholarship Program',
+    place: 'Scholar',
   },
 ]

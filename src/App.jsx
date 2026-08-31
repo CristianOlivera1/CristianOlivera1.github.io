@@ -4,6 +4,7 @@ import { PERSONAL_INFO } from './constants/portfolioData'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
+import Achievements from './components/Achievements'
 import About from './components/About'
 import Footer from './components/Footer'
 import AuraBackground from './components/AuraBackground'
@@ -30,7 +31,7 @@ function PortfolioPage() {
           url: 'https://cristianolivera1.github.io/',
           jobTitle: 'Desarrollador de aplicaciones web',
           email: PERSONAL_INFO.email,
-          image: 'https://cristianolivera1.github.io/assets/foto/foto.avif',
+          image: 'https://cristianolivera1.github.io/assets/photo/avatar.avif',
           sameAs: [
             PERSONAL_INFO.linkedin,
             PERSONAL_INFO.github
@@ -57,6 +58,7 @@ function PortfolioPage() {
         <Hero />
         <div className="space-y-24 pt-12 relative">
           <Projects />
+          <Achievements />
           <About />
 
           <div className="absolute bottom-0 left-0 z-[-2] w-full h-[900px] translate-y-[-100px] bg-[radial-gradient(circle_500px_at_100%_50%,#FFEA96,transparent)] dark:bg-[radial-gradient(circle_500px_at_100%_50%,#101828,transparent)]"></div>
