@@ -427,6 +427,25 @@ button {
 }
 
 .action-btn-squircle {
+  background: radial-gradient(51.07% 92.4% at 51% 7.61%, #fafafa 0%, #d4d4d8 100%) !important;
+  color: #18181b !important;
+  border: 1px solid #d4d4d8 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
+}
+
+.action-btn-squircle:hover {
+  background: radial-gradient(51.07% 92.4% at 51% 7.61%, #ffffff 0%, #c9c9d1 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+.dark .action-btn-squircle {
   background: radial-gradient(51.07% 92.4% at 51% 7.61%, #3f3f46 0%, #18181b 100%) !important;
   color: #ffffff !important;
   border: 1px solid rgba(63, 63, 70, 0.3) !important;
@@ -434,10 +453,9 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     inset 0 -1px 0 rgba(0, 0, 0, 0.2),
     0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
 }
 
-.action-btn-squircle:hover {
+.dark .action-btn-squircle:hover {
   background: radial-gradient(51.07% 92.4% at 51% 7.61%, #4b4b52 0%, #121214 100%) !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
