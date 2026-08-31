@@ -14,7 +14,7 @@ const VARIANTS = {
     'active:scale-[0.98]',
   squircle:
     BASE_CLASSES +
-    ' action-btn-squircle gap-1 sm:gap-2 px-4 py-2 text-md ' +
+    ' action-btn-squircle gap-1 sm:gap-2 px-2 sm:px-4 py-2 text-md ' +
     'squircle-element-xl active:scale-[0.98]'
 }
 
