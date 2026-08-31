@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react'
 
 const STYLES = {
   info: 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800 text-blue-900 dark:text-blue-100',
-  warning: 'bg-yellow-50 dark:bg-yellow-950/30 border-yellow-300 dark:border-yellow-700 text-yellow-900 dark:text-yellow-100',
+  warning: 'bg-zinc-50 dark:bg-zinc-900/30 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100',
   danger: 'bg-red-50 dark:bg-red-950/30 border-red-200 dark:border-red-800 text-red-900 dark:text-red-100',
   success: 'bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800 text-green-900 dark:text-green-100',
 }

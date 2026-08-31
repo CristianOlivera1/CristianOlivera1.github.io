@@ -35,11 +35,12 @@ const BlogIndex = () => {
       </Helmet>
 
       <BlogLayout>
-      <section className="border-b border-gray-100 dark:border-gray-800">
+      <section className="relative">
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent dark:via-zinc-700 pointer-events-none" aria-hidden="true" />
         <div className="max-w-4xl mx-auto px-4 py-16 sm:py-20">
           <div className="flex items-center gap-2 mb-5">
-            <span className="w-1.5 h-5 rounded-full bg-yellow-400 inline-block" />
-            <span className="text-xs font-semibold text-yellow-600 dark:text-yellow-400 uppercase tracking-widest">
+            <span className="w-1.5 h-5 rounded-full bg-zinc-400 inline-block" />
+            <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-widest">
               CrisBlog
             </span>
           </div>

@@ -16,7 +16,7 @@ const ReadingProgress = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-yellow-400 to-yellow-300 z-[200] transition-none will-change-[width]"
+      className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-zinc-400 to-zinc-300 z-[200] transition-none will-change-[width]"
       style={{ width: `${progress}%` }}
       role="progressbar"
       aria-valuenow={Math.round(progress)}

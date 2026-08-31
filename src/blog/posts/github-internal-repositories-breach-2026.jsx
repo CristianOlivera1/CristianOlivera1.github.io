@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
 
 const SectionHeading = ({ icon, children }) => (
   <h2 className="mt-12 mb-4 flex items-center gap-2 text-2xl font-black text-gray-900 dark:text-white tracking-tight">
-    <Icon icon={icon} className="w-6 h-6 text-yellow-500 flex-shrink-0" />
+    <Icon icon={icon} className="w-6 h-6 text-zinc-500 flex-shrink-0" />
     <span>{children}</span>
   </h2>
 )
@@ -11,7 +11,7 @@ const SectionHeading = ({ icon, children }) => (
 const Callout = ({ icon, children, type = 'info' }) => {
   const styles = {
     info: 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800 text-blue-900 dark:text-blue-100',
-    warning: 'bg-yellow-50 dark:bg-yellow-950/30 border-yellow-300 dark:border-yellow-700 text-yellow-900 dark:text-yellow-100',
+    warning: 'bg-zinc-50 dark:bg-zinc-900/30 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100',
     danger: 'bg-red-50 dark:bg-red-950/30 border-red-200 dark:border-red-800 text-red-900 dark:text-red-100',
     success: 'bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800 text-green-900 dark:text-green-100',
   }
@@ -28,8 +28,8 @@ const Callout = ({ icon, children, type = 'info' }) => {
 
 const FactCard = ({ icon, title, text }) => (
   <div className="squircle-element border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5 shadow-sm hover:shadow-md transition-shadow">
-    <div className="w-11 h-11 squircle-element-xl bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mb-4">
-      <Icon icon={icon} className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
+    <div className="w-11 h-11 squircle-element-xl bg-zinc-100 dark:bg-zinc-900/20 flex items-center justify-center mb-4">
+      <Icon icon={icon} className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
     </div>
     <h4 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h4>
     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{text}</p>
@@ -57,7 +57,7 @@ const RiskItem = ({ icon, title, text, tone = 'warning' }) => {
 
 const ActionStep = ({ number, title, text }) => (
   <li className="flex gap-4">
-    <div className="w-8 h-8 rounded-full bg-yellow-400 text-gray-900 font-black flex items-center justify-center flex-shrink-0">
+    <div className="w-8 h-8 rounded-full bg-zinc-400 text-gray-900 font-black flex items-center justify-center flex-shrink-0">
       {number}
     </div>
     <div>

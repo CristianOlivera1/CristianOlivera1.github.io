@@ -41,7 +41,7 @@ const PostPage = () => {
                     <p className="text-gray-500 dark:text-gray-400 mb-6">{t.postNotFoundDesc}</p>
                     <Link
                         to="/blog"
-                        className="inline-block px-5 py-2.5 squircle-element-xl bg-yellow-400 text-gray-900 font-semibold text-sm hover:bg-yellow-300 transition-colors"
+                        className="inline-block px-5 py-2.5 squircle-element-xl bg-zinc-900 text-white font-semibold text-sm hover:bg-zinc-800 transition-colors"
                     >
                         {t.backToBlog}
                     </Link>
@@ -155,13 +155,13 @@ const PostPage = () => {
 
                 <article className="max-w-4xl mx-auto px-4 py-10">
                     <div className="flex items-center justify-between mb-8">
-                        <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-yellow-500 transition-colors">
+                        <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-zinc-500 transition-colors">
                             <Icon icon="lucide:arrow-left" width={16} />
                             {t.backToBlog}
                         </Link>
                         <button
                             onClick={toggleLang}
-                            className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-yellow-400/50 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all"
+                            className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-zinc-400/50 hover:text-zinc-600 dark:hover:text-zinc-400 transition-all"
                         >
                             <Icon icon={lang === 'en' ? 'circle-flags:us' : 'circle-flags:es'} width={18} height={18} />
                             <span>{lang === 'en' ? 'EN' : 'ES'}</span>
@@ -172,8 +172,9 @@ const PostPage = () => {
                         {title}
                     </h1>
 
-                    <div className="flex items-center gap-3 pb-8 border-b border-gray-100 dark:border-gray-800 mb-8">
-                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-sm font-black text-gray-900 flex-shrink-0">
+                    <div className="relative flex items-center gap-3 pb-8 mb-8">
+                      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent dark:via-zinc-700 pointer-events-none" aria-hidden="true" />
+                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-zinc-400 to-zinc-500 flex items-center justify-center text-sm font-black text-gray-900 flex-shrink-0">
                             CO
                         </div>
                         <div>
@@ -188,7 +189,8 @@ const PostPage = () => {
                         <Content />
                     </div>
 
-                    <div className="mt-14 pt-8 border-t border-gray-100 dark:border-gray-800">
+                    <div className="relative mt-14 pt-8">
+                      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent dark:via-zinc-700 pointer-events-none" aria-hidden="true" />
                         <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">{t.share}</p>
                         <div className="flex flex-wrap gap-2">
                             <ShareButton

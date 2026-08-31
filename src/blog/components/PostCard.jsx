@@ -15,7 +15,7 @@ const PostCard = ({ post, featured = false }) => {
     return (
         <Link
             to={`/post/${meta.slug}`}
-            className={`group block squircle-element overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-yellow-400/50 hover:shadow-xl hover:shadow-yellow-400/5 transition-all duration-300 ${featured ? 'sm:flex' : ''}`}
+            className={`group block squircle-element overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-zinc-400/50 hover:shadow-xl hover:shadow-zinc-400/5 transition-all duration-300 ${featured ? 'sm:flex' : ''}`}
         >
             <div className={`relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 ${featured ? 'sm:w-100 sm:flex-shrink-0' : 'aspect-[16/9]'}`}>
                 <img
@@ -42,7 +42,7 @@ const PostCard = ({ post, featured = false }) => {
                     <span>{t.minRead(meta.readingTime[lang] ?? meta.readingTime.en)}</span>
                 </div>
 
-                <h3 className={`font-bold text-gray-900 dark:text-white leading-snug group-hover:text-yellow-500 transition-colors line-clamp-2 ${featured ? 'text-xl' : 'text-base'}`}>
+                <h3 className={`font-bold text-gray-900 dark:text-white leading-snug group-hover:text-zinc-500 transition-colors line-clamp-2 ${featured ? 'text-xl' : 'text-base'}`}>
                     {title}
                 </h3>
 
@@ -52,12 +52,12 @@ const PostCard = ({ post, featured = false }) => {
 
                 <div className="flex items-center justify-between mt-auto pt-2">
                     <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-xs font-bold text-gray-900">
+                        <div className="w-6 h-6 rounded-full bg-zinc-400 flex items-center justify-center text-xs font-bold text-gray-900">
                             CO
                         </div>
                         <span className="text-xs text-gray-500 dark:text-gray-400">{meta.author}</span>
                     </div>
-                    <div className="flex items-center gap-1 mt-2 text-yellow-500 group/link">
+                    <div className="flex items-center gap-1 mt-2 text-zinc-500 group/link">
                         <span className="text-xs font-medium transform group-hover:translate-x-0.5 transition-transform duration-200">
                             {t.readMore}
                         </span>

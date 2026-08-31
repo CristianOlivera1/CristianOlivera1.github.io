@@ -4,7 +4,7 @@ import { useInView, useCountUp } from '../hooks/useCountUp'
 
 const SectionHeading = ({ icon, children }) => (
   <h2 className="mt-12 mb-4 flex items-center gap-2 text-2xl font-black text-gray-900 dark:text-white tracking-tight">
-    <Icon icon={icon} className="w-6 h-6 text-yellow-500 flex-shrink-0" />
+    <Icon icon={icon} className="w-6 h-6 text-zinc-500 flex-shrink-0" />
     <span>{children}</span>
   </h2>
 )
@@ -12,7 +12,7 @@ const SectionHeading = ({ icon, children }) => (
 const Callout = ({ icon, children, type = 'info' }) => {
   const styles = {
     info: 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800 text-blue-900 dark:text-blue-100',
-    warning: 'bg-yellow-50 dark:bg-yellow-950/30 border-yellow-300 dark:border-yellow-700 text-yellow-900 dark:text-yellow-100',
+    warning: 'bg-zinc-50 dark:bg-zinc-900/30 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100',
     danger: 'bg-red-50 dark:bg-red-950/30 border-red-200 dark:border-red-800 text-red-900 dark:text-red-100',
     success: 'bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800 text-green-900 dark:text-green-100',
   }
@@ -85,7 +85,7 @@ const AnimatedBillingStats = ({ lang }) => {
         <p className="text-xs uppercase tracking-widest text-gray-400 mb-2">
           {lang === 'en' ? 'Monthly Overage' : 'Sobrecosto mensual'}
         </p>
-        <p className="text-3xl font-black text-yellow-400 tabular-nums">
+        <p className="text-3xl font-black text-zinc-400 tabular-nums">
           +${diff.toFixed(2)}
         </p>
         <p className="text-xs text-gray-400 mt-1">
@@ -153,14 +153,14 @@ const AlternativeCard = ({ name, icon, tagline, pros, cons, url }) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="not-prose block squircle-element border border-gray-200/80 dark:border-gray-700/50 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-900/50 p-6 hover:border-yellow-400/60 hover:shadow-xl hover:shadow-yellow-500/10 dark:hover:shadow-yellow-500/5 hover:-translate-y-1 transition-all duration-300 group"
+    className="not-prose block squircle-element border border-gray-200/80 dark:border-gray-700/50 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-900/50 p-6 hover:border-zinc-400/60 hover:shadow-xl hover:shadow-zinc-500/10 dark:hover:shadow-zinc-500/5 hover:-translate-y-1 transition-all duration-300 group"
   >
     <div className="flex items-start gap-4 mb-4">
-      <div className="flex-shrink-0 w-12 h-12 squircle-element-xl bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 dark:from-yellow-500/10 dark:to-yellow-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-        <Icon icon={icon} className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
+      <div className="flex-shrink-0 w-12 h-12 squircle-element-xl bg-gradient-to-br from-zinc-400/20 to-zinc-500/20 dark:from-zinc-500/10 dark:to-zinc-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <Icon icon={icon} className="w-6 h-6 text-zinc-600 dark:text-zinc-400" />
       </div>
       <div className="flex-1 min-w-0">
-        <h4 className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors mb-1">
+        <h4 className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors mb-1">
           {name}
         </h4>
         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{tagline}</p>
@@ -300,7 +300,7 @@ export const ContentEN = () => (
             </td>
             <td className="px-4 py-3 text-gray-500 dark:text-gray-400 text-xs">Completions + daily base-model chat + occasional agent task</td>
             <td className="px-4 py-3 font-mono text-gray-700 dark:text-gray-300">$10/mo</td>
-            <td className="px-4 py-3 font-mono font-bold text-yellow-600 dark:text-yellow-400">≈$18–40/mo</td>
+            <td className="px-4 py-3 font-mono font-bold text-zinc-600 dark:text-zinc-400">≈$18–40/mo</td>
           </tr>
           <tr className="border-t border-gray-100 dark:border-gray-800">
             <td className="px-4 py-3">
@@ -346,9 +346,9 @@ export const ContentEN = () => (
           desc: 'Monorepos and enterprise apps mean more tokens per agent prompt. The bigger the context, the higher the credit consumption per task.',
         },
       ].map(({ icon, title, desc }) => (
-        <div key={title} className="squircle-element-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-yellow-400/40 transition-colors">
-          <div className="w-10 h-10 rounded-lg bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mb-3">
-            <Icon icon={icon} className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
+        <div key={title} className="squircle-element-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-zinc-400/40 transition-colors">
+          <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-900/20 flex items-center justify-center mb-3">
+            <Icon icon={icon} className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
           </div>
           <h4 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h4>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{desc}</p>
@@ -554,7 +554,7 @@ export const ContentES = () => (
             </td>
             <td className="px-4 py-3 text-gray-500 dark:text-gray-400 text-xs">Completaciones + chat diario con modelo base + alguna tarea de agente</td>
             <td className="px-4 py-3 font-mono text-gray-700 dark:text-gray-300">$10/mes</td>
-            <td className="px-4 py-3 font-mono font-bold text-yellow-600 dark:text-yellow-400">≈$18–40/mes</td>
+            <td className="px-4 py-3 font-mono font-bold text-zinc-600 dark:text-zinc-400">≈$18–40/mes</td>
           </tr>
           <tr className="border-t border-gray-100 dark:border-gray-800">
             <td className="px-4 py-3">
@@ -598,9 +598,9 @@ export const ContentES = () => (
           desc: 'Monorepos y apps empresariales implican más tokens por prompt de agente. A mayor contexto, mayor consumo de créditos por tarea.',
         },
       ].map(({ icon, title, desc }) => (
-        <div key={title} className="squircle-element-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-yellow-400/40 transition-colors">
-          <div className="w-10 h-10 rounded-lg bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mb-3">
-            <Icon icon={icon} className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
+        <div key={title} className="squircle-element-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 p-5 hover:border-zinc-400/40 transition-colors">
+          <div className="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-900/20 flex items-center justify-center mb-3">
+            <Icon icon={icon} className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
           </div>
           <h4 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h4>
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{desc}</p>

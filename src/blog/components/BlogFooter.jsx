@@ -10,13 +10,14 @@ const BlogFooter = ({ currentSlug = null }) => {
   const recentPosts = getRecentPosts(3, currentSlug)
 
   return (
-    <footer className="border-t border-gray-100 dark:border-gray-800 mt-16">
+    <footer className="relative mt-16">
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent dark:via-zinc-700 pointer-events-none" aria-hidden="true" />
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="grid sm:grid-cols-3 gap-10">
 
           <div className="space-y-4">
             <Link to="/blog" className="inline-flex items-center gap-0.5">
-              <span className="font-black text-2xl text-yellow-400">Cris</span>
+              <span className="font-black text-2xl text-zinc-400">Cris</span>
               <span className="font-black text-2xl text-gray-900 dark:text-white">Blog</span>
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -70,7 +71,7 @@ const BlogFooter = ({ currentSlug = null }) => {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-yellow-500 transition-colors line-clamp-2 leading-snug">
+                        <p className="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-zinc-500 transition-colors line-clamp-2 leading-snug">
                           {title}
                         </p>
                         <p className="text-xs text-gray-400 mt-0.5">
@@ -85,9 +86,10 @@ const BlogFooter = ({ currentSlug = null }) => {
           )}
         </div>
 
-        <div className="mt-10 pt-6 border-t border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400 dark:text-gray-500">
+        <div className="relative mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 text-xs text-gray-400 dark:text-gray-500">
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent dark:via-zinc-700 pointer-events-none" aria-hidden="true" />
           <p>© {new Date().getFullYear()} Cristian Olivera · CrisBlog</p>
-          <Link to="/" className="hover:text-yellow-500 transition-colors">
+          <Link to="/" className="hover:text-zinc-500 transition-colors">
             {t.backToPortfolio}
           </Link>
         </div>

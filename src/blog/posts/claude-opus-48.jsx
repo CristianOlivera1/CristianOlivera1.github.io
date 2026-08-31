@@ -14,7 +14,7 @@ const Callout = ({ icon, children, type = 'info' }) => {
     const styles = {
         info: 'bg-blue-50 border-blue-200 text-blue-900 dark:bg-blue-950/30 dark:border-blue-800 dark:text-blue-100',
         warning:
-            'bg-yellow-50 border-yellow-300 text-yellow-900 dark:bg-yellow-950/30 dark:border-yellow-700 dark:text-yellow-100',
+            'bg-zinc-50 border-zinc-300 text-zinc-900 dark:bg-zinc-900/30 dark:border-zinc-700 dark:text-zinc-100',
         danger: 'bg-red-50 border-red-200 text-red-900 dark:bg-red-950/30 dark:border-red-800 dark:text-red-100',
     }
 
@@ -316,7 +316,7 @@ export const ContentEN = () => (
                 label="top_p / top_k"
                 value="Locked"
                 icon="lucide:lock"
-                accent="bg-yellow-100 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400"
+                accent="bg-zinc-100 dark:bg-zinc-900/20 text-zinc-600 dark:text-zinc-400"
             />
 
             <StatCard
@@ -560,7 +560,7 @@ export const ContentES = () => (
                 label="top_p / top_k"
                 value="Bloqueado"
                 icon="lucide:lock"
-                accent="bg-yellow-100 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400"
+                accent="bg-zinc-100 dark:bg-zinc-900/20 text-zinc-600 dark:text-zinc-400"
             />
 
             <StatCard
