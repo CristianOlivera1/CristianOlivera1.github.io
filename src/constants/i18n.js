@@ -1,5 +1,10 @@
 export const PORTFOLIO_UI = {
   es: {
+    seo: {
+      title: 'Cristian Olivera - Desarrollador de apps web | Angular & React',
+      description:
+        'Portafolio de Cristian Olivera - Desarrollador de apps web especializado en Angular, React y tecnologías modernas. Descubre proyectos y experiencia.',
+    },
     nav: {
       inicio: 'Inicio',
       proyectos: 'Proyectos',
@@ -67,6 +72,11 @@ export const PORTFOLIO_UI = {
     },
   },
   en: {
+    seo: {
+      title: 'Cristian Olivera - Web App Developer | Angular & React',
+      description:
+        'Portfolio of Cristian Olivera - Web App Developer specialized in Angular, React and modern web technologies. Explore projects and experience.',
+    },
     nav: {
       inicio: 'Home',
       proyectos: 'Projects',

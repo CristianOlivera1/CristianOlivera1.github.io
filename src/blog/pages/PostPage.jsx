@@ -20,7 +20,7 @@ const ShareButton = ({ children, onClick, className = '' }) => (
 
 const PostPage = () => {
     const { slug } = useParams()
-    const { lang, toggleLang } = useBlog()
+    const { lang } = useBlog()
     const t = UI[lang]
     const [copied, setCopied] = useState(false)
 
@@ -54,9 +54,9 @@ const PostPage = () => {
     const Content = safeLang === 'es' ? ContentES : ContentEN
     const readingTime = (meta.readingTime[safeLang]) || meta.readingTime.en
     const absoluteOgImage = (meta.ogImage && meta.ogImage.startsWith('http')) ? meta.ogImage : `${BASE_URL}${meta.ogImage}`
-    const postUrl = `${BASE_URL}/post/${meta.slug}`
+    const postUrl = `${BASE_URL}/post/${meta.slug}${safeLang === 'en' ? '' : `?lang=${safeLang}`}`
 
-    const blogUrl = `${BASE_URL}/blog/`
+    const blogUrl = `${BASE_URL}/blog/${safeLang === 'en' ? '' : '?lang=es'}`
 
     const jsonLdArticle = {
       '@context': 'https://schema.org',
@@ -66,6 +66,7 @@ const PostPage = () => {
       image: absoluteOgImage,
       datePublished: meta.date,
       dateModified: meta.date,
+      inLanguage: safeLang,
       author: {
         '@type': 'Person',
         name: meta.author,
@@ -112,6 +113,7 @@ const PostPage = () => {
     return (
         <>
             <Helmet>
+                <html lang={safeLang} />
                 <title>{title} | CrisBlog</title>
                 <meta name="description" content={description} />
                 <link rel="canonical" href={postUrl} />
@@ -159,13 +161,6 @@ const PostPage = () => {
                             <Icon icon="lucide:arrow-left" width={16} />
                             {t.backToBlog}
                         </Link>
-                        <button
-                            onClick={toggleLang}
-                            className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-zinc-400/50 hover:text-zinc-600 dark:hover:text-zinc-400 transition-all"
-                        >
-                            <Icon icon={lang === 'en' ? 'circle-flags:us' : 'circle-flags:es'} width={18} height={18} />
-                            <span>{lang === 'en' ? 'EN' : 'ES'}</span>
-                        </button>
                     </div>
 
                     <h1 className="text-2xl sm:text-4xl font-black text-gray-900 dark:text-white leading-tight tracking-tight mb-6">

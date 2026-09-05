@@ -28,7 +28,6 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
     { id: 'blog', label: t.blog, component: AnimatedBlogIcon, ref: blogIconRef, url: '/blog' }
   ]
 
-  // Oculta en < sm para ahorrar espacio en móvil sin tocar layout desktop
   const HIDDEN_BELOW_SM = new Set(['inicio', 'blog'])
   const getNavItemClasses = (itemId) => {
     const displayClasses = HIDDEN_BELOW_SM.has(itemId) ? 'hidden sm:flex' : 'flex'

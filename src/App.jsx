@@ -10,6 +10,8 @@ import Footer from './components/Footer'
 import AuraBackground from './components/AuraBackground'
 import { useActiveSection } from './hooks/useActiveSection'
 import { useTheme } from './hooks/useTheme'
+import { useLanguage } from './context/LanguageContext'
+import { PORTFOLIO_UI } from './constants/i18n'
 import { BlogProvider } from './blog/context/BlogContext'
 import BlogIndex from './blog/pages/BlogIndex'
 import PostPage from './blog/pages/PostPage'
@@ -18,18 +20,31 @@ import { LanguageProvider } from './context/LanguageProvider'
 
 function PortfolioPage() {
   const { darkMode, toggleDarkMode } = useTheme()
+  const { lang } = useLanguage()
+  const seo = PORTFOLIO_UI[lang]?.seo ?? PORTFOLIO_UI.es.seo
+  const canonical = `https://cristianolivera1.github.io/${lang === 'en' ? '?lang=en' : ''}`
 
   const activeSection = useActiveSection()
 
   return (
     <>
       <Helmet>
+        <html lang={lang} />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_ES'} />
+        <meta property="og:url" content={canonical} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Person',
           name: PERSONAL_INFO.name,
           url: 'https://cristianolivera1.github.io/',
-          jobTitle: 'Desarrollador de aplicaciones web',
+          jobTitle: lang === 'en' ? 'Web App Developer' : 'Desarrollador de aplicaciones web',
           email: PERSONAL_INFO.email,
           image: 'https://cristianolivera1.github.io/assets/photo/avatar.avif',
           sameAs: [
@@ -40,9 +55,10 @@ function PortfolioPage() {
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'Cristian Olivera - Portafolio',
+          name: lang === 'en' ? 'Cristian Olivera - Portfolio' : 'Cristian Olivera - Portafolio',
           url: 'https://cristianolivera1.github.io/',
-          description: 'Portafolio de Cristian Olivera - Desarrollador de aplicaciones web especializado en React, Angular, Next.js y Spring Boot.',
+          description: seo.description,
+          inLanguage: lang,
           author: { '@type': 'Person', name: PERSONAL_INFO.name },
         })}</script>
       </Helmet>

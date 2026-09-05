@@ -18,16 +18,20 @@ const BlogIndex = () => {
     return { featured: featuredPost, rest: restPosts }
   }, [posts])
 
+  const canonical = `${BASE_URL}/blog/${lang === 'en' ? '' : '?lang=es'}`
+
   return (
     <>
       <Helmet>
+        <html lang={lang} />
         <title>{t.heroTitle} | CrisBlog</title>
         <meta name="description" content={t.heroSubtitle} />
-        <link rel="canonical" href={`${BASE_URL}/blog/`} />
+        <link rel="canonical" href={canonical} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${BASE_URL}/blog/`} />
+        <meta property="og:url" content={canonical} />
         <meta property="og:title" content={`${t.heroTitle} | CrisBlog`} />
         <meta property="og:description" content={t.heroSubtitle} />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_ES'} />
         <meta property="og:site_name" content="CrisBlog" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${t.heroTitle} | CrisBlog`} />
