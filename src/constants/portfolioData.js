@@ -314,7 +314,7 @@ export const ACHIEVEMENTS = [
   },
   {
     year: 2023,
-    title: 'Becario Pronabec - Beca 18',
+    title: 'Becario Pronabec - Beca Permanencia',
     event: 'Pronabec · Programa Nacional de Becas',
     place: 'Becario',
     link: null,

@@ -287,7 +287,7 @@ export const ACHIEVEMENTS_EN = [
     place: 'Winner',
   },
   {
-    title: 'Pronabec Scholar - Beca 18',
+    title: 'Pronabec Scholar - Beca Permanence',
     event: 'Pronabec · National Scholarship Program',
     place: 'Scholar',
   },
