@@ -59,7 +59,7 @@ const Header = ({ darkMode, toggleDarkMode, activeSection }) => {
 
   return (
     <header className="fixed top-0 z-20 flex items-center justify-center w-full mx-auto mt-2">
-      <nav className="relative overflow-hidden flex px-4 py-2 text-sm font-medium squircle-element text-zinc-700 dark:text-zinc-200 justify-center items-center bg-white dark:bg-zinc-900/90 backdrop-blur-xl border border-zinc-200 dark:border-zinc-700 shadow-[0_4px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.04)]">
+      <nav className="relative overflow-hidden flex px-0 sm:px-4 py-1 sm:py-2 text-sm font-medium squircle-element text-zinc-700 dark:text-zinc-200 justify-center items-center bg-white dark:bg-zinc-900/90 backdrop-blur-xl border border-zinc-200 dark:border-zinc-700 shadow-[0_4px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.04)]">
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-zinc-900/20 via-40% to-transparent dark:via-white/25" />
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[radial-gradient(75%_120%_at_50%_0%,rgba(0,0,0,0.07)_0%,transparent_65%)] dark:bg-[radial-gradient(75%_120%_at_50%_0%,rgba(255,255,255,0.10)_0%,transparent_65%)]" />
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] opacity-60" />
