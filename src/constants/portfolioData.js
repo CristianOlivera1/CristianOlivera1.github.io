@@ -335,9 +335,17 @@ export const PROJECTS = [
 export const ACHIEVEMENTS = [
   {
     year: 2026,
+    title: 'Miembro Activo - Crafter Station',
+    event: 'Crafter Station · Comunidad Tech',
+    place: 'Miembro',
+    link: null,
+  },
+  {
+    year: 2026,
     title: 'Ganador - Hackatón MiduDev 2026',
     event: 'Midudev · Hackatón 2026',
     place: 'Ganador',
+    featured: true,
     link: 'https://www.linkedin.com/feed/update/urn:li:activity:7447991013987717121/',
   },
   {
@@ -345,7 +353,7 @@ export const ACHIEVEMENTS = [
     title: 'Becario Pronabec - Beca Permanencia',
     event: 'Pronabec · Programa Nacional de Becas',
     place: 'Becario',
-    link: null,
+    link: 'https://cdn.www.gob.pe/uploads/document/file/5364600/4803769-anexo-01-relacion-de-postulantes-seleccionados.pdf?v=1698963346',
   },
 ]
 

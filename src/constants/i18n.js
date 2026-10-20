@@ -295,6 +295,11 @@ export const PROJECTS_EN = [
 
 export const ACHIEVEMENTS_EN = [
   {
+    title: 'Active Member - Crafter Station',
+    event: 'Crafter Station · Tech Community',
+    place: 'Member',
+  },
+  {
     title: 'Winner - MiduDev Hackathon 2026',
     event: 'MiduDev · Hackathon 2026',
     place: 'Winner',

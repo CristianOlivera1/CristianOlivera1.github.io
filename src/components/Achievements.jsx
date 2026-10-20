@@ -48,7 +48,7 @@ const Achievements = () => {
 
             <div className="relative">
               {sorted.map((item, idx) => {
-                const isFeatured = idx === 0
+                const isFeatured = item.featured === true
                 const isLast = idx === sorted.length - 1
                 return (
                   <div
