@@ -153,7 +153,20 @@ export const ABOUT_TEXT_EN = [
 
 export const PROJECTS_EN = [
   {
-    title: 'openvid - Video Editor',
+    title: 'Mdverse',
+    description: 'A collaborative Markdown editor with live preview, built for writing and organizing documents as a team. Includes version history, real-time cursors, comments, share links, and export to Markdown, HTML, PDF, and Word.',
+    features: [
+      'Markdown editor with live preview',
+      'Autosave and document version history',
+      'Real-time collaboration with roles and cursors',
+      'Comments with mentions and replies',
+      'Invitations, share links, and access requests',
+      'Export to Markdown, HTML, PDF, and Word',
+      'Private documents protected with Supabase RLS',
+    ],
+  },
+  {
+    title: 'Openvid - Video Editor',
     description: 'Create professional demos in seconds directly in your browser. Record your screen or upload a video, add smooth zooms, device mockups and custom backgrounds, and export a cinematic demo ready to share.',
     features: [
       'Screen recording in the browser',
@@ -170,7 +183,7 @@ export const PROJECTS_EN = [
     ],
   },
   {
-    title: 'openhero - Hero Section Gallery',
+    title: 'Openhero - Hero Section Gallery',
     description: 'An open and free collection of cinematic video hero sections for the modern web. Explore, preview fullscreen, download backgrounds and copy production-ready code for HTML or Next.js.',
     features: [
       'Gallery with 60+ cinematic backgrounds organized by category',

@@ -16,7 +16,35 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS = [
   {
-    title: "openvid - Editor de video",
+    title: "Mdverse",
+    description: "Editor colaborativo de Markdown con vista previa en vivo, diseñado para escribir y organizar documentos en equipo. Incluye historial de versiones, cursores en tiempo real, comentarios, enlaces compartidos y exportación a Markdown, HTML, PDF y Word.",
+    image: "./assets/projects/mdverse/mdverse.avif",
+    image2: "./assets/projects/mdverse/mdverse2.mp4",
+    image3: "./assets/projects/mdverse/mdverse3.avif",
+    favicon: "./assets/projects/mdverse/favicon.svg",
+    features: [
+      { icon: "tabler:markdown", text: "Editor Markdown con vista previa en vivo" },
+      { icon: "tabler:history", text: "Autoguardado e historial de versiones" },
+      { icon: "tabler:users", text: "Colaboración en tiempo real con roles y cursores" },
+      { icon: "tabler:message-circle", text: "Comentarios con menciones y respuestas" },
+      { icon: "tabler:share", text: "Invitaciones, enlaces compartidos y solicitudes de acceso" },
+      { icon: "tabler:file-export", text: "Exportación a Markdown, HTML, PDF y Word" },
+      { icon: "tabler:lock", text: "Documentos privados protegidos con Supabase RLS" }
+    ],
+    technologies: [
+      { name: "Astro", icon: "logos:astro-icon" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+      { name: "Cloudflare", icon: "logos:cloudflare-icon" }
+    ],
+    links: {
+      github: "https://github.com/CristianOlivera1/Mdverse",
+      live: "https://mdverse.dev/"
+    }
+  },
+  {
+    title: "Openvid - Editor de video",
     description: "Crea demos profesionales en segundos directamente en tu navegador. Graba tu pantalla o sube un video, añade zooms suaves, mockups de dispositivo y fondos personalizados, y exporta un demo cinematográfico listo para compartir.",
     image: "./assets/projects/openvid/openvid.avif",
     image2: "./assets/projects/openvid/openvid.mp4",
@@ -49,7 +77,7 @@ export const PROJECTS = [
     }
   },
   {
-    title: "openhero - Galería de Secciones Hero",
+    title: "Openhero - Galería de Secciones Hero",
     description: "Una colección abierta y gratuita de secciones hero con video cinematográfico para la web moderna. Explora, previsualiza a pantalla completa, descarga los fondos y copia código de producción listo para usar en HTML o Next.js.",
     image: "./assets/projects/openhero/openhero.mp4",
     poster: "./assets/projects/openhero/poster.avif",
