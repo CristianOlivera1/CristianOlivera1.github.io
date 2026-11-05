@@ -338,7 +338,7 @@ export const ACHIEVEMENTS = [
     title: 'Miembro Activo - Crafter Station',
     event: 'Crafter Station · Comunidad Tech',
     place: 'Miembro',
-    link: null,
+    link: 'https://crafter.run/en/team/cristianolivera1',
   },
   {
     year: 2026,
