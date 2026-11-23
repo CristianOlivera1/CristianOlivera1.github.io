@@ -29,7 +29,7 @@ const Projects = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const initialProjectsCount = 4
-  const incrementCount = 3
+  const incrementCount = 4
   const translatedProjects = useMemo(
     () => PROJECTS.map((p, i) => getTranslatedProject(p, i, lang)),
     [lang]
