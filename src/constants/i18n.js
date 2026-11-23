@@ -153,6 +153,19 @@ export const ABOUT_TEXT_EN = [
 
 export const PROJECTS_EN = [
   {
+    title: 'Muelle - Windows Dock',
+    description: 'A lightweight dock for Windows 10 and 11 that replaces the taskbar with a customizable, macOS-inspired interface. Includes live window previews, a minimize animation, and an optional menu bar.',
+    features: [
+      'Glass-style dock with cursor-based icon magnification',
+      'Launch, pin, reorder, and group apps',
+      'Live window previews and Genie minimize effect',
+      'Drag and drop files onto apps, Downloads, or the Recycle Bin',
+      'Optional top menu bar with system information',
+      'Live settings in Spanish, English, and French',
+      'AI provider usage limits in the menu bar',
+    ],
+  },
+  {
     title: 'Mdverse',
     description: 'A collaborative Markdown editor with live preview, built for writing and organizing documents as a team. Includes version history, real-time cursors, comments, share links, and export to Markdown, HTML, PDF, and Word.',
     features: [
@@ -289,19 +302,6 @@ export const PROJECTS_EN = [
       'Distribution management',
       'Results analysis',
       'Efficient routes',
-    ],
-  },
-  {
-    title: 'Muelle - Windows Dock',
-    description: 'A lightweight dock for Windows 10 and 11 that replaces the taskbar with a customizable, macOS-inspired interface. Includes live window previews, a minimize animation, and an optional menu bar.',
-    features: [
-      'Glass-style dock with cursor-based icon magnification',
-      'Launch, pin, reorder, and group apps',
-      'Live window previews and Genie minimize effect',
-      'Drag and drop files onto apps, Downloads, or the Recycle Bin',
-      'Optional top menu bar with system information',
-      'Live settings in Spanish, English, and French',
-      'AI provider usage limits in the menu bar',
     ],
   },
 ]

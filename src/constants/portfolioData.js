@@ -16,6 +16,35 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS = [
   {
+    title: "Muelle",
+    description: "Dock ligero para Windows 10 y 11 que reemplaza la barra de tareas con una interfaz personalizable inspirada en macOS. Incluye vistas previas en vivo de ventanas, animación al minimizar y una barra superior opcional.",
+    image: "./assets/projects/muelle/muelle.mp4",
+    poster: "./assets/projects/muelle/muelle2.avif",
+    image2: "./assets/projects/muelle/muelle2.avif",
+    image3: "./assets/projects/muelle/muelle3.avif",
+    favicon: "./assets/projects/muelle/favicon.png",
+    features: [
+      { icon: "tabler:layout-dashboard", text: "Dock de cristal con ampliación de iconos según el cursor" },
+      { icon: "tabler:apps", text: "Abrir, fijar, reordenar y agrupar aplicaciones" },
+      { icon: "tabler:window", text: "Vistas previas en vivo y efecto genio al minimizar ventanas" },
+      { icon: "tabler:drag-drop", text: "Arrastrar archivos a aplicaciones, Descargas o la Papelera" },
+      { icon: "tabler:device-desktop", text: "Barra superior opcional con información del sistema" },
+      { icon: "tabler:settings", text: "Ajustes en vivo disponibles en español, inglés y francés" },
+      { icon: "tabler:chart-donut", text: "Límites de uso de proveedores de IA en la barra superior" },
+    ],
+    technologies: [
+      { name: "Rust", icon: "logos:rust" },
+      { name: "Tauri", icon: "logos:tauri" },
+      { name: "React", icon: "logos:react" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Vite", icon: "logos:vitejs" },
+    ],
+    links: {
+      github: "https://github.com/crafter-station/Muelle",
+      live: "https://muelle.crafter.run"
+    }
+  },
+  {
     title: "Mdverse",
     description: "Editor colaborativo de Markdown con vista previa en vivo, diseñado para escribir y organizar documentos en equipo. Incluye historial de versiones, cursores en tiempo real, comentarios, enlaces compartidos y exportación a Markdown, HTML, PDF y Word.",
     image: "./assets/projects/mdverse/mdverse.avif",
@@ -328,35 +357,6 @@ export const PROJECTS = [
     links: {
       github: "https://github.com/CristianOlivera1/Costo-minimo-y-Esquina-noroeste",
       live: "https://encmcalculator.vercel.app/"
-    }
-  },
-  {
-    title: "Muelle",
-    description: "Dock ligero para Windows 10 y 11 que reemplaza la barra de tareas con una interfaz personalizable inspirada en macOS. Incluye vistas previas en vivo de ventanas, animación al minimizar y una barra superior opcional.",
-    image: "./assets/projects/muelle/muelle.mp4",
-    poster: "./assets/projects/muelle/muelle2.avif",
-    image2: "./assets/projects/muelle/muelle2.avif",
-    image3: "./assets/projects/muelle/muelle3.avif",
-    favicon: "./assets/projects/muelle/favicon.png",
-    features: [
-      { icon: "tabler:layout-dashboard", text: "Dock de cristal con ampliación de iconos según el cursor" },
-      { icon: "tabler:apps", text: "Abrir, fijar, reordenar y agrupar aplicaciones" },
-      { icon: "tabler:window", text: "Vistas previas en vivo y efecto genio al minimizar ventanas" },
-      { icon: "tabler:drag-drop", text: "Arrastrar archivos a aplicaciones, Descargas o la Papelera" },
-      { icon: "tabler:device-desktop", text: "Barra superior opcional con información del sistema" },
-      { icon: "tabler:settings", text: "Ajustes en vivo disponibles en español, inglés y francés" },
-      { icon: "tabler:chart-donut", text: "Límites de uso de proveedores de IA en la barra superior" },
-    ],
-    technologies: [
-      { name: "Rust", icon: "logos:rust" },
-      { name: "Tauri", icon: "logos:tauri" },
-      { name: "React", icon: "logos:react" },
-      { name: "TypeScript", icon: "logos:typescript-icon" },
-      { name: "Vite", icon: "logos:vitejs" },
-    ],
-    links: {
-      github: "https://github.com/crafter-station/Muelle",
-      live: "https://muelle.crafter.run"
     }
   },
 ]
