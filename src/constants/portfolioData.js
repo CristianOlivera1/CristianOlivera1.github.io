@@ -33,7 +33,7 @@ export const PROJECTS = [
       { icon: "tabler:chart-donut", text: "Límites de uso de proveedores de IA en la barra superior" },
     ],
     technologies: [
-      { name: "Rust", icon: "logos:rust" },
+      { name: "Rust", icon: "material-icon-theme:rust" },
       { name: "Tauri", icon: "logos:tauri" },
       { name: "React", icon: "logos:react" },
       { name: "TypeScript", icon: "logos:typescript-icon" },
