@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from '@dr.pogodin/react-helmet'
 import { PERSONAL_INFO } from './constants/portfolioData'
 import Header from './components/Header'
 import Hero from './components/Hero'

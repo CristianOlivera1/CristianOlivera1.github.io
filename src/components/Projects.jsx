@@ -1,5 +1,5 @@
 import { lazy, Suspense, useMemo, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from '@dr.pogodin/react-helmet'
 import { Icon } from '@iconify/react'
 import { PROJECTS, PERSONAL_INFO } from '../constants/portfolioData'
 import { useLanguage } from '../context/LanguageContext'

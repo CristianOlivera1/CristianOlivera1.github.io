@@ -4,7 +4,7 @@ import PostCard from '../components/PostCard'
 import { useBlog } from '../context/BlogContext'
 import { UI } from '../i18n/translations'
 import { posts } from '../posts/index'
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from '@dr.pogodin/react-helmet'
 
 const BASE_URL = 'https://cristianolivera1.github.io'
 

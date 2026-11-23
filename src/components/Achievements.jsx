@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from '@dr.pogodin/react-helmet'
 import { Icon } from '@iconify/react'
 import { ACHIEVEMENTS } from '../constants/portfolioData'
 import { useLanguage } from '../context/LanguageContext'
