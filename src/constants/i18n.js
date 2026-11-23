@@ -291,6 +291,19 @@ export const PROJECTS_EN = [
       'Efficient routes',
     ],
   },
+  {
+    title: 'Muelle - Windows Dock',
+    description: 'A lightweight dock for Windows 10 and 11 that replaces the taskbar with a customizable, macOS-inspired interface. Includes live window previews, a minimize animation, and an optional menu bar.',
+    features: [
+      'Glass-style dock with cursor-based icon magnification',
+      'Launch, pin, reorder, and group apps',
+      'Live window previews and Genie minimize effect',
+      'Drag and drop files onto apps, Downloads, or the Recycle Bin',
+      'Optional top menu bar with system information',
+      'Live settings in Spanish, English, and French',
+      'AI provider usage limits in the menu bar',
+    ],
+  },
 ]
 
 export const ACHIEVEMENTS_EN = [
